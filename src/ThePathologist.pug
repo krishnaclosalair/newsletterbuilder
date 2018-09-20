@@ -1,0 +1,83 @@
+extends template.pug
+
+block vars
+
+  - var color = {bg: '#FFFFFF', txt: '#414a51', hlight: '#354a92'};
+  
+block content
+
+  //Preview Snippet
+  +wrapper({paddingTop: '10', paddingBottom: '10'})
+    +row
+      +column
+        +txt({txt: 'Your preview snippet goes here | <a href="#" target="_blank" style="color: #000000">View online</a>', fontSize: '11', align: 'right'})
+  
+  // Logo
+  +wrapper({paddingBottom: '15'})
+    +row
+      +column({width: '300', align: 'left'})
+        +img({imgSrc: 'http://images.ascp.org/images/ThePathologist_Logo_2.png', width: '300'})
+        
+  // Highlight
+  +wrapper({width: '100%', bgColor: '#354a92', bgSrc: 'http://images.ascp.org/images/E080718_ASCP_ThePathologist_Header.png'})
+    +row({bgColor: '#354a92', paddingTop: '40', paddingBottom: '40'})
+        +txt({bgColor: '#354a92', txt: 'We Are<br />Stronger Together', fontColor: '#FFFFFF', fontSize: '30', lineHeight: '40', paddingBottom: '20'})
+        +btn({bgColor: '#354a92', btnTxt: 'Read More', btnColor: '#FFFFFF', btnTxtColor: '#354a92', btnFontWeight: 'bold', btnPaddingTop: '12', btnPaddingRight: '20', btnPaddingBottom: '12', btnPaddingLeft: '20', btnHref: 'https://thepathologist.com/magazine/', btnTitle: 'The Pathologist Magazine'})
+        
+  // 1 Column Text
+  +wrapper({paddingTop: '40', paddingBottom: '40'})
+    +row
+      +column
+        +txt({fontSize: '14', lineHeight: '28', txt: 'Welcome to The Pathologist’s first partnership issue with ASCP! Why are we so pleased to bring you this collaboration? Read ASCP CEO Dr. E. Blair Holladay’s editorial to find out – and then read on to discover what else is in this month’s magazine:', align: 'left'})
+        
+  // 2 Column Image and Text
+  +wrapper({paddingBottom: '30'})
+    +row({paddingBottom: '20'})
+      +column({width: '200', mobileWidth: '100%'})
+        +img({width: '200', imgWidth: '80', imgSrc: 'http://images.ascp.org/images/Pathologists_Icon1.png', paddingRight: '30', paddingLeft: '30'})
+      +column({width: '400', mobileWidth: '100%'})
+        +txt({txt: '<ul style="margin: 0;"><li>Three different specialists talk about inter-specialty communication and why it’s important for pathologists to be open and collaborative with other healthcare professionals.</li></ul>', align: 'left', fontSize: '14', lineHeight: '28'})
+    +row({paddingBottom: '20'})
+      +column({width: '200', mobileWidth: '100%'})
+        +img({imgWidth: '80', imgSrc: 'http://images.ascp.org/images/Pathologists_Icon-2-1.png'})
+      +column({width: '400', mobileWidth: '100%'})
+        +txt({txt: '<ul style="margin: 0;"><li>Ilan Danieli explores the health economics of liquid biopsy, discussing when to use broad NGS panels – and when not to.</li></ul>', align: 'left', fontSize: '14', lineHeight: '28'})
+    +row({paddingBottom: '20'})
+      +column({width: '200', mobileWidth: '100%'})
+        +img({imgWidth: '80', imgSrc: 'http://images.ascp.org/images/Pathologists_Icons3-2.png'})
+      +column({width: '400', mobileWidth: '100%'})
+        +txt({txt: '<ul style="margin: 0;"><li>Practical tips and tricks help residents and early-career pathologists focus on wellness, resilience, and burnout avoidance.</li></ul>', align: 'left', fontSize: '14', lineHeight: '28'})
+    +row({paddingBottom: '20'})
+      +column({width: '200', mobileWidth: '100%'})
+        +img({imgWidth: '80', imgSrc: 'http://images.ascp.org/images/Pathologists_Icon-4-1.png'})
+      +column({width: '400', mobileWidth: '100%'})
+        +txt({txt: '<ul style="margin: 0;"><li>And much more: a mystery tumor, changing the public perception of pathology, the newest in mass spectrometry imaging, how readers got started in their laboratory medicine careers, and an interview with Cleveland Clinic pathology chair John Goldblum.</li></ul>', align: 'left', fontSize: '14', lineHeight: '28'})
+    +row
+      +column
+        +btn({btnTxt: 'Click here to read the issue!', btnFontWeight: 'bold', btnPaddingTop: '12', btnPaddingRight: '20', btnPaddingBottom: '12', btnPaddingLeft: '20', btnHref: 'https://thepathologist.com/magazine/', btnTitle: 'The Pathologist Magazine'})
+        
+  // 1 Column Image
+  +wrapper
+    +row
+      +column
+        +img({imgSrc: 'http://images.ascp.org/images/E082418_Pathologist_Image3.png', imgHref: 'https://thepathologist.com/magazine/', imgTitle: 'The Pathologist Magazine'})
+        
+  // Footer
+  +wrapper({width: '100%', borderTop: '5px solid #666666', bgColor: '#cccccc'})
+    +row({bgColor: '#cccccc', paddingTop: '20', paddingBottom: '15', borderBottom: '1px solid black'})
+      +column({bgColor: '#cccccc', width: '200', align: 'left'})
+        +img({bgColor: '#cccccc', width: '200', imgWidth: '200', imgSrc: 'http://images.ascp.org/images/ThePathologist_Logo_Grey_1.png', imgtitle: 'The Pathologist Logo'})
+      +column({bgColor: '#cccccc', width: '20', valign: 'middle'})
+        +img({bgColor: '#cccccc', width: '20', imgWidth: '20', paddingLeft: '10', imgSrc: 'http://images.ascp.org/images/footer_social-icons_484848_facebook.png', imgTitle: 'Facebook', imgHref: 'https://www.facebook.com/ASCP.Chicago'})
+      +column({bgColor: '#cccccc', width: '20', valign: 'middle'})
+        +img({bgColor: '#cccccc', width: '20', imgWidth: '20', paddingLeft: '10', imgSrc: 'http://images.ascp.org/images/footer_social-icons_484848_twitter.png', imgTitle: 'Twitter', imgHref: 'https://www.twitter.com/ASCP_Chicago'})
+      +column({bgColor: '#cccccc', width: '20', valign: 'middle'})
+        +img({bgColor: '#cccccc', width: '20', imgWidth: '20', paddingLeft: '10', imgSrc: 'http://images.ascp.org/images/footer_social-icons_484848_instagram.png', imgTitle: 'Instagram', imgHref: 'https://www.instagram.com/ascponelab/'})
+      +column({bgColor: '#cccccc', width: '20', valign: 'middle'})
+        +img({bgColor: '#cccccc', width: '20', imgWidth: '20', paddingLeft: '10', imgSrc: 'http://images.ascp.org/images/footer_social-icons_484848_linkedin.png', imgTitle: 'LinkedIn', imgHref: 'https://www.linkedin.com/groups/1811630/profile'})
+    +row({bgColor: '#cccccc', paddingTop: '15'})
+      +column({bgColor: '#cccccc'})
+        +txt({bgColor: '#cccccc', align: 'left', fontSize: '11', txt: '<span style="font-weight: bold;">ABOUT THIS MESSAGE</span> | You are receiving this e-mail because you have been certified by the Board of Certification (BOC), are a member of ASCP, have attended ASCP programs/meetings or made a purchase from ASCP. If you no longer wish to receive e-mails of this kind from ASCP, please login to change your email preferences or call Customer Service at 800.267.2727. This e-mail message complies with all CAN-SPAM 2004 regulations. It was sent to you by the American Society for Clinical Pathology, 33 West Monroe Street, Suite 1600, Chicago, IL 60603.', paddingBottom: '15'})
+        +txt({bgColor: '#cccccc', align: 'left', fontSize: '11', txt: 'Job: E082418_ASCP_ThePathologist', paddingBottom: '45'})
+  
+    

@@ -1,16 +1,19 @@
 mixin wrapper(opts)
   - var opts = opts || {};
-  - ( !opts.width || opts.width == '100%' ) ? width = '600' : width = opts.width
-  - opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : (opts.paddingRight && opts.paddingLeft) ? calculatedWidth = ( width - ( opts.paddingRight + opts.paddingLeft ) ) : calculatedWidth = width
+  - !opts.width ? width = '600' : width = opts.width
+  - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   
   table.w100pc.backgroundTable(width=width, align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0')
     tbody
       tr
-        td.w100pc(width=calculatedWidth, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
+        td.w100pc(width=calculatedWidth, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bgSrc ? opts.bgSrc : 'none' style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
         padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
         padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
         padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
-        border: ' + ( opts.border ? opts.border : '0' ) + ';')
+        border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
+        border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
+        border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
+        border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';')
           block
 
 
@@ -18,7 +21,7 @@ mixin wrapper(opts)
 mixin row(opts)
   - var opts = opts || {};
   - !opts.width ? width = '600' : width = opts.width
-  - opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : (opts.paddingRight && opts.paddingLeft) ? calculatedWidth = ( width - ( opts.paddingRight + opts.paddingLeft ) ) : calculatedWidth = width
+  - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   
   table.w100pc(width=width, align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0')
     tbody
@@ -27,7 +30,10 @@ mixin row(opts)
         padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
         padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
         padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
-        border: ' + ( opts.border ? opts.border : '0' ) + ';')
+        border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
+        border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
+        border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
+        border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';')
           table.w100pc(width=calculatedWidth, align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0')
             tbody
               tr
@@ -38,7 +44,7 @@ mixin row(opts)
 mixin column(opts)
   - var opts = opts || {};
   - !opts.width ? width = '600' : width = opts.width
-  - opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : (opts.paddingRight && opts.paddingLeft) ? calculatedWidth = ( width - ( opts.paddingRight + opts.paddingLeft ) ) : calculatedWidth = width
+  - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   
   - if (opts.mobileWidth == '100%')
     - var mobileWidth = 'w100pc full';
@@ -59,7 +65,10 @@ mixin column(opts)
   padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
   padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
   padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
-  border: ' + ( opts.border ? opts.border : '0' ) + ';')
+  border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
+  border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
+  border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
+  border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';')
     table.w100pc(width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0')
       tbody
         block
@@ -69,16 +78,20 @@ mixin column(opts)
 mixin img(opts)
   - var opts = opts || {};
   - !opts.width ? width = '600' : width = opts.width
-  - opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : (opts.paddingRight && opts.paddingLeft) ? calculatedWidth = ( width - ( opts.paddingRight + opts.paddingLeft ) ) : calculatedWidth = width
+  - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
+  - var calculatedImgWidth = Math.round((width / 3) * 2)
 
   tr
     td.w100pc(width=calculatedWidth, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
     padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
     padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
     padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
-    border: ' + ( opts.border ? opts.border : '0' ) + ';')
+    border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
+    border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
+    border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
+    border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';')
       a(href=opts.imgHref ? opts.imgHref : '#', target='_blank', title=opts.imgTitle ? opts.imgTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
-        img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.src ? opts.src : 'https://placehold.it/600x400', alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : '100%', border='0', style='display: block; border: none;')
+        img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.imgSrc ? opts.imgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth, alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : '100%', border='0', style='display: block; border: none;')
       block
 
 
@@ -86,7 +99,7 @@ mixin img(opts)
 mixin txt(opts)
   - var opts = opts || {};
   - !opts.width ? width = '600' : width = opts.width
-  - opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : (opts.paddingRight && opts.paddingLeft) ? calculatedWidth = ( width - ( opts.paddingRight + opts.paddingLeft ) ) : calculatedWidth = width
+  - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   - !opts.txt ? opts.txt = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' : opts.txt
   
   tr
@@ -98,15 +111,16 @@ mixin txt(opts)
     font-family: ' + ( opts.fontFamily ? opts.fontFamily : 'Helvetica' ) + ', sans-serif;\
     font-size: ' + ( opts.fontSize ? opts.fontSize : '14' ) + 'px;\
     font-weight: ' + ( opts.fontWeight ? opts.fontWeight : '400' ) + ';\
-    line-height: ' + ( opts.lineHeight ? opts.lineHeight : '21px' ) + ';\
-    color: ' + ( opts.fontColor ? opts.fontColor : color.txt ) + ';')=opts.txt
+    line-height: ' + ( opts.lineHeight ? opts.lineHeight : '21px' ) + 'px;\
+    color: ' + ( opts.fontColor ? opts.fontColor : color.txt ) + ';')
+      | !{opts.txt}
       block 
 
 
 mixin btn(opts)
   - var opts = opts || {};
   - !opts.width ? width = '600' : width = opts.width
-  - opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : (opts.paddingRight && opts.paddingLeft) ? calculatedWidth = ( width - ( opts.paddingRight + opts.paddingLeft ) ) : calculatedWidth = width
+  - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   - !opts.btnTxt ? opts.btnTxt = 'Lorem ipsum' : opts.btnTxt
   
   tr
@@ -114,7 +128,10 @@ mixin btn(opts)
     padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
     padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
     padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
-    border: ' + ( opts.border ? opts.border : '0' ) + ';')
+    border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
+    border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
+    border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
+    border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';')
       table(align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0', cellpadding='0', cellspacing='0', width=opts.btnWidth)
         tbody
           tr
