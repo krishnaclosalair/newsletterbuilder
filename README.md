@@ -3,12 +3,12 @@
 This:
 
     +wrapper
-	    +row
-		    +column
-			    +img
-				+txt
-				+btn
+      +row
+        +column
+	  +img
+	  +txt
+	  +btn
 
 Renders to this:
 
-    inc
+    X
