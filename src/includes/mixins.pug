@@ -14,9 +14,10 @@ mixin wrapper(opts)
         border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
         border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
         border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
-        background-size: ' + ( opts.bgSrc ? 'cover' : 'auto' ) + ';')
+        background-size: ' + ( opts.bgSrc ? 'cover' : 'auto' ) + ';\
+        background-position: ' + ( opts.bgSrc ? 'center' : 'auto' ) + ';')
         
-          - if (opts.bgSrc)
+          - if (opts.bulletproof)
             //
               <!--[if gte mso 9]>
               <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
