@@ -2,7 +2,7 @@
 
 Responsive emails made easy.
 
-Write readable semantic code like this:
+### Write readable semantic code like this:
 
     +wrapper
       +row
@@ -11,7 +11,7 @@ Write readable semantic code like this:
           +txt
           +btn
 
-To render complicated nested tables like this:
+### To render complicated nested tables like this:
 
     <table align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" class="w100pc backgroundTable" width="600">
       <tbody>
