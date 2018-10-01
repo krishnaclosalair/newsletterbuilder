@@ -18,20 +18,19 @@ mixin wrapper(opts)
         background-position: ' + ( opts.bgSrc ? 'center' : 'auto' ) + ';')
         
           - if (opts.bulletproof)
-            //
+            // -->
               <!--[if gte mso 9]>
               <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
-                <v:fill type="tile" src="" color="" />
+                <v:fill type="tile" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
                 <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
-              <![endif]-->
+              <![endif]--> <!--
             div
               block      
             //
               <!--[if gte mso 9]>
                 </v:textbox>
               </v:rect>
-              <![endif]-->
-
+              <![endif]--> <!-- 
           - else
         
             block
@@ -130,7 +129,7 @@ mixin txt(opts)
     border: ' + ( opts.border ? opts.border : '0' ) + ';\
     font-family: ' + ( opts.fontFamily ? opts.fontFamily : 'Helvetica' ) + ', sans-serif;\
     font-size: ' + ( opts.fontSize ? opts.fontSize : '14' ) + 'px;\
-    font-weight: ' + ( opts.fontWeight ? opts.fontWeight : '400' ) + ';\
+    font-weight: ' + ( opts.fontWeight ? opts.fontWeight : 'normal' ) + ';\
     line-height: ' + ( opts.lineHeight ? opts.lineHeight : '21px' ) + 'px;\
     color: ' + ( opts.fontColor ? opts.fontColor : color.txt ) + ';')
       | !{opts.txt}
@@ -159,28 +158,28 @@ mixin btn(opts)
             - if (opts.bulletproof)
               td
                 div
-                  //
+                  // -->
                     <!--[if mso]>
-                    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="{{ product.u|set_ga_tracking(utm_campaign=ga_campaign, utm_medium=ga_medium, utm_source=ga_source) }}" style="height:40px;v-text-anchor:middle;width:200px;" stroke="f" fillcolor="#cc0000">
+                    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#{opts.btnHref ? opts.btnHref : '#'}" style="height:40px;v-text-anchor:middle;width:#{opts.btnWidth ? opts.btnWidth : '200'}px;" stroke="f" fillcolor="#{opts.btnColor ? opts.btnColor : color.hlight}">
                       <w:anchorlock/>
                       <center>
                     <![endif]-->
-                        <a href="{{ product.u|set_ga_tracking(utm_campaign=ga_campaign, utm_medium=ga_medium, utm_source=ga_source) }}"
-                    style="background-color:#cc0000;color:#ffffff;display:inline-block;font-family:sans-serif;font-size:13px;font-weight:bold;line-height:40px;text-align:center;text-decoration:none;width:200px;-webkit-text-size-adjust:none;">Lorem ipsum</a>
+                        <a href="#{opts.btnHref ? opts.btnHref : '#'}"
+                    style="background-color:#{opts.btnColor ? opts.btnColor : color.hlight};color:#{opts.btnTxtColor ? opts.btnTxtColor : color.bg};display:inline-block;font-family:#{opts.btnFontFamily ? opts.btnFontFamily : 'Helvetica'};font-size:#{opts.btnFontSize ? opts.btnFontSize : '14'}px;font-weight:#{opts.btnFontWeight ? opts.btnFontWeight : 'normal'};line-height:#{opts.btnLineHeight ? opts.btnLineHeight : '21'}px;text-align:center;text-decoration:none;width:#{opts.btnWidth ? opts.btnWidth : '200'}px;-webkit-text-size-adjust:none;">#{opts.btnTxt}</a>
                     <!--[if mso]>
                       </center>
                     </v:rect>
-                    <![endif]-->
+                    <![endif]--> <!--
             - else
-              td(width=opts.btnWidth, align='center', valign='middle', bgcolor=opts.btnColor ? opts.btnColor : color.hlight, style='padding-top: ' + ( opts.btnPaddingTop ? opts.btnPaddingTop : '0') + 'px;\
+              td(width=opts.btnWidth ? opts.btnWidth : '200', align='center', valign='middle', bgcolor=opts.btnColor ? opts.btnColor : color.hlight, style='padding-top: ' + ( opts.btnPaddingTop ? opts.btnPaddingTop : '0') + 'px;\
               padding-right: ' + ( opts.btnPaddingRight ? opts.btnPaddingRight : '0') + 'px;\
               padding-bottom: ' + ( opts.btnPaddingBottom ? opts.btnPaddingBottom : '0') + 'px;\
               padding-left: ' + ( opts.btnPaddingLeft ? opts.btnPaddingLeft : '0') + 'px;\
               border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';\
               font-family: ' + ( opts.btnFontFamily ? opts.btnFontFamily : 'Helvetica' ) + ', sans-serif;\
               font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
-              font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : '400' ) + ';\
+              font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';\
               line-height: ' + ( opts.btnLineHeight ? opts.btnLineHeight : '21' ) + 'px;\
               color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';')
-                a(href=opts.btnHref ? opts.btnHref : '#' , target='_blank', title=opts.btnTitle ? opts.btnTitle : 'title', style='text-decoration: none; border: 0; outline: 0; color:' + (opts.btnTxtColor ? opts.btnTxtColor : color.bg) + ';')=opts.btnTxt
+                a(href=opts.btnHref ? opts.btnHref : '#', target='_blank', title=opts.btnTitle ? opts.btnTitle : 'title', style='text-decoration: none; border: 0; outline: 0; color:' + (opts.btnTxtColor ? opts.btnTxtColor : color.bg) + ';')=opts.btnTxt
                 block
