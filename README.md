@@ -83,7 +83,7 @@ bgColor - #FFFFFF by default. Background color. Takes hex color code as value.
 
 bgSrc - None by default. Use images as background. Takes in URL as value.
 
-bulletproof (boolean) - False by default. If true, adds support for background images on the Microsoft Outlook Email Client by using VML's (Vector Markup Language) v:fill tag. Source: Stig Morten Myre (Campaign Monitor) - https://backgrounds.cm/ 
+bulletproof - (Boolean) False (does not exist) by default. If true (exists), adds support for background images on the Microsoft Outlook Email Client by using VML's (Vector Markup Language) v:fill tag. Source: Stig Morten Myre (Campaign Monitor) - https://backgrounds.cm/ 
 
 **+row**
 
