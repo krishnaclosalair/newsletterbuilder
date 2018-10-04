@@ -6,18 +6,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta content="telephone=no, email=no" name="format-detection"/>
-    <!-- CSS Reset -->
     <style>
+      /* CSS Reset */ 
+      
       body {
-        height: 100% !important;
-        margin:0 !important;
-        padding:0 !important;
         width: 100% !important;
+        height: 100% !important;
+        min-width: 100% !important;
+        -webkit-text-size-adjust: 100% !important;
+        -ms-text-size-adjust: 100% !important;
+        margin: 0 !important;
+        Margin: 0 !important;
+        padding: 0 !important;
+      }
+      
+      td, th {
+        -moz-box-sizing: border-box !important;
+        -webkit-box-sizing: border-box !important;
+        box-sizing: border-box !important;
       }
       
       img {
-        border:0 none !important;
-        height:auto !important;
+        border:0 none;
+        height:auto;
+        max-width: 100%;
         line-height:100% !important;
         outline:none !important;
         text-decoration:none !important;
@@ -25,7 +37,18 @@
       }
       
       a img {
-        border:0 none !important;
+        border:0 none;
+      }
+      
+      table {
+        border-spacing: 0 !important;
+      }
+      
+      td, th {
+      word-wrap: break-word !important;
+      -webkit-hyphens: auto !important;
+      -moz-hyphens: auto !important;
+      hyphens: auto !important;
       }
       
       table, 
@@ -33,21 +56,19 @@
         border-collapse:collapse !important;
       }
       
-      
-    </style>
-    <!-- Client-specific CSS Styles -->
-    <style>
+      /* Client-specific CSS Styles */
       /* Samsung Mail */
       
         /* Blue Links */
         #MessageViewBody a {
-        color: inherit;
-        text-decoration: none;
-        font-size: inherit;
-        font-family: inherit;
-        font-weight: inherit;
-        line-height: inherit;
+        color: inherit !important;
+        text-decoration: none !important;
+        font-size: inherit !important;
+        font-family: inherit !important;
+        font-weight: inherit !important;
+        line-height: inherit !important;
         }
+        
       
       /* Outlook.com / Hotmail */
       
@@ -76,13 +97,13 @@
         /* table td Element Spacing */
         table, 
         td {
-          mso-table-lspace:0pt;
-          mso-table-rspace:0pt;
+          mso-table-lspace:0pt !important;
+          mso-table-rspace:0pt !important;
         }
       
         /* Image Resizing */
         img {
-          -ms-interpolation-mode:bicubic;
+          -ms-interpolation-mode:bicubic !important;
         }
       
       
@@ -118,9 +139,8 @@
         }
       
       
-    </style>
-    <!-- Custom CSS -->
-    <style>
+      /* Custom CSS */ 
+      
       @media only screen and (max-width: 600px) {
         .hide {
           display: none !important;
