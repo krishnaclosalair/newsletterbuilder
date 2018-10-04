@@ -1,0 +1,19 @@
+extends template.pug
+
+block vars
+
+  - var color = {bg: '#FFFFFF', txt: '#FFFFFF', hlight: '#760f2b'};
+  
+block content
+
+  //- Start Here
+  +wrapper({width: '600'})
+    +row({width: '600'})
+      +column({width: '600', mobileWidth: '100%'})
+        +img({imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/Taj-rece.jpg', width: '600', imgHref: '#', imgTitle: 'title'})
+  +wrapper({width: '600'})
+    +row({width: '600'})
+      +column({mobileWidth: '100%', width: '600', bgColor: '#760f2b', paddingTop: '24', paddingRight: '24', paddingBottom: '24', paddingLeft: '24'})
+        +txt({width: '552', bgColor: '#760f2b', fontSize: '26', lineHeight: '26', fontWeight: 'bold', fontFamily: 'Raleway, sans-serif', fontColor: '#FFFFFF', txt: 'PASSAGE TO ANCIENT EGYPT AND INDIA', paddingBottom: '16'})
+        +txt({width: '552', bgColor: '#760f2b', fontSize: '18', lineHeight: '24', fontFamily: 'Raleway, sans-serif', fontColor: '#FFFFFF', txt: 'Lorem ipsum dolor', paddingBottom: '32'})
+        +btn({width: '552', bgColor: '#760f2b', btnColor: '#760f2b', btnBorder: '2px solid #FFFFFF', btnFontSize: '12', btnLineHeight: '12', btnFontWeight: 'bold', btnFontFamily: 'Raleway, sans-serif', btnTxt: 'WATCH CRUISE VIDEO', btnPaddingTop: '12', btnPaddingRight: '24', btnPaddingBottom: '12', btnPaddingLeft: '24', btnTxtColor: '#FFFFFF', btnWidth: '144', btnWidth: '190', href: '#'})
