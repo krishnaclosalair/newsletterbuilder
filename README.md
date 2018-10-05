@@ -67,9 +67,9 @@ Responsive emails made easy.
 
 ### Tags and Options:
 
-**+wrapper**
+***GENERAL OPTIONS***
 
-width - 600 by default. Width of the table. Value recalculated when left and right padding is added.
+width - 600 by default. Width of the table.
 
 paddingTop - 0 by default. Top padding. 
 
@@ -81,9 +81,11 @@ paddingLeft - 0 by default. Left padding.
 
 bgColor - #FFFFFF by default. Background color. Takes hex color code as value.
 
+**+wrapper**
+
 bgSrc - None by default. Use images as background. Takes in URL as value.
 
-bulletproof - (Boolean) False (does not exist) by default. If true (exists), adds support for background images on the Microsoft Outlook Email Client by using VML's (Vector Markup Language) v:fill tag. Source: Stig Morten Myre (Campaign Monitor) - https://backgrounds.cm/ 
+bulletproof - Not enabled by default. If specified ({bulletproof: 'true')}, adds support for background images on the Microsoft Outlook Email Client by using VML's (Vector Markup Language) v:fill tag. Source: Stig Morten Myre (Campaign Monitor) - https://backgrounds.cm/ 
 
 **+row**
 
