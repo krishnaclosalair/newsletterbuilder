@@ -1,0 +1,26 @@
+extends template.pug
+
+block vars
+
+  - var color = {bg: '#FFFFFF', txt: '#000000', hlight: '#cc0000'};
+  
+block content
+
+  //- Start Here  
+  +wrapper({width: '600', borderTop: '10px solid #780d29', paddingBottom: '16'})
+    +row({width: '600'})
+      +column({width: '300', mobileWidth: '100%', paddingRight: '8'})
+        +img({width: '292', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/Campaign%20-%20031018/Greece_Delos_169369307.jpg', imgHref: '#'})
+      +column({width: '300', mobileWidth: '100%', paddingLeft: '8'})
+        +txt({width: '292', align: 'left', txt: 'OUR HIGHLIGHTS: Greece', fontSize: '20', lineHeight: '26', fontColor: '#780d29', fontWeight: '700', fontFamily: 'Raleway, Helvetica, sans-serif', paddingTop: '16', paddingBottom: '16'})
+        +txt({width: '292', align: 'left', txt: 'Visit Osios Loukas, a historic, walled monastery and one of the most important monuments of Middle Byzantine architecture and art.', fontSize: '12', lineHeight: '24', fontWeight: '400', fontFamily: 'Raleway, Helvetica, sans-serif', paddingBottom: '12'})
+        +txt({width: '292', align: 'left', txt: 'See Delphi, the site of the 4th-century BC Temple of Apollo. And then on to Epidaurus, known for its impressive theatre, it was once the most celebrated healing centre.', fontSize: '12', lineHeight: '24', fontWeight: '400', fontFamily: 'Raleway, Helvetica, sans-serif', paddingBottom: '12'})
+        
+  +wrapper({width: '600', borderTop: '10px solid #780d29', paddingBottom: '16'})
+    +row({width: '600'})
+      +column({width: '300', mobileWidth: '100%', paddingRight: '8'})
+        +txt({width: '292', align: 'left', txt: 'TOUR HIGHLIGHTS: Egypt', fontSize: '20', lineHeight: '26', fontColor: '#780d29', fontWeight: '700', fontFamily: 'Raleway, Helvetica, sans-serif', paddingTop: '16', paddingBottom: '16'})
+        +txt({width: '292', align: 'left', txt: 'Once you arrive in Alexandria, visit Pompey’s Pillar, a triumphal Roman column and the Catacombs of Kom El Shoqafa – one of the Seven Wonders of the Middle Ages.', fontSize: '12', lineHeight: '24', fontWeight: '400', fontFamily: 'Raleway, Helvetica, sans-serif', paddingBottom: '12'})
+        +txt({width: '292', align: 'left', txt: 'Enjoy a 2-night stay in Cairo and visit the great Pyramids of Giza and the famous Sphinx, enjoy a trip to Memphis, followed by dinner on a Nile cruise.', fontSize: '12', lineHeight: '24', fontWeight: '400', fontFamily: 'Raleway, Helvetica, sans-serif', paddingBottom: '12'})
+      +column({width: '300', mobileWidth: '100%', paddingLeft: '8'})
+        +img({width: '292', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/Campaign%20-%20031018/iStock_000009278398Large.jpg', imgHref: 'https://www.voyagestoantiquity.com/cruises/the-aegean-experience-cairo-1432/cruise-features?date=2018-10-18'})

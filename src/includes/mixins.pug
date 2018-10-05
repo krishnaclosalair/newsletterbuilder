@@ -1,7 +1,7 @@
 mixin wrapper(opts)
   - var opts = opts || {};
   
-  table.w100pc.backgroundTable(width=opts.width ? opts.width : '600', align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0')
+  table.w100pc.backgroundTable(width=opts.width ? opts.width : '600', align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + ';')
     tbody
       tr
         td.w100pc(width=opts.width ? opts.width : '600', align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bgSrc ? opts.bgSrc : 'none', style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
@@ -13,7 +13,8 @@ mixin wrapper(opts)
         border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
         border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
         background-size: ' + ( opts.bgSrc ? 'cover' : 'auto' ) + ';\
-        background-position: ' + ( opts.bgSrc ? 'center' : 'auto' ) + ';')
+        background-position: ' + ( opts.bgSrc ? 'center' : 'auto' ) + ';\
+        width: ' + (opts.width ? opts.width : '600') + ';')
         
           - if (opts.bulletproof)
             // -->
@@ -38,7 +39,7 @@ mixin wrapper(opts)
 mixin row(opts)
   - var opts = opts || {};
   
-  table.w100pc(width=opts.width ? opts.width : '600', align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0')
+  table.w100pc(width=opts.width ? opts.width : '600', align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + ';')
     tbody
       tr
         td.w100pc.pH(width=opts.width ? opts.width : '600', align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
@@ -48,8 +49,9 @@ mixin row(opts)
         border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
         border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
         border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
-        border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';')
-          table.w100pc(width=opts.width ? opts.width : '600', align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0')
+        border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
+        width: ' + (opts.width ? opts.width : '600') + ';')
+          table.w100pc(width=opts.width ? opts.width : '600', align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + ';')
             tbody
               tr
                 block
@@ -75,6 +77,8 @@ mixin column(opts)
     - var mobileWidth = 'w25pc';
   - else if (opts.mobileWidth == '10%')
     - var mobileWidth = 'w10pc';
+  - else if (opts.mobileWidth == 'hide')
+    - var mobileWidth = 'hide';
   
   th(class=mobileWidth, width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
   padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
@@ -83,8 +87,9 @@ mixin column(opts)
   border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
   border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
   border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
-  border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';')
-    table.w100pc(width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0')
+  border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
+  width: ' + width + ';')
+    table.w100pc(width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + calculatedWidth + ';')
       tbody
         block
 
@@ -103,9 +108,10 @@ mixin img(opts)
     border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
-    border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';')
+    border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
+    width: ' + width + ';')
       a(href=opts.imgHref ? opts.imgHref : '#', target='_blank', title=opts.imgTitle ? opts.imgTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
-        img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.imgSrc ? opts.imgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth, alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : width, border='0', style='display: block; border: none;')/
+        img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.imgSrc ? opts.imgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth, alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.imgWidth ? opts.imgWidth : width) + ';')/
       block
 
 
@@ -124,7 +130,8 @@ mixin txt(opts)
     font-size: ' + ( opts.fontSize ? opts.fontSize : '14' ) + 'px;\
     font-weight: ' + ( opts.fontWeight ? opts.fontWeight : 'normal' ) + ';\
     line-height: ' + ( opts.lineHeight ? opts.lineHeight : '21px' ) + 'px;\
-    color: ' + ( opts.fontColor ? opts.fontColor : color.txt ) + ';')
+    color: ' + ( opts.fontColor ? opts.fontColor : color.txt ) + ';\
+    width: ' + (opts.width ? opts.width : '600') + ';')
       | !{opts.txt}
       block
 
@@ -142,8 +149,9 @@ mixin btn(opts)
     border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
-    border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';')
-      table(align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0', cellpadding='0', cellspacing='0', width=opts.btnWidth)
+    border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
+    width: ' + (opts.width ? opts.width : '600') + ';')
+      table(align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0', cellpadding='0', cellspacing='0', width=opts.btnWidth, style='width: ' + opts.btnWidth + ';')
         tbody
           tr
             - if (opts.bulletproof)
@@ -171,6 +179,7 @@ mixin btn(opts)
               font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
               font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';\
               line-height: ' + ( opts.btnLineHeight ? opts.btnLineHeight : '21' ) + 'px;\
-              color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';')
+              color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';\
+              width: ' + (opts.btnWidth ? opts.btnWidth : '200') + ';')
                 a(href=opts.btnHref ? opts.btnHref : '#', target='_blank', title=opts.btnTitle ? opts.btnTitle : 'title', style='text-decoration: none; border: 0; outline: 0; color:' + (opts.btnTxtColor ? opts.btnTxtColor : color.bg) + ';')=opts.btnTxt
                 block
