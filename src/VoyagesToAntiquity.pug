@@ -2,25 +2,387 @@ extends template.pug
 
 block vars
 
-  - var color = {bg: '#FFFFFF', txt: '#000000', hlight: '#cc0000'};
+  - var color = {bg: '#FFFFFF', txt: '#000000', hlight: '#76112F'};
   
 block content
 
-  //- Start Here  
-  +wrapper({width: '600', borderTop: '10px solid #780d29', paddingBottom: '16'})
-    +row({width: '600'})
-      +column({width: '300', mobileWidth: '100%', paddingRight: '8'})
-        +img({width: '292', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/Campaign%20-%20031018/Greece_Delos_169369307.jpg', imgHref: '#'})
-      +column({width: '300', mobileWidth: '100%', paddingLeft: '8'})
-        +txt({width: '292', align: 'left', txt: 'OUR HIGHLIGHTS: Greece', fontSize: '20', lineHeight: '26', fontColor: '#780d29', fontWeight: '700', fontFamily: 'Raleway, Helvetica, sans-serif', paddingTop: '16', paddingBottom: '16'})
-        +txt({width: '292', align: 'left', txt: 'Visit Osios Loukas, a historic, walled monastery and one of the most important monuments of Middle Byzantine architecture and art.', fontSize: '12', lineHeight: '24', fontWeight: '400', fontFamily: 'Raleway, Helvetica, sans-serif', paddingBottom: '12'})
-        +txt({width: '292', align: 'left', txt: 'See Delphi, the site of the 4th-century BC Temple of Apollo. And then on to Epidaurus, known for its impressive theatre, it was once the most celebrated healing centre.', fontSize: '12', lineHeight: '24', fontWeight: '400', fontFamily: 'Raleway, Helvetica, sans-serif', paddingBottom: '12'})
+  //-
+    +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+          +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.placehold.it/600x400', imgWidth: '600'})
+
+          +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem Ipsum'})
+
+          +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', btnWidth: '200', btnColor: '#76112F', btnPaddingTop: '8', btnPaddingRight: '16', btnPaddingBottom: '8', btnPaddingLeft: '16', btnBorder: '1px solid #FFFFFF', btnFontFamily: 'Raleway, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '21', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Lorem Ipsum'})
+
+  //- LOGO  
+  +wrapper({width: '100%', bgColor: '#192E38', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({width: '600', bgColor: '#192E38', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '100', align: 'left', valign: 'top', bgColor: '#192E38', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '100', align: 'center', valign: 'top', bgColor: '#192E38', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://www.voyagestoantiquity.com/', imgTitle: 'Voyages to Antiquity Logo', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/vta-head-logo-full.jpg', imgWidth: '100'})
         
-  +wrapper({width: '600', borderTop: '10px solid #780d29', paddingBottom: '16'})
-    +row({width: '600'})
-      +column({width: '300', mobileWidth: '100%', paddingRight: '8'})
-        +txt({width: '292', align: 'left', txt: 'TOUR HIGHLIGHTS: Egypt', fontSize: '20', lineHeight: '26', fontColor: '#780d29', fontWeight: '700', fontFamily: 'Raleway, Helvetica, sans-serif', paddingTop: '16', paddingBottom: '16'})
-        +txt({width: '292', align: 'left', txt: 'Once you arrive in Alexandria, visit Pompey’s Pillar, a triumphal Roman column and the Catacombs of Kom El Shoqafa – one of the Seven Wonders of the Middle Ages.', fontSize: '12', lineHeight: '24', fontWeight: '400', fontFamily: 'Raleway, Helvetica, sans-serif', paddingBottom: '12'})
-        +txt({width: '292', align: 'left', txt: 'Enjoy a 2-night stay in Cairo and visit the great Pyramids of Giza and the famous Sphinx, enjoy a trip to Memphis, followed by dinner on a Nile cruise.', fontSize: '12', lineHeight: '24', fontWeight: '400', fontFamily: 'Raleway, Helvetica, sans-serif', paddingBottom: '12'})
-      +column({width: '300', mobileWidth: '100%', paddingLeft: '8'})
-        +img({width: '292', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/Campaign%20-%20031018/iStock_000009278398Large.jpg', imgHref: 'https://www.voyagestoantiquity.com/cruises/the-aegean-experience-cairo-1432/cruise-features?date=2018-10-18'})
+      +column({width: '500', mobileWidth: '100%', align: 'right', valign: 'top', bgColor: '#192E38', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +txt({width: '500', align: 'right', valign: 'top', bgColor: '#192E38', paddingTop: '8', paddingRight: '0', paddingBottom: '24', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '18', fontColor: '#FFFFFF', txt: 'Please confirm you are happy receiving communication from us | <a href="http://{~customDomain~}/interface/external_view_email.php?{~mailId~}" title="View in browser" style="color: #FFFFFF; text-decoration: none;">View in browser</a>'})
+        
+        +txt({width: '500', align: 'right', valign: 'top', bgColor: '#192E38', paddingTop: '0', paddingRight: '0', paddingBottom: '8', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '16', fontWeight: 'bold', lineHeight: '16', fontColor: '#e8d8c2', txt: '<a href="tel:01865951330" title="Call Voyages to Antiquity" style="color: #e8d8c2; text-decoration: none;">Call: 01865 951 330'})
+        
+        +txt({width: '500', align: 'right', valign: 'top', bgColor: '#192E38', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '16', fontWeight: 'normal', lineHeight: '16', fontColor: '#e8d8c2', txt: 'or contact your Travel Agent'})
+        
+  //- NAV BAR
+  +wrapper({width: '100%', bgColor: '#76112F', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({width: '600', bgColor: '#76112F', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '600', align: 'center', valign: 'top', bgColor: '#76112F', paddingTop: '16', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +txt({width: '600', align: 'right', valign: 'top', bgColor: '#76112F', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '12', fontColor: '#76112F', txt: '<a href="https://www.uploadlibrary.com/VoyagesAntiquityUK/template-builder-0918/components/block-2.html#" title="Find Your Cruise" style="color: #FFFFFF; text-decoration: none;">FIND YOUR CRUISE</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="https://www.uploadlibrary.com/VoyagesAntiquityUK/template-builder-0918/components/block-2.html#" title="Destinations" style="color: #FFFFFF; text-decoration: none;">DESTINATIONS</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="https://www.uploadlibrary.com/VoyagesAntiquityUK/template-builder-0918/components/block-2.html#" title="Brochures" style="color: #FFFFFF; text-decoration: none;">BROCHURES</a>'})
+        
+  //- MAIN IMAGE
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/THE%20REAL%20BANNER-re.jpg', imgWidth: '600'})
+        
+  //- ANCIENT GREECE AND DALMATIAN COAST
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '400', mobileWidth: '100%', align: 'center', valign: 'middle', bgColor: '#76112F', paddingTop: '24', paddingRight: '24', paddingBottom: '24', paddingLeft: '24', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +txt({width: '352', align: 'left', valign: 'middle', bgColor: '#76112F', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '26', fontWeight: 'bold', lineHeight: '30', fontColor: '#FFFFFF', txt: 'ANCIENT GREECE AND DALMATIAN COAST'})
+
+        +txt({width: '352', align: 'left', valign: 'middle', bgColor: '#76112F', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'normal', lineHeight: '24', fontColor: '#FFFFFF', txt: 'Plan your unforgettable journey today!'})
+
+      +column({width: '200', mobileWidth: '100%', align: 'center', valign: 'middle', bgColor: '#76112F', paddingTop: '24', paddingRight: '24', paddingBottom: '24', paddingLeft: '24', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +btn({width: '152', align: 'center', valign: 'middle', bgColor: '#76112F', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', btnWidth: '150', btnColor: '#76112F', btnPaddingTop: '8', btnPaddingRight: '8', btnPaddingBottom: '8', btnPaddingLeft: '8', btnBorder: '2px solid #FFFFFF', btnFontFamily: 'Raleway, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '21', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'READ MORE'})
+        
+  //- ITINERARY LIST
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '10px solid #76112F', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '24', paddingRight: '24', paddingBottom: '0', paddingLeft: '24', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +txt({width: '552', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '26', fontWeight: 'bold', lineHeight: '26', fontColor: '#76112F', txt: 'ITINERARY LIST'})
+
+        +txt({width: '552', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'normal', lineHeight: '24', fontColor: '#747678', txt: 'Vestibulum fringilla sem sit amet tempus condimentum. Aenean pharetra sapien quis mauris felis onvallis sapien in convallis ultrices nibh ipsumultricies orci, eget lobortis leo lorem vitae nunc.'})
+
+        +img({width: '552', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/map2-rece.jpg', imgWidth: '375'})
+      
+  //- ANCIENT GREECE AND DALMATIAN COAST
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '10px solid #76112F', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '292', mobileWidth: '100%', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '292', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/Lifestyle-re.jpg', imgWidth: '292'})
+        
+      +column({width: '16', mobileWidth: '100%', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+      +column({width: '292', mobileWidth: '100%', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '0', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +txt({width: '260', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '20', fontWeight: 'bold', lineHeight: '24', fontColor: '#76112F', txt: 'ANCIENT GREECE AND DALMATIAN COAST'})
+
+        +txt({width: '260', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Embark Aegean Odyssey in nearby Piraeus. Optional tour to the NationalArchaeological Museum. Choice of tours: Acropolis and its Museum or Byzantine Athens'})
+        
+        +txt({width: '260', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '4', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '26', fontWeight: 'bold', lineHeight: '26', fontColor: '#76112F', txt: '<span style="font-size: 14px; font-weight: bold;">FROM</span> £1,632'})
+
+        +btn({width: '152', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', btnWidth: '150', btnColor: '#76112F', btnPaddingTop: '8', btnPaddingRight: '8', btnPaddingBottom: '8', btnPaddingLeft: '8', btnBorder: '2px solid #FFFFFF', btnFontFamily: 'Raleway, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'bold', btnLineHeight: '21', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'READ MORE'})
+        
+  //- ANCIENT GREECE AND DALMATIAN COAST - WHAT'S INCLUDED - AN OVERLOOK
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+      +column({width: '292', mobileWidth: '100%', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '0', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +txt({width: '260', align: 'left', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '24', fontColor: '#000000', txt: "WHAT'S INCLUDED - An overlook"})
+        
+        +txt({width: '260', align: 'left', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: '&bull; Free walk around location of tour.'})
+        
+        +txt({width: '260', align: 'left', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: '&bull; Free walk around location of tour.'})
+        
+        +txt({width: '260', align: 'left', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: '&bull; Free walk around location of tour.'})
+        
+      +column({width: '16', mobileWidth: '100%', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+      +column({width: '292', mobileWidth: '100%', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '292', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/sight-re.jpg', imgWidth: '292'})
+        
+  //- CRUISES FOR 2019
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '10px solid #76112F', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '24', paddingRight: '24', paddingBottom: '24', paddingLeft: '24', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +txt({width: '552', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '26', fontWeight: 'bold', lineHeight: '26', fontColor: '#76112F', txt: 'CRUISES FOR 2019'})
+
+        +txt({width: '552', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'normal', lineHeight: '24', fontColor: '#747678', txt: 'Plan your unforgettable journey today!'})
+      
+  //- CLASSICAL CIVILISATION OF THE SOUTHERN MEDITERRANEAN
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '292', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/4-re.jpg', imgWidth: '292'})
+
+        +txt({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#76112F', txt: 'Classical Civilisation of the southern Mediterranean'})
+
+        +txt({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '24', fontColor: '#76112F', txt: '13 Apr, 2019'})
+
+        +txt({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '0', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+        +txt({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: '&nbsp;'})
+
+          +row({width: '292', noMobilePadding: 'true', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +column({width: '146', align: 'center', valign: 'top', bgColor: '#1C3540', paddingTop: '8', paddingRight: '8', paddingBottom: '8', paddingLeft: '8', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+              +txt({width: '130', align: 'center', valign: 'middle', bgColor: '#1C3540', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '12', fontColor: '#FFFFFF', txt: '<a href="#" title="title" style="color: #FFFFFF; text-decoration: none;">FROM <span style="font-size: 14px;">1,234</span></a>'})
+
+            +column({width: '146', align: 'center', valign: 'top', bgColor: '#76112F', paddingTop: '8', paddingRight: '8', paddingBottom: '8', paddingLeft: '8', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+              +txt({width: '130', align: 'center', valign: 'middle', bgColor: '#76112F', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '12', fontColor: '#FFFFFF', txt: '<a href="#" title="title" style="color: #FFFFFF; text-decoration: none;">READ MORE</a>'})
+      
+      +column({width: '16', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+              
+      +column({width: '292', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/3-re.jpg', imgWidth: '292'})
+
+        +txt({width: '292', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#76112F', txt: 'Classical Civilisation of the southern Mediterranean'})
+
+        +txt({width: '292', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '24', fontColor: '#76112F', txt: '13 Apr, 2019'})
+
+        +txt({width: '292', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '0', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+        +txt({width: '292', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: '&nbsp;'})
+
+          +row({width: '292', noMobilePadding: 'true', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +column({width: '146', align: 'center', valign: 'top', bgColor: '#1C3540', paddingTop: '8', paddingRight: '8', paddingBottom: '8', paddingLeft: '8', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+              +txt({width: '130', align: 'center', valign: 'middle', bgColor: '#1C3540', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '12', fontColor: '#FFFFFF', txt: '<a href="#" title="title" style="color: #FFFFFF; text-decoration: none;">FROM <span style="font-size: 14px;">1,234</span></a>'})
+
+            +column({width: '146', align: 'center', valign: 'top', bgColor: '#76112F', paddingTop: '8', paddingRight: '8', paddingBottom: '8', paddingLeft: '8', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+              +txt({width: '130', align: 'center', valign: 'middle', bgColor: '#76112F', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '12', fontColor: '#FFFFFF', txt: '<a href="#" title="title" style="color: #FFFFFF; text-decoration: none;">READ MORE</a>'})
+              
+  //- GREY SPACER
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '24', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+              
+  //- CLASSICAL CIVILISATION OF THE SOUTHERN MEDITERRANEAN
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '292', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/2-re.jpg', imgWidth: '292'})
+
+        +txt({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#76112F', txt: 'Classical Civilisation of the southern Mediterranean'})
+
+        +txt({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '24', fontColor: '#76112F', txt: '13 Apr, 2019'})
+
+        +txt({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '0', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+        +txt({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: '&nbsp;'})
+
+          +row({width: '292', noMobilePadding: 'true', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +column({width: '146', align: 'center', valign: 'top', bgColor: '#1C3540', paddingTop: '8', paddingRight: '8', paddingBottom: '8', paddingLeft: '8', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+              +txt({width: '130', align: 'center', valign: 'middle', bgColor: '#1C3540', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '12', fontColor: '#FFFFFF', txt: '<a href="#" title="title" style="color: #FFFFFF; text-decoration: none;">FROM <span style="font-size: 14px;">1,234</span></a>'})
+
+            +column({width: '146', align: 'center', valign: 'top', bgColor: '#76112F', paddingTop: '8', paddingRight: '8', paddingBottom: '8', paddingLeft: '8', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+              +txt({width: '130', align: 'center', valign: 'middle', bgColor: '#76112F', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '12', fontColor: '#FFFFFF', txt: '<a href="#" title="title" style="color: #FFFFFF; text-decoration: none;">READ MORE</a>'})
+      
+      +column({width: '16', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+              
+      +column({width: '292', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '292', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/1-re.jpg', imgWidth: '292'})
+
+        +txt({width: '292', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#76112F', txt: 'Classical Civilisation of the southern Mediterranean'})
+
+        +txt({width: '292', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '24', fontColor: '#76112F', txt: '13 Apr, 2019'})
+
+        +txt({width: '292', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '0', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+        +txt({width: '292', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: '&nbsp;'})
+
+          +row({width: '292', noMobilePadding: 'true', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +column({width: '146', align: 'center', valign: 'top', bgColor: '#1C3540', paddingTop: '8', paddingRight: '8', paddingBottom: '8', paddingLeft: '8', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+              +txt({width: '130', align: 'center', valign: 'middle', bgColor: '#1C3540', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '12', fontColor: '#FFFFFF', txt: '<a href="#" title="title" style="color: #FFFFFF; text-decoration: none;">FROM <span style="font-size: 14px;">1,234</span></a>'})
+
+            +column({width: '146', align: 'center', valign: 'top', bgColor: '#76112F', paddingTop: '8', paddingRight: '8', paddingBottom: '8', paddingLeft: '8', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+              +txt({width: '130', align: 'center', valign: 'middle', bgColor: '#76112F', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'bold', lineHeight: '12', fontColor: '#FFFFFF', txt: '<a href="#" title="title" style="color: #FFFFFF; text-decoration: none;">READ MORE</a>'})
+              
+  //- WHITE SPACER
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '24', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+  //- HIGHLIGHTS FROM THE JOURNEY
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '10px solid #76112F', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '24', paddingRight: '24', paddingBottom: '24', paddingLeft: '24', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +txt({width: '552', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '26', fontWeight: 'bold', lineHeight: '26', fontColor: '#76112F', txt: 'HIGHLIGHTS FROM THE JOURNEY'})
+
+        +txt({width: '552', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'normal', lineHeight: '24', fontColor: '#747678', txt: 'Aenean pharetra sapien mauris condimentum laoreet felis dapibus'})
+        
+  //- CLASSICAL CIVILISATION OF THE SOUTHERN MEDITERRANEAN
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '189', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/highlights-rece.jpg', imgWidth: '189'})
+
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#000000', txt: 'Classical Civilisation of the southern Mediterranean'})
+
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+      
+      +column({width: '16', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+              
+      +column({width: '189', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/highlights-rece.jpg', imgWidth: '189'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#000000', txt: 'Classical Civilisation of the southern Mediterranean'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+      +column({width: '16', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+      +column({width: '189', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/highlights-rece.jpg', imgWidth: '189'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#000000', txt: 'Classical Civilisation of the southern Mediterranean'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+  //- GREY SPACER
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '24', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+  //- CLASSICAL CIVILISATION OF THE SOUTHERN MEDITERRANEAN
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '189', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/highlights-rece.jpg', imgWidth: '189'})
+
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#000000', txt: 'Classical Civilisation of the southern Mediterranean'})
+
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#76112F', paddingTop: '8', paddingRight: '16', paddingBottom: '8', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '14', fontWeight: 'bold', lineHeight: '14', fontColor: '#FFFFFF', txt: 'REQUEST BROCHURE'})
+      
+      +column({width: '16', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+              
+      +column({width: '189', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/highlights-rece.jpg', imgWidth: '189'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#000000', txt: 'Classical Civilisation of the southern Mediterranean'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#76112F', paddingTop: '8', paddingRight: '16', paddingBottom: '8', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '14', fontWeight: 'bold', lineHeight: '14', fontColor: '#FFFFFF', txt: 'REQUEST BROCHURE'})
+        
+      +column({width: '16', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+      +column({width: '189', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/highlights-rece.jpg', imgWidth: '189'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#000000', txt: 'Classical Civilisation of the southern Mediterranean'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#76112F', paddingTop: '8', paddingRight: '16', paddingBottom: '8', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '14', fontWeight: 'bold', lineHeight: '14', fontColor: '#FFFFFF', txt: 'REQUEST BROCHURE'})
+        
+  //- GREY SPACER
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '24', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+  //- CLASSICAL CIVILISATION OF THE SOUTHERN MEDITERRANEAN
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '189', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/highlights-rece.jpg', imgWidth: '189'})
+
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#000000', txt: '8 days from only £1,928 pp'})
+
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#76112F', paddingTop: '8', paddingRight: '16', paddingBottom: '8', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '14', fontWeight: 'bold', lineHeight: '14', fontColor: '#FFFFFF', txt: 'REQUEST BROCHURE'})
+      
+      +column({width: '16', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+              
+      +column({width: '189', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/highlights-rece.jpg', imgWidth: '189'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#000000', txt: '8 days from only £1,928 pp'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#76112F', paddingTop: '8', paddingRight: '16', paddingBottom: '8', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '14', fontWeight: 'bold', lineHeight: '14', fontColor: '#FFFFFF', txt: 'REQUEST BROCHURE'})
+        
+      +column({width: '16', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+      +column({width: '189', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +img({width: '189', align: 'center', valign: 'top', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '6px solid #76112F', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.uploadlibrary.com/VoyagesAntiquityUK/2018-update/highlights-rece.jpg', imgWidth: '189'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '22', fontColor: '#000000', txt: '8 days from only £1,928 pp'})
+
+        +txt({width: '189', align: 'center', valign: 'middle', bgColor: '#F5F6F6', paddingTop: '0', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '12', fontWeight: 'normal', lineHeight: '24', fontColor: '#000000', txt: 'Step ashore in Chania’s Old Town and learn more about the architectural legacies of its turbulent past.'})
+        
+        +txt({width: '189', align: 'center', valign: 'top', bgColor: '#76112F', paddingTop: '8', paddingRight: '16', paddingBottom: '8', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Raleway, Helvetica, sans-serif', fontSize: '14', fontWeight: 'bold', lineHeight: '14', fontColor: '#FFFFFF', txt: 'REQUEST BROCHURE'})
