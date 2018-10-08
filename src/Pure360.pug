@@ -6,11 +6,19 @@ block vars
   
 block content
 
-  //- Start Here  
+  //- Start Here
+  
+  +wrapper({width: '100%', bgColor: '#FFFFFF'})
+    +row({width: '600'})
+      +column({width: '270', paddingTop: '16', paddingBottom: '16'})
+        +img({width: '270', imgSrc: 'Pure360Logo.png'})
+      +column({width: '330'})
+        +txt({txt: 'Preheader text | <a href="" title="View Online" style="color: #25455E; text-decoration: none;">View online</a>', align: 'right', fontSize: '12', lineHeight: '12', paddingTop: '8'})
+  
   +wrapper({width: '100%', paddingBottom: '24', bgColor: '#F7F7F7'})
     +row({width: '600'})
       +column({width: '600', mobileWidth: '100%'})
-        +img({width: '600', responsive: 'true'})
+        +img({width: '600', responsive: 'true', imgSrc: 'Banner.jpg'})
     +row({width: '600', mobileWidth: '100%'})
       +column({width: '600', paddingTop: '32', paddingRight: '16', paddingLeft: '16', paddingBottom: '16'})
         +txt({width: '568', txt: 'Main Title', fontSize: '32', lineHeight: '32', fontWeight: 'bold', align: 'left', paddingBottom: '8'})
@@ -49,17 +57,66 @@ block content
   +wrapper({width: '100%', paddingBottom: '24', bgColor: '#F7F7F7'})
     +row({width: '600', bgColor: '#FFFFFF'})
       +column({width: '300', mobileWidth: '100%'})
-        +img({width: '300', responsive: 'true'})
+        +img({width: '300', responsive: 'true', imgSrc: 'Article1.jpg'})
       +column({width: '300', mobileWidth: '100%', paddingTop: '16', paddingRight: '16', paddingLeft: '16', paddingBottom: '16'})
         +txt({width: '268', txt: 'Main Title', fontSize: '24', lineHeight: '24', fontWeight: 'bold', align: 'left', paddingBottom: '8'})
         +txt({width: '268', txt: 'Article text here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.', fontSize: '16', lineHeight: '24', fontWeight: 'normal', align: 'left', paddingBottom: '16'})
         +btn({width: '268', btnTxt: 'Call-to-action', btnColor: '#7961CB', btnPaddingTop: '8', btnPaddingRight: '16', btnPaddingBottom: '8', btnPaddingLeft: '16', btnFontSize: '18', align: 'left'})
       
   +wrapper({width: '100%', paddingBottom: '24', bgColor: '#F7F7F7'})
-    +row({width: '600', bgColor: '#FFFFFF'})
+    +row({width: '600', bgColor: '#FFFFFF', direction: 'rtl'})
+      +column({width: '300', mobileWidth: '100%'})
+        +img({width: '300', responsive: 'true', imgSrc: 'Article2.jpg'})
       +column({width: '300', mobileWidth: '100%', paddingTop: '16', paddingRight: '16', paddingLeft: '16', paddingBottom: '16'})
         +txt({width: '268', txt: 'Main Title', fontSize: '24', lineHeight: '24', fontWeight: 'bold', align: 'left', paddingBottom: '8'})
         +txt({width: '268', txt: 'Article text here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.', fontSize: '16', lineHeight: '24', fontWeight: 'normal', align: 'left', paddingBottom: '16'})
         +btn({width: '268', btnTxt: 'Call-to-action', btnColor: '#7961CB', btnPaddingTop: '8', btnPaddingRight: '16', btnPaddingBottom: '8', btnPaddingLeft: '16', btnFontSize: '18', align: 'left'})
-      +column({width: '300', mobileWidth: '100%'})
-        +img({width: '300', responsive: 'true'})
+        
+  +wrapper({width: '100%', paddingBottom: '24', bgColor: '#F7F7F7'})
+    +row({width: '600', bgColor: '#4AB0A1'})
+      +column({width: '600', mobileWidth: '100%', paddingTop: '16', paddingRight: '16', paddingLeft: '16', paddingBottom: '16', bgColor: '#4AB0A1'})
+        +txt({width: '568', txt: 'Highlight title', fontSize: '32', lineHeight: '32', fontWeight: 'bold', align: 'left', paddingBottom: '8', bgColor: '#4AB0A1', fontColor: '#FFFFFF'})
+        +txt({width: '568', txt: 'Highlight text here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur.', fontSize: '16', lineHeight: '24', fontWeight: 'normal', align: 'left', paddingBottom: '16', bgColor: '#4AB0A1', fontColor: '#FFFFFF'})
+        +btn({width: '568', btnTxt: 'Call-to-action', btnColor: '#4AB0A1', btnPaddingTop: '8', btnPaddingRight: '16', btnPaddingBottom: '8', btnPaddingLeft: '16', btnFontSize: '18', align: 'left', btnBorder: '2px solid #FFFFFF', bgColor: '#4AB0A1'})
+        
+  +wrapper({width: '100%', paddingBottom: '24', bgColor: '#F7F7F7'})
+    +row({width: '600', bgColor: '#319DCE'})
+      +column({width: '600', mobileWidth: '100%', paddingTop: '16', paddingRight: '16', paddingLeft: '16', paddingBottom: '16', bgColor: '#319DCE'})
+        +txt({width: '568', txt: 'Highlight title', fontSize: '32', lineHeight: '32', fontWeight: 'bold', align: 'left', paddingBottom: '8', bgColor: '#319DCE', fontColor: '#FFFFFF'})
+        +txt({width: '568', txt: 'Highlight text here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur.', fontSize: '16', lineHeight: '24', fontWeight: 'normal', align: 'left', paddingBottom: '16', bgColor: '#319DCE', fontColor: '#FFFFFF'})
+        +btn({width: '568', btnTxt: 'Call-to-action', btnColor: '#319DCE', btnPaddingTop: '8', btnPaddingRight: '16', btnPaddingBottom: '8', btnPaddingLeft: '16', btnFontSize: '18', align: 'left', btnBorder: '2px solid #FFFFFF', bgColor: '#319DCE'})
+        
+  +wrapper({width: '100%', paddingBottom: '24', bgColor: '#F7F7F7'})
+    +row({width: '600', bgColor: '#25455E'})
+      +column({width: '600', mobileWidth: '100%', paddingTop: '16', paddingRight: '16', paddingLeft: '16', paddingBottom: '16', bgColor: '#25455E'})
+        +txt({width: '568', txt: 'Highlight title', fontSize: '32', lineHeight: '32', fontWeight: 'bold', align: 'left', paddingBottom: '8', bgColor: '#25455E', fontColor: '#FFFFFF'})
+        +txt({width: '568', txt: 'Highlight text here lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur.', fontSize: '16', lineHeight: '24', fontWeight: 'normal', align: 'left', paddingBottom: '16', bgColor: '#25455E', fontColor: '#FFFFFF'})
+        +btn({width: '568', btnTxt: 'Call-to-action', btnColor: '#25455E', btnPaddingTop: '8', btnPaddingRight: '16', btnPaddingBottom: '8', btnPaddingLeft: '16', btnFontSize: '18', align: 'left', btnBorder: '2px solid #FFFFFF', bgColor: '#25455E'})
+        
+  +wrapper({width: '100%', bgColor: '#FFFFFF'})
+    +row({width: '600'})
+      +column({width: '300', paddingTop: '16', paddingBottom: '16'})
+        +img({width: '300', imgWidth: '150', align: 'left', imgSrc: 'Pure360Logo.png'})
+        +txt({txt: '&copy; 2018 Pure360. All Rights Reserved.', align: 'left', fontSize: '12', lineHeight: '12', paddingTop: '8'})
+      +column({width: '300', paddingTop: '16', paddingBottom: '16', valign: 'bottom'})
+        +subRow({width: '130', align: 'right', paddingBottom: '8'})
+          +column({width: '35', paddingRight: '10'})
+            +img({width: '25', imgWidth: '25', imgSrc: 'Twitter.png'})
+          +column({width: '35', paddingRight: '10'})
+            +img({width: '25', imgWidth: '25', imgSrc: 'Facebook.png'})
+          +column({width: '35', paddingRight: '10'})
+            +img({width: '25', imgWidth: '25', imgSrc: 'Linkedin.png'})
+          +column({width: '25'})
+            +img({width: '25', imgWidth: '25', imgSrc: 'Pinterest.png'})
+        +txt({txt: '<a href="#" title="Privacy Policy" style="color: #25455E; text-decoration: none;">Privacy Policy</a> | <a href="#" title="Unsubscribe" style="color: #25455E; text-decoration: none;">Unsubscribe</a> | <a href="#" title="Contact Us" style="color: #25455E; text-decoration: none;">Contact Us</a>', align: 'right', fontSize: '12', lineHeight: '12', paddingTop: '8'})
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        

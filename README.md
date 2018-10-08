@@ -69,7 +69,7 @@ Responsive emails made easy.
 
 ***GENERAL OPTIONS***
 
-width - 600 by default. Width of the table.
+width - 600 by default. Set to 'full' for 100%. Width of the container.
 
 paddingTop - 0 by default. Top padding. 
 
