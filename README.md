@@ -67,125 +67,88 @@ Responsive emails made easy.
 
 ### Tags and Options:
 
-***GENERAL OPTIONS***
+***General Options***
 
-  width - 600 by default. Set to 'full' for 100%. Width of the container.
-
-  bgColor - #FFFFFF by default. Takes hex color code as value.
-
-  paddingTop - 0 by default.
-
-  paddingRight - 0 by default.
-
-  paddingBottom - 0 by default.
-
-  paddingLeft - 0 by default.
-
-  borderTop - 0 by default.
-
-  borderRight - 0 by default.
-
-  borderBottom - 0 by default.
-
-  borderLeft - 0 by default.
-
+| Option | Default Value| Description | Usage
+|--|--|--|--|
+| width  | 600(px) | Container Width | Takes natural numbers as value. Set to 'full' for 100%.
+| bgColor | #FFFFFF | Background color | Takes hex color code as value
+| paddingTop | 0 | Top padding | Takes natural numbers as value
+| paddingRight | 0 | Right padding | Takes natural numbers as value
+| paddingBottom | 0 | Bottom padding | Takes natural numbers as value
+| paddingLeft | 0 | Left padding | Takes natural numbers as value
+| borderTop | 0 | Top border | Ex. 1px solid #000000
+| borderRight | 0 | Right border | Ex. 1px solid #000000
+| borderBottom | 0 | Bottom border | Ex. 1px solid #000000
+| borderLeft | 0 | Left border | Ex. 1px solid #000000
 
 **+wrapper**
 
-  bgSrc - None by default. Use images as background. Takes in URL as value.
-
-  bulletproof - Not enabled by default. If set ({bulletproof: 'true')}, adds support for background images on the Microsoft Outlook Email Client by using VML's (Vector Markup Language) v:fill tag. Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/ 
-
+| Option | Default Value| Description | Usage
+|--|--|--|--|
+| bgSrc | none | Background image source | Takes in URL as value
+| bulletproof | false | Adds support for background images on the Microsoft Outlook Email Client by using VML's (Vector Markup Language) v:fill tag. Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/ | ({bulletproof: 'true')}
 
 **+row**
 
-General
+Refer to general options.
 
 
 **+column**
 
-  mobileWidth - Length of column on mobile. Options: 100%, 75%, 66%, 50%, 33%, 25%, 10%, hide (Hide on mobile)
-
-  align - center by default.
-
-  valign - top by default.
-
+| Option | Default Value| Description | Usage
+|--|--|--|--|
+| mobileWidth | none (scaling) | Length of column on mobile | 100%, 75%, 66%, 50%, 33%, 25%, 10%, hide (Hides on mobile)
+| align | center | Horizontal alignment | left, center, right
+| valign | top | Vertical alignment | top, middle, bottom
 
   **+img**
 
-  align - center by default.
-
-  valign - top by default.
-
-  imgHref - Image link.
-
-  imgTitle - Image alt text/link title.
-
-  responsive - Images retain their width by default. If set ({responsive: 'true')}, makes images take the width of it's container and sets height to adjust accordingly.
-
-  imgSrc
-
-  imgWidth
-
+| Option | Default Value| Description | Usage
+|--|--|--|--|
+| align | center | Horizontal alignment | left, center, right
+| valign | top | Vertical alignment | top, middle, bottom
+| imgHref | # | Anchor path | Takes url as value
+| imgTitle | title | Image alt text | takes text as value
+| imgSrc | placeholder | Image source | Takes url as value
+| imgWidth | none (scaling) | Image width | Takes natural numbers as value
+| responsive | none | Images take the width of its container and sets height to adjust accordingly | ({responsive: 'true')}
 
 **+txt**
 
-  align - center by default.
-
-  valign - top by default.
-
-  fontFamily - Helvetica by default.
-
-  fontSize - 14px by default.
-
-  fontWeight - normal by default. 
-
-  lineHeight - 21px by default.
-
-  fontColor - #000000 by default.
-
-  txt - Text output.
-
+| Option | Default Value| Description | Usage
+|--|--|--|--|
+| align | center | Horizontal alignment | left, center, right
+| valign | top | Vertical alignment | top, middle, bottom
+| fontFamily | Helvetica | Text font family | Takes font name as value
+| fontSize | 14(px) | Text font size | Takes natural numbers as value
+| fontWeight | normal | Text font weight | lighter, normal, bold, bolder
+| lineHeight | 21(px) | Text line height | Takes natural numbers as value
+| fontColor | #000000 | Text font color | Takes hex color codes as value
+| txt | placeholder | Actual text | Takes text as value. HTML may also be written
 
 **+btn**
 
-  align - center by default.
-
-  valign - top by default.
-
-  bulletproof - Not enabled by default. If set ({bulletproof: 'true')}, adds support for border-radius on buttons on the Microsoft Outlook Email Client by using VML (Vector Markup Language). Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/ 
-
-  btnWidth - 200px by default. Width of the button.
-
-  btnColor - #000000 by default. Background color of the button.
-
-  btnPaddingTop
-
-  btnPaddingRight
-
-  btnPaddingBottom
-
-  btnPaddingLeft
-
-  btnBorder
-
-  btnFontFamily - Helvetica by default.
-
-  btnFontSize - 14px by default.
-
-  btnFontWeight - normal by default.
-
-  btnLineHeight - 21px by default.
-
-  btnHref
-
-  btnTitle
-
-  btnTxtColor - #FFFFFF by default.
-
-  btnTxt - Text on button.
-
-
+| Option | Default Value| Description | Usage
+|--|--|--|--|
+| align | center | Horizontal alignment | left, center, right
+| valign | top | Vertical alignment | top, middle, bottom
+| bulletproof | none | Adds support for border-radius on buttons on the Microsoft Outlook Email Client by using VML (Vector Markup Language). Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/  | ({bulletproof: 'true')}
+| btnWidth | 200 | Button width | Takes natural number as value
+| btnColor | #000000 | Button background color | Takes hex color codes as value
+| btnPaddingTop | 0 | Button top padding | Takes natural number as value
+| btnPaddingRight | 0 | Button right padding | Takes natural number as value
+| btnPaddingBottom | 0 | Button bottom padding | Takes natural number as value
+| btnPaddingLeft | 0 | Button left padding | Takes natural number as value
+| btnBorder | 0 | Button border | Ex. 1px solid #000000
+| btnFontFamily | Helvetica | Button font family | Takes font name as value
+| btnFontSize | 14(px) | Button font size | Takes natural number as value
+| btnFontWeight | normal |  | lighter, normal, bold, bolder
+| btnLineHeight | 21(px) |  | Takes natural number as value
+| btnHref | # | Button anchor path | Takes URL as value
+| btnTitle | title | Button title | Takes text as value
+| btnTxtColor | #FFFFFF | Button text color | Takes hex color codes as value
+| btnTxt | placeholder | Button actual text | Takes text as value
 
 ***NOTE: Unit expression not recessary. (14 instead of 14px)***
 
