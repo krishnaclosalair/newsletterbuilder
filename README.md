@@ -65,7 +65,7 @@ Responsive emails made easy.
     
 ## Getting started
 
-### Installation:
+### Installation
 1.) Install Node.js (https://nodejs.org/en/)
 2.) Make sure you have git (https://git-scm.com/)
 3.) Using the command line, clone this repository and navigate to it.
@@ -88,14 +88,13 @@ Responsive emails made easy.
 
 After this point, any .pug files saved/updated under the src folder should render as .html on the dist folder.
 
+---
 
-### Your first project:
+### Your first project
 
-1.) Copy the newProject.pug file found in the src folder within the newsletterbuilder.
+Create a copy of the newProject.pug file found inside the src folder.
 
-2.) Open that new file.
-
-It should look like this: 
+Code looks like this: 
 
 		extends template.pug
 
@@ -118,12 +117,21 @@ It should look like this:
 		        
 		        +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnWidth: '200', btnColor: '#CC0000', btnPaddingTop: '8', btnPaddingRight: '16', btnPaddingBottom: '8', btnPaddingLeft: '16', btnBorder: '1px solid #FFFFFF', btnFontFamily: 'Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '21', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Lorem Ipsum'})
 
-3.) TBC
+This is your starting point.
+
+It begins with the standard image, text and call-to-action combo that most emails consist of.
 
 
-### Tags and Options:
+## How to use
+
+TBC
+
+
+## Tags and Options
 
 ***General Options***
+
+These options are available to all tags.
 
 | Option | Default Value| Description | Usage
 |--|--|--|--|
@@ -141,6 +149,7 @@ It should look like this:
 ---
 
 **+wrapper**
+
 
 | Option | Default Value| Description | Usage
 |--|--|--|--|
@@ -161,6 +170,7 @@ Refer to general options.
 
 **+column**
 
+
 | Option | Default Value| Description | Usage
 |--|--|--|--|
 | mobileWidth | none (scaling) | Length of column on mobile | 100%, 75%, 66%, 50%, 33%, 25%, 10%, hide (Hides on mobile)
@@ -172,6 +182,7 @@ Refer to general options.
 ---
 
   **+img**
+  
 
 | Option | Default Value| Description | Usage
 |--|--|--|--|
@@ -188,6 +199,7 @@ Refer to general options.
 ---
 
 **+txt**
+
 
 | Option | Default Value| Description | Usage
 |--|--|--|--|
@@ -206,6 +218,7 @@ Refer to general options.
 
 **+btn**
 
+
 | Option | Default Value| Description | Usage
 |--|--|--|--|
 | align | center | Horizontal alignment | left, center, right
@@ -220,8 +233,8 @@ Refer to general options.
 | btnBorder | 0 | Button border | Ex. 1px solid #000000
 | btnFontFamily | Helvetica | Button font family | Takes font name as value
 | btnFontSize | 14(px) | Button font size | Takes natural number as value
-| btnFontWeight | normal |  | lighter, normal, bold, bolder
-| btnLineHeight | 21(px) |  | Takes natural number as value
+| btnFontWeight | normal | Button font weight | lighter, normal, bold, bolder
+| btnLineHeight | 21(px) | Button line height | Takes natural number as value
 | btnHref | # | Button anchor path | Takes URL as value
 | btnTitle | title | Button title | Takes text as value
 | btnTxtColor | #FFFFFF | Button text color | Takes hex color codes as value
