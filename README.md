@@ -1,3 +1,4 @@
+
 # NewsletterBuilder
 
 Responsive emails made easy.
@@ -67,7 +68,9 @@ Responsive emails made easy.
 
 ### Installation
 1.) Install Node.js (https://nodejs.org/en/)
+
 2.) Make sure you have git (https://git-scm.com/)
+
 3.) Using the command line, clone this repository and navigate to it.
 
 		git clone https://github.com/krishnaclosalair/newsletterbuilder.git
