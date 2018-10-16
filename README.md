@@ -63,7 +63,63 @@ Responsive emails made easy.
     </table>
     
     
-## How to use:
+## Getting started
+
+### Installation:
+1.) Install Node.js (https://nodejs.org/en/)
+2.) Make sure you have git (https://git-scm.com/)
+3.) Using the command line, clone this repository and navigate to it.
+
+		git clone https://github.com/krishnaclosalair/newsletterbuilder.git
+		cd newsletterbuilder
+		
+4.) Install dependencies.
+			
+		npm install
+		
+5.) Install Gulp and Gulp for Pug
+
+		npm install gulp --save-dev
+		npm install gulp-pug --save-dev
+		
+6.) Run Gulp
+
+		node_modules/.bin/gulp
+
+After this point, any .pug files saved/updated under the src folder should render as .html on the dist folder.
+
+
+### Your first project:
+
+1.) Copy the newProject.pug file found in the src folder within the newsletterbuilder.
+
+2.) Open that new file.
+
+It should look like this: 
+
+		extends template.pug
+
+		block vars
+
+		  - var color = {bg: '#FFFFFF', txt: '#000000', hlight: '#000000'};
+		  
+		block content
+
+		  //- Start Here  
+		  +wrapper({width: '600', bgColor: '#FFFFFF', bgSrc: 'https://www.placehold.it/600x400', bulletproof: 'true', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+		    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+		      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+		      
+		        +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.placehold.it/600x400', imgWidth: '600'})
+		        
+		        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum'})
+		        
+		        +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnWidth: '200', btnColor: '#CC0000', btnPaddingTop: '8', btnPaddingRight: '16', btnPaddingBottom: '8', btnPaddingLeft: '16', btnBorder: '1px solid #FFFFFF', btnFontFamily: 'Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '21', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Lorem Ipsum'})
+
+3.) TBC
+
 
 ### Tags and Options:
 
@@ -82,6 +138,8 @@ Responsive emails made easy.
 | borderBottom | 0 | Bottom border | Ex. 1px solid #000000
 | borderLeft | 0 | Left border | Ex. 1px solid #000000
 
+---
+
 **+wrapper**
 
 | Option | Default Value| Description | Usage
@@ -89,10 +147,17 @@ Responsive emails made easy.
 | bgSrc | none | Background image source | Takes in URL as value
 | bulletproof | false | Adds support for background images on the Microsoft Outlook Email Client by using VML's (Vector Markup Language) v:fill tag. Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/ | ({bulletproof: 'true')}
 
+    +wrapper({width: '600', bgColor: '#FFFFFF', bgSrc: 'https://www.placehold.it/600x400', bulletproof: 'true', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+---
+
 **+row**
 
 Refer to general options.
 
+      +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+---
 
 **+column**
 
@@ -101,6 +166,10 @@ Refer to general options.
 | mobileWidth | none (scaling) | Length of column on mobile | 100%, 75%, 66%, 50%, 33%, 25%, 10%, hide (Hides on mobile)
 | align | center | Horizontal alignment | left, center, right
 | valign | top | Vertical alignment | top, middle, bottom
+
+        +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+---
 
   **+img**
 
@@ -114,6 +183,10 @@ Refer to general options.
 | imgWidth | none (scaling) | Image width | Takes natural numbers as value
 | responsive | none | Images take the width of its container and sets height to adjust accordingly | ({responsive: 'true')}
 
+          +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.placehold.it/600x400', imgWidth: '600'})
+
+---
+
 **+txt**
 
 | Option | Default Value| Description | Usage
@@ -126,6 +199,10 @@ Refer to general options.
 | lineHeight | 21(px) | Text line height | Takes natural numbers as value
 | fontColor | #000000 | Text font color | Takes hex color codes as value
 | txt | placeholder | Actual text | Takes text as value. HTML may also be written
+
+          +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum'})
+
+---
 
 **+btn**
 
@@ -150,19 +227,8 @@ Refer to general options.
 | btnTxtColor | #FFFFFF | Button text color | Takes hex color codes as value
 | btnTxt | placeholder | Button actual text | Takes text as value
 
-***NOTE: Unit expression not recessary. (14 instead of 14px)***
-
-
-## Example:
-
-    +wrapper({width: '600', bgColor: '#FFFFFF', bgSrc: 'https://www.placehold.it/600x400', bulletproof: 'true', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-      +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-        +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-          +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.placehold.it/600x400', imgWidth: '600'})
-
-          +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum'})
-
           +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnWidth: '200', btnColor: '#CC0000', btnPaddingTop: '8', btnPaddingRight: '16', btnPaddingBottom: '8', btnPaddingLeft: '16', btnBorder: '1px solid #FFFFFF', btnFontFamily: 'Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '21', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Lorem Ipsum'})
+
+---
+
+***NOTE: Unit expression not recessary. (Use 14 instead of 14px)***
