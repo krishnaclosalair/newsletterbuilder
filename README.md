@@ -133,10 +133,12 @@ Code looks like this:
             +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
 
             +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnWidth: '200', btnColor: '#000000', btnPaddingTop: '0', btnPaddingRight: '0', btnPaddingBottom: '0', btnPaddingLeft: '0', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '42', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
+            
+Which should look like this:
+
+![New Project](https://image.ibb.co/mbBsaf/new-Project.jpg)
 
 This is your starting point.
-
-It begins with the standard image, headline text, body text and call-to-action combo that most emails consist of.
 
 
 ## How to use
