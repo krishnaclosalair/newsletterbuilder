@@ -4,7 +4,8 @@
     <title>Template</title>
     <meta http-equiv="Content Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta content="telephone=no, email=no" name="format-detection"/>
+    <meta content="date=no, address=no, telephone=no, email=no" name="format-detection"/>
+    <meta name="x-apple-disable-message-reformatting"/>
     <!-- -->
     <!--[if gte mso 9]>
     <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
@@ -104,6 +105,16 @@
       
       /* Outlook */
       
+        /* Visited Link Color */
+        span.MsoHyperlink {
+          mso-style-priority:99;
+          color:inherit;
+        }
+        span.MsoHyperlinkFollowed {
+          mso-style-priority:99;
+          color:inherit;
+        }
+      
         /* "Read in Browser" Link */
         #outlook a {
           padding:0 !important;
@@ -141,7 +152,12 @@
           line-height: inherit !important;
         }
         
-      
+        /* Legacy iOS Blue Link */
+        .appleLinks, .appleLinks a {
+          color: inherit !important;
+          text-decoration: none !important;
+        }
+         
       /* Windows Mobile */
         
        /* Windows Mobile Text Size Adjustment */
