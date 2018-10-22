@@ -1,10 +1,10 @@
 mixin wrapper(opts)
   - var opts = opts || {};
   
-  table.w100pc.backgroundTable.zwrapper(width=opts.width ? opts.width : '600', align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width == 'full' ? '100%' : opts.width ? (opts.width + 'px') : '600px') + ';')
+  table.w100pc.backgroundTable.zwrapper(width=(opts.width == 'full' ? '100%' : opts.width ? opts.width : '600'), align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width == 'full' ? '100%' : opts.width ? (opts.width + 'px') : '600px') + ';')
     tbody
       tr
-        td.w100pc.zwrapper(width=opts.width ? opts.width : '600', align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bgSrc ? opts.bgSrc : 'none', style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
+        td.w100pc.zwrapper(width=(opts.width == 'full' ? '100%' : opts.width ? opts.width : '600'), valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bgSrc ? opts.bgSrc : 'none', style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
         padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
         padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
         padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
@@ -14,18 +14,19 @@ mixin wrapper(opts)
         border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
         background-size: ' + ( opts.bgSrc ? 'cover' : 'auto' ) + ';\
         background-position: ' + ( opts.bgSrc ? 'center' : 'auto' ) + ';\
+        background-repeat: ' + ( opts.bgSrc ? 'no-repeat' : 'auto' ) + ';\
         width: ' + (opts.width == 'full' ? '100%' : opts.width ? (opts.width + 'px') : '600px') + ';')
         
           - if (opts.bulletproof)
             // -->
               <!--[if gte mso 9]>
-              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="mso-width-percent:1000;">
+              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="#{opts.width == '100%' ? 'mso-width-percent:1000' : ('width:' + opts.width + 'px')};">
                 <v:fill type="tile" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
                 <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
               <![endif]--> <!--
             div
               block      
-            //
+            // -->
               <!--[if gte mso 9]>
                 </v:textbox>
               </v:rect>
@@ -133,9 +134,10 @@ mixin img(opts)
       a(href=opts.imgHref ? opts.imgHref : '#', target='_blank', title=opts.imgTitle ? opts.imgTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
         img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.imgSrc ? opts.imgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth, alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.imgWidth ? opts.imgWidth : width) + 'px;')/
       block
-        
-        
-mixin txtHeading(opts)
+
+
+
+mixin txt(opts)
   - var opts = opts || {};
   - !opts.txt ? opts.txt = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' : opts.txt
   
@@ -148,31 +150,7 @@ mixin txtHeading(opts)
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
     border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
-    font-family: ' + ( opts.fontFamily ? opts.fontFamily : font.customHeading != '' ? font.customHeading : font.defaultHeading != '' ? font.defaultHeading : 'Georgia, serif' ) + ';\
-    font-size: ' + ( opts.fontSize ? opts.fontSize : '14' ) + 'px;\
-    font-weight: ' + ( opts.fontWeight ? opts.fontWeight : 'normal' ) + ';\
-    line-height: ' + ( opts.lineHeight ? opts.lineHeight : '21' ) + 'px;\
-    color: ' + ( opts.fontColor ? opts.fontColor : color.txt ) + ';\
-    width: ' + (opts.width ? opts.width : '600') + 'px;')
-      | !{opts.txt}
-      block
-
-
-
-mixin txtBody(opts)
-  - var opts = opts || {};
-  - !opts.txt ? opts.txt = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' : opts.txt
-  
-  tr
-    td.w100pc(width=opts.width ? opts.width : '600', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
-    padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
-    padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
-    padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
-    border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
-    border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
-    border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
-    border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
-    font-family: ' + ( opts.fontFamily ? opts.fontFamily : font.customBody != '' ? font.customBody : font.defaultBody != '' ? font.defaultBody : 'Helvetica, sans-serif' ) + ';\
+    font-family: ' + ( opts.fontFamily ? opts.fontFamily : font.custom != '' ? font.custom : font.default != '' ? font.default : 'Helvetica, sans-serif' ) + ';\
     font-size: ' + ( opts.fontSize ? opts.fontSize : '14' ) + 'px;\
     font-weight: ' + ( opts.fontWeight ? opts.fontWeight : 'normal' ) + ';\
     line-height: ' + ( opts.lineHeight ? opts.lineHeight : '21' ) + 'px;\
@@ -221,7 +199,7 @@ mixin btn(opts)
               padding-bottom: ' + ( opts.btnPaddingBottom ? opts.btnPaddingBottom : '8') + 'px;\
               padding-left: ' + ( opts.btnPaddingLeft ? opts.btnPaddingLeft : '16') + 'px;\
               border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';\
-              font-family: ' + ( opts.fontFamily ? opts.fontFamily : font.customBody != '' ? font.customBody : font.defaultBody != '' ? font.defaultBody : 'Helvetica, sans-serif' ) + ';\
+              font-family: ' + ( opts.fontFamily ? opts.fontFamily : font.custom != '' ? font.custom : font.default != '' ? font.default : 'Helvetica, sans-serif' ) + ';\
               font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
               font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';\
               line-height: ' + ( opts.btnLineHeight ? opts.btnLineHeight : '21' ) + 'px;\
