@@ -157,7 +157,7 @@ These options are available to all tags.
 
 | Option | Default Value| Description | Usage
 |--|--|--|--|
-| width  | 600(px) | Container Width | Takes natural numbers as value. Set to 'full' for 100%.
+| width  | 600(px) | Container Width | Takes natural numbers as value.
 | bgColor | #FFFFFF | Background color | Takes hex color code as value
 | paddingTop | 0 | Top padding | Takes natural numbers as value
 | paddingRight | 0 | Right padding | Takes natural numbers as value
@@ -175,6 +175,7 @@ These options are available to all tags.
 
 | Option | Default Value| Description | Usage
 |--|--|--|--|
+| width  | 600(px) | Container Width | Takes natural numbers as value. Set to 'full' for 100%.
 | bgSrc | none | Background image source | Takes in URL as value
 | bulletproof | false | Adds support for background images on the Microsoft Outlook Email Client by using VML's (Vector Markup Language) v:fill tag. Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/ | ({bulletproof: 'true')}
 
