@@ -99,28 +99,28 @@ Create a copy of the newProject.pug file found inside the src folder.
 
 Code looks like this: 
 
-extends template.pug
+    extends template.pug
 
-block vars
+    block vars
 
-  - var color = {bg: '#FFFFFF', txt: '#000000', hlight: '#000000'};
-  //- custom only supports fonts found on https://fonts.google.com/
-  - var font = {custom: 'Open Sans', default: 'Helvetica, sans-serif'}
-  
-block font
+      - var color = {bg: '#FFFFFF', txt: '#000000', hlight: '#000000'};
+      //- custom only supports fonts found on https://fonts.google.com/
+      - var font = {custom: 'Open Sans', default: 'Helvetica, sans-serif'}
 
-  - if (font.custom != '')
-    - var fontCustom = font.custom.split(' ').join('+');
-    link(href='https://fonts.googleapis.com/css?family=' + fontCustom + ':300,400,700', rel='stylesheet')/
-    
-  // -->
-    <!--[if mso]>
-    <style>
-    body, table, td, th { font-family: #{font.default != '' ? font.default : 'Helvetica, sans-serif'} !important; }
-    </style>
-    <![endif]--> <!--
- 
-block content
+    block font
+
+      - if (font.custom != '')
+        - var fontCustom = font.custom.split(' ').join('+');
+        link(href='https://fonts.googleapis.com/css?family=' + fontCustom + ':300,400,700', rel='stylesheet')/
+
+      // -->
+        <!--[if mso]>
+        <style>
+        body, table, td, th { font-family: #{font.default != '' ? font.default : 'Helvetica, sans-serif'} !important; }
+        </style>
+        <![endif]--> <!--
+
+    block content
  
     //- START HERE
 
