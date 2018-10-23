@@ -150,7 +150,7 @@ mixin txt(opts)
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
     border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
-    font-family: ' + ( opts.fontFamily ? opts.fontFamily : font.custom != '' ? font.custom : font.default != '' ? font.default : 'Helvetica, sans-serif' ) + ';\
+    font-family: ' + ( opts.fontFamily ? opts.fontFamily + ',': font.custom !== undefined ? font.custom[0].name + ',': font.default !== undefined ? font.default  + ',' : '' ) + ' Helvetica, sans-serif;\
     font-size: ' + ( opts.fontSize ? opts.fontSize : '14' ) + 'px;\
     font-weight: ' + ( opts.fontWeight ? opts.fontWeight : 'normal' ) + ';\
     line-height: ' + ( opts.lineHeight ? opts.lineHeight : '21' ) + 'px;\
@@ -158,8 +158,6 @@ mixin txt(opts)
     width: ' + (opts.width ? opts.width : '600') + 'px;')
       | !{opts.txt}
       block
-
-
 
 mixin btn(opts)
   - var opts = opts || {};
@@ -199,7 +197,7 @@ mixin btn(opts)
               padding-bottom: ' + ( opts.btnPaddingBottom ? opts.btnPaddingBottom : '8') + 'px;\
               padding-left: ' + ( opts.btnPaddingLeft ? opts.btnPaddingLeft : '16') + 'px;\
               border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';\
-              font-family: ' + ( opts.fontFamily ? opts.fontFamily : font.custom != '' ? font.custom : font.default != '' ? font.default : 'Helvetica, sans-serif' ) + ';\
+              font-family: ' + ( opts.fontFamily ? opts.fontFamily + ',': font.custom !== undefined ? font.custom[0].name + ',': font.default !== undefined ? font.default  + ',' : '' ) + ' Helvetica, sans-serif;\
               font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
               font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';\
               line-height: ' + ( opts.btnLineHeight ? opts.btnLineHeight : '21' ) + 'px;\
