@@ -22,7 +22,6 @@
     
     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"/>
     <!-- -->
     <!--[if mso]>
     <style>
@@ -72,9 +71,9 @@
       
       td, th {
       word-wrap: break-word !important;
-      -webkit-hyphens: auto !important;
+      /* -webkit-hyphens: auto !important;
       -moz-hyphens: auto !important;
-      hyphens: auto !important;
+       hyphens: auto !important; */
       }
       
       table, 
@@ -177,6 +176,42 @@
         a {
           -ms-text-size-adjust:100% !important;
         }
+        
+        
+      /* Video-Related */
+        .vid {
+          display: none;
+        }
+      
+        @media (-webkit-min-device-pixel-ratio: 0) and (min-device-width:1024px) {
+          .vid {
+            display: block !important;
+          }
+      
+          .vid-fallback {
+            display: none !important;
+          }
+        }
+      
+        /* iOS 10+ Video Support */
+        @supports (-webkit-overflow-scrolling:touch) and (color:#ffffff) {
+          div[class^=vid] {
+            display: block !important;
+          }
+      
+          div[class^=vid-fallback] {
+            display: none !important;
+          }
+        }
+      
+        /* Samsung Video Support */
+        #MessageViewBody .vid {
+          display: block !important;
+        }
+      
+        #MessageViewBody .vid-fallback {
+          display: none !important;
+        }
       
       
       /* Custom CSS */ 
@@ -190,6 +225,10 @@
           max-width:100% !important;
         }
         
+        video {
+          width: 100% !important;
+        }
+        
         .hauto {
           height:auto !important;
         }
@@ -198,28 +237,80 @@
           width:100% !important;
         }
         
+        .w95pc {
+          width:95% !important;
+        }
+        
+        .w90pc {
+          width:90% !important;
+        }
+        
+        .w85pc {
+          width:85% !important;
+        }
+        
+        .w80pc {
+          width:80% !important;
+        }
+        
         .w75pc {
           width:75% !important;
         }
         
-        .w66pc {
-          width:66.6% !important;
+        .w70pc {
+          width:70% !important;
+        }
+        
+        .w65pc {
+          width:65% !important;
+        }
+        
+        .w60pc {
+          width:60% !important;
+        }
+        
+        .w55pc {
+          width:55% !important;
         }
         
         .w50pc {
           width:50% !important;
         }
         
-        .w33pc {
-          width:33.3% !important;
+        .w45pc {
+          width:45% !important;
+        }
+        
+        .w40pc {
+          width:40% !important;
+        }
+        
+        .w35pc {
+          width:35% !important;
+        }
+        
+        .w30pc {
+          width:30% !important;
         }
         
         .w25pc {
           width:25% !important;
         }
         
+        .w20pc {
+          width:20% !important;
+        }
+        
+        .w15pc {
+          width:15% !important;
+        }
+        
         .w10pc {
           width:10% !important;
+        }
+        
+        .w5pc {
+          width:5% !important;
         }
         
         .full {
@@ -229,6 +320,10 @@
         .pH {
           padding-left: 16px !important;
           padding-right: 16px !important;
+        }
+        
+        .aH {
+          text-align: center;
         }
       }
     </style>
@@ -245,7 +340,7 @@
                             <table class="w100pc zrow" width="600" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
                               <tbody>
                                 <tr>
-                                      <th class="zcolumn w100pc full" width="600" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;  padding-right: 0px;  padding-bottom: 0px;  padding-left: 0px;  border-top: 0;  border-right: 0;  border-bottom: 0;  border-left: 0;  width: 600px;">
+                                      <th class="zcolumn w100pc full" width="600" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0px;  padding-right: 0px;  padding-bottom: 0px;  padding-left: 0px;  border-top: 0;  border-right: 0;  border-bottom: 0;  border-left: 0;  background-position: auto;  background-repeat: auto;  width: 600px;">
                                         <table class="w100pc zcolumn" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
                                           <tbody>
                                                 <tr>
@@ -253,11 +348,11 @@
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <td class="w100pc" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif, Helvetica, sans-serif;    font-size: 28px;    font-weight: bold;    line-height: 28px;    color: #000000;    width: 600px;">Lorem ipsum
+                                                  <td class="w100pc" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif;    font-size: 28px;    font-weight: bold;    line-height: 28px;    color: #000000;    width: 600px;">Lorem ipsum
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <td class="w100pc" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif, Helvetica, sans-serif;    font-size: 14px;    font-weight: normal;    line-height: 21px;    color: #000000;    width: 600px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
+                                                  <td class="w100pc" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif;    font-size: 14px;    font-weight: normal;    line-height: 21px;    color: #000000;    width: 600px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
                                                   </td>
                                                 </tr>
                                                 <tr>
@@ -313,7 +408,7 @@
                               <tbody>
                                 <tr>
                                   <!-- 1st Column-->
-                                      <th class="zcolumn w100pc full" width="284" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;  padding-right: 0px;  padding-bottom: 32px;  padding-left: 0px;  border-top: 0;  border-right: 0;  border-bottom: 0;  border-left: 0;  width: 284px;">
+                                      <th class="zcolumn w100pc full" width="284" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0px;  padding-right: 0px;  padding-bottom: 32px;  padding-left: 0px;  border-top: 0;  border-right: 0;  border-bottom: 0;  border-left: 0;  background-position: auto;  background-repeat: auto;  width: 284px;">
                                         <table class="w100pc zcolumn" width="284" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 284px;">
                                           <tbody>
                                                 <tr>
@@ -321,11 +416,11 @@
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <td class="w100pc" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif, Helvetica, sans-serif;    font-size: 28px;    font-weight: bold;    line-height: 28px;    color: #000000;    width: 284px;">Lorem ipsum
+                                                  <td class="w100pc" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif;    font-size: 28px;    font-weight: bold;    line-height: 28px;    color: #000000;    width: 284px;">Lorem ipsum
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <td class="w100pc" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif, Helvetica, sans-serif;    font-size: 14px;    font-weight: normal;    line-height: 21px;    color: #000000;    width: 284px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
+                                                  <td class="w100pc" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif;    font-size: 14px;    font-weight: normal;    line-height: 21px;    color: #000000;    width: 284px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
                                                   </td>
                                                 </tr>
                                                 <tr>
@@ -359,14 +454,14 @@
                                         </table>
                                       </th>
                                   <!-- Divider-->
-                                      <th class="zcolumn hide" width="32" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;  padding-right: 0px;  padding-bottom: 0px;  padding-left: 0px;  border-top: 0;  border-right: 0;  border-bottom: 0;  border-left: 0;  width: 32px;">
+                                      <th class="zcolumn hide" width="32" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0px;  padding-right: 0px;  padding-bottom: 0px;  padding-left: 0px;  border-top: 0;  border-right: 0;  border-bottom: 0;  border-left: 0;  background-position: auto;  background-repeat: auto;  width: 32px;">
                                         <table class="w100pc zcolumn" width="32" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 32px;">
                                           <tbody>
                                           </tbody>
                                         </table>
                                       </th>
                                   <!-- 2nd Column-->
-                                      <th class="zcolumn w100pc full" width="284" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;  padding-right: 0px;  padding-bottom: 32px;  padding-left: 0px;  border-top: 0;  border-right: 0;  border-bottom: 0;  border-left: 0;  width: 284px;">
+                                      <th class="zcolumn w100pc full" width="284" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0px;  padding-right: 0px;  padding-bottom: 32px;  padding-left: 0px;  border-top: 0;  border-right: 0;  border-bottom: 0;  border-left: 0;  background-position: auto;  background-repeat: auto;  width: 284px;">
                                         <table class="w100pc zcolumn" width="284" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 284px;">
                                           <tbody>
                                                 <tr>
@@ -374,11 +469,11 @@
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <td class="w100pc" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif, Helvetica, sans-serif;    font-size: 28px;    font-weight: bold;    line-height: 28px;    color: #000000;    width: 284px;">Lorem ipsum
+                                                  <td class="w100pc" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif;    font-size: 28px;    font-weight: bold;    line-height: 28px;    color: #000000;    width: 284px;">Lorem ipsum
                                                   </td>
                                                 </tr>
                                                 <tr>
-                                                  <td class="w100pc" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif, Helvetica, sans-serif;    font-size: 14px;    font-weight: normal;    line-height: 21px;    color: #000000;    width: 284px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
+                                                  <td class="w100pc" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 16px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Open Sans, Helvetica, sans-serif;    font-size: 14px;    font-weight: normal;    line-height: 21px;    color: #000000;    width: 284px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
                                                   </td>
                                                 </tr>
                                                 <tr>
