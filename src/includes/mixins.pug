@@ -13,7 +13,7 @@ mixin wrapper(opts)
         border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
         border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
         background-size: ' + ( opts.bgSrc ? 'cover' : 'auto' ) + ';\
-        background-position: ' + ( opts.bgSrc ? 'center' : 'auto' ) + ';\
+        background-position: ' + ( opts.bgSrc ? 'top center' : 'auto' ) + ';\
         background-repeat: ' + ( opts.bgSrc ? 'no-repeat' : 'auto' ) + ';\
         width: ' + (opts.width == 'full' ? '100%' : opts.width ? (opts.width + 'px') : '600px') + ';')
         
@@ -86,22 +86,44 @@ mixin column(opts)
   
   - if (opts.mobileWidth == '100%')
     - var mobileWidth = 'w100pc full';
+  - else if (opts.mobileWidth == '95%')
+    - var mobileWidth = 'w95pc';
+  - else if (opts.mobileWidth == '90%')
+    - var mobileWidth = 'w90pc';
+  - else if (opts.mobileWidth == '85%')
+    - var mobileWidth = 'w85pc';
+  - else if (opts.mobileWidth == '80%')
+    - var mobileWidth = 'w80pc';
   - else if (opts.mobileWidth == '75%')
     - var mobileWidth = 'w75pc';
-  - else if (opts.mobileWidth == '66%')
-    - var mobileWidth = 'w66pc';
+  - else if (opts.mobileWidth == '70%')
+    - var mobileWidth = 'w70pc';
+  - else if (opts.mobileWidth == '65%')
+    - var mobileWidth = 'w65pc';
+  - else if (opts.mobileWidth == '60%')
+    - var mobileWidth = 'w60pc';
+  - else if (opts.mobileWidth == '55%')
+    - var mobileWidth = 'w55pc';
   - else if (opts.mobileWidth == '50%')
     - var mobileWidth = 'w50pc';
-  - else if (opts.mobileWidth == '33%')
-    - var mobileWidth = 'w33pc';
+  - else if (opts.mobileWidth == '45%')
+    - var mobileWidth = 'w45pc';
+  - else if (opts.mobileWidth == '30%')
+    - var mobileWidth = 'w30pc';
   - else if (opts.mobileWidth == '25%')
     - var mobileWidth = 'w25pc';
+  - else if (opts.mobileWidth == '20%')
+    - var mobileWidth = 'w20pc';
+  - else if (opts.mobileWidth == '15%')
+    - var mobileWidth = 'w15pc';
   - else if (opts.mobileWidth == '10%')
     - var mobileWidth = 'w10pc';
+  - else if (opts.mobileWidth == '5%')
+    - var mobileWidth = 'w5pc';
   - else if (opts.mobileWidth == 'hide')
     - var mobileWidth = 'hide';
   
-  th.zcolumn(class=mobileWidth, width=width, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
+  th.zcolumn(class=mobileWidth, width=width, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bgSrc ? opts.bgSrc : 'none', style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
   padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
   padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
   padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
@@ -109,10 +131,31 @@ mixin column(opts)
   border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
   border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
   border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
+  background-position: ' + ( opts.bgSrc ? 'top center' : 'auto' ) + ';\
+  background-repeat: ' + ( opts.bgSrc ? 'no-repeat' : 'auto' ) + ';\
   width: ' + width + 'px;')
-    table.w100pc.zcolumn(width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + calculatedWidth + 'px;')
-      tbody
-        block  
+  
+    - if (opts.bulletproof)
+      // -->
+        <!--[if gte mso 9]>
+        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="#{opts.width == '100%' ? 'mso-width-percent:1000' : ('width:' + opts.width + 'px')};">
+          <v:fill type="tile" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
+          <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+        <![endif]--> <!--
+      div
+        table.w100pc.zcolumn(width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + calculatedWidth + 'px;')
+          tbody
+            block
+      // -->
+        <!--[if gte mso 9]>
+          </v:textbox>
+        </v:rect>
+        <![endif]--> <!-- 
+    - else
+
+      table.w100pc.zcolumn(width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + calculatedWidth + 'px;')
+        tbody
+          block  
 
 
               
@@ -134,15 +177,16 @@ mixin img(opts)
       a(href=opts.imgHref ? opts.imgHref : '#', target='_blank', title=opts.imgTitle ? opts.imgTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
         img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.imgSrc ? opts.imgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth, alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.imgWidth ? opts.imgWidth : width) + 'px;')/
       block
-
-
-
-mixin txt(opts)
-  - var opts = opts || {};
-  - !opts.txt ? opts.txt = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' : opts.txt
+      
+      
   
+mixin vid(opts)
+  - var opts = opts || {};
+  - !opts.width ? width = '600' : width = opts.width
+  - var calculatedVidImgWidth = Math.round((width / 16) * 9)
+
   tr
-    td.w100pc(width=opts.width ? opts.width : '600', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
+    td.w100pc(width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
     padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
     padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
     padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
@@ -150,7 +194,36 @@ mixin txt(opts)
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
     border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
-    font-family: ' + ( opts.fontFamily ? opts.fontFamily + ',': font.custom !== undefined ? font.custom[0].name + ',': font.default !== undefined ? font.default  + ',' : '' ) + ' Helvetica, sans-serif;\
+    width: ' + width + 'px;')
+      .vid(style='display:none;')
+        video(width=opts.vidWidth ? opts.vidWidth : width, controls='controls', poster=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', src=opts.vidSrc ? opts.vidSrc : 'https://bit.ly/2RtB5UV')
+          a(href=opts.vidHref ? opts.vidHref : '#', target='_blank', title=opts.vidTitle ? opts.vidTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
+            img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidTitle ? opts.vidTitle : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
+      .vid-fallback
+        a(href=opts.vidHref ? opts.vidHref : '#', target='_blank', title=opts.vidTitle ? opts.vidTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
+          img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidTitle ? opts.vidTitle : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
+      block
+          
+
+
+
+mixin txt(opts)
+  - var opts = opts || {};
+  - !opts.txt ? opts.txt = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' : opts.txt
+  
+  - if (opts.mobileAlignment == 'center')
+    - var mobileAlignment = 'aH';
+  
+  tr
+    td.w100pc(class=mobileAlignment, width=opts.width ? opts.width : '600', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
+    padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
+    padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
+    padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
+    border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
+    border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
+    border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
+    border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
+    font-family: ' + ( opts.fontFamily ? opts.fontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif' ) + ';\
     font-size: ' + ( opts.fontSize ? opts.fontSize : '14' ) + 'px;\
     font-weight: ' + ( opts.fontWeight ? opts.fontWeight : 'normal' ) + ';\
     line-height: ' + ( opts.lineHeight ? opts.lineHeight : '21' ) + 'px;\
@@ -197,7 +270,7 @@ mixin btn(opts)
               padding-bottom: ' + ( opts.btnPaddingBottom ? opts.btnPaddingBottom : '8') + 'px;\
               padding-left: ' + ( opts.btnPaddingLeft ? opts.btnPaddingLeft : '16') + 'px;\
               border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';\
-              font-family: ' + ( opts.fontFamily ? opts.fontFamily + ',': font.custom !== undefined ? font.custom[0].name + ',': font.default !== undefined ? font.default  + ',' : '' ) + ' Helvetica, sans-serif;\
+              font-family: ' + ( opts.btnFontFamily ? opts.btnFontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif' ) + ';\
               font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
               font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';\
               line-height: ' + ( opts.btnLineHeight ? opts.btnLineHeight : '21' ) + 'px;\
