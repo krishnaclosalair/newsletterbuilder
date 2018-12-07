@@ -20,7 +20,7 @@ mixin wrapper(opts)
           - if (opts.bulletproof)
             // -->
               <!--[if gte mso 9]>
-              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="#{opts.width == '100%' ? 'mso-width-percent:1000' : ('width:' + opts.width + 'px')};">
+              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="#{opts.width == 'full' ? 'mso-width-percent:1000' : ('width:' + opts.width + 'px')};">
                 <v:fill type="tile" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
                 <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
               <![endif]--> <!--
@@ -39,11 +39,13 @@ mixin wrapper(opts)
 
 mixin row(opts)
   - var opts = opts || {};
+  - !opts.width ? width = '600' : width = opts.width
+  - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   
-  table.w100pc.zrow(width=opts.width ? opts.width : '600', align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
+  table.w100pc.zrow(width=width, align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
     tbody
       tr
-        td.w100pc.zrow(class=opts.noMobilePadding ? '' : 'pH', width=opts.width ? opts.width : '600', align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
+        td.w100pc.zrow(class=opts.noMobilePadding ? '' : 'pH', width=calculatedWidth, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
         padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
         padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
         padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
@@ -61,9 +63,11 @@ mixin row(opts)
                 
 mixin subRow(opts)
   - var opts = opts || {};
+  - !opts.width ? width = '600' : width = opts.width
+  - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   
   tr
-    td.w100pc.zsubRow(width=opts.width ? opts.width : '600', align='center', valign=opts.valign? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
+    td.w100pc.zsubRow(width=width, align='center', valign=opts.valign? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
     padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
     padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
     padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
@@ -72,7 +76,7 @@ mixin subRow(opts)
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
     border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
     width: ' + (opts.width ? opts.width : '600') + 'px;')
-      table.w100pc.zsubrow(width=opts.width ? opts.width : '600', dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
+      table.w100pc.zsubrow(width=calculatedWidth, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
         tbody
           tr
             block
@@ -138,7 +142,7 @@ mixin column(opts)
     - if (opts.bulletproof)
       // -->
         <!--[if gte mso 9]>
-        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="#{opts.width == '100%' ? 'mso-width-percent:1000' : ('width:' + opts.width + 'px')};">
+        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="#width: #{width}px;">
           <v:fill type="tile" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
           <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
         <![endif]--> <!--
@@ -174,9 +178,14 @@ mixin img(opts)
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
     border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
     width: ' + width + 'px;')
-      a(href=opts.imgHref ? opts.imgHref : '#', target='_blank', title=opts.imgTitle ? opts.imgTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
+      - if (opts.removeLink)
         img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.imgSrc ? opts.imgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth, alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.imgWidth ? opts.imgWidth : width) + 'px;')/
-      block
+        block
+        
+      - else
+        a(href=opts.imgHref ? opts.imgHref : '#', target='_blank', title=opts.imgTitle ? opts.imgTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
+          img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.imgSrc ? opts.imgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth, alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.imgWidth ? opts.imgWidth : width) + 'px;')/
+        block
       
       
   
