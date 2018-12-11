@@ -151,11 +151,19 @@
           font-weight: inherit !important;
           line-height: inherit !important;
         }
+        .appleFooter a {color:#999999!important; text-decoration: none!important;}
         
         /* Legacy iOS Blue Link */
         .appleLinks, .appleLinks a {
           color: inherit !important;
           text-decoration: none !important;
+        }
+        
+      /* Android */
+      
+        /* Center Fix */
+        div[style*="margin: 16px 0;"] {
+        margin: 0 !important;
         }
          
       /* Windows Mobile */
@@ -313,8 +321,14 @@
           padding-right: 16px !important;
         }
         
-        .aH {
+        .aH--c {
           text-align: center;
+        }
+        .aH--l {
+          text-align: left;
+        }
+        .aH--r {
+          text-align: right;
         }
       }
     </style>

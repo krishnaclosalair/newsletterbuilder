@@ -4,10 +4,10 @@ mixin wrapper(opts)
   table.w100pc.backgroundTable.zwrapper(width=(opts.width == 'full' ? '100%' : opts.width ? opts.width : '600'), align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width == 'full' ? '100%' : opts.width ? (opts.width + 'px') : '600px') + ';')
     tbody
       tr
-        td.w100pc.zwrapper(width=(opts.width == 'full' ? '100%' : opts.width ? opts.width : '600'), valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bgSrc ? opts.bgSrc : 'none', style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
-        padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
-        padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
-        padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
+        td.w100pc.zwrapper(width=(opts.width == 'full' ? '100%' : opts.width ? opts.width : '600'), valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bgSrc ? opts.bgSrc : 'none', style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+        padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
+        padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
+        padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
         border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
         border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
         border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
@@ -45,10 +45,10 @@ mixin row(opts)
   table.w100pc.zrow(width=width, align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
     tbody
       tr
-        td.w100pc.zrow(class=opts.noMobilePadding ? '' : 'pH', width=calculatedWidth, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
-        padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
-        padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
-        padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
+        td.w100pc.zrow(class=opts.noMobilePadding ? '' : 'pH', width=calculatedWidth, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+        padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
+        padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
+        padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
         border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
         border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
         border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
@@ -67,10 +67,10 @@ mixin subRow(opts)
   - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   
   tr
-    td.w100pc.zsubRow(width=width, align='center', valign=opts.valign? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
-    padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
-    padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
-    padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
+    td.w100pc.zsubRow(width=width, align='center', valign=opts.valign? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
+    padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
+    padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
     border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
@@ -127,10 +127,10 @@ mixin column(opts)
   - else if (opts.mobileWidth == 'hide')
     - var mobileWidth = 'hide';
   
-  th.zcolumn(class=mobileWidth, width=width, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bgSrc ? opts.bgSrc : 'none', style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
-  padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
-  padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
-  padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
+  th.zcolumn(class=mobileWidth, width=width, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bgSrc ? opts.bgSrc : 'none', style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+  padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
+  padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
+  padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
   border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
   border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
   border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
@@ -169,10 +169,10 @@ mixin img(opts)
   - var calculatedImgWidth = Math.round((width / 3) * 2)
 
   tr
-    td.w100pc(width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
-    padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
-    padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
-    padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
+    td.w100pc(width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
+    padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
+    padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
     border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
@@ -195,10 +195,10 @@ mixin vid(opts)
   - var calculatedVidImgWidth = Math.round((width / 16) * 9)
 
   tr
-    td.w100pc(width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
-    padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
-    padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
-    padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
+    td.w100pc(width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
+    padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
+    padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
     border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
@@ -221,13 +221,17 @@ mixin txt(opts)
   - !opts.txt ? opts.txt = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' : opts.txt
   
   - if (opts.mobileAlignment == 'center')
-    - var mobileAlignment = 'aH';
+    - var mobileAlignment = 'aH--c';
+  - if (opts.mobileAlignment == 'left')
+    - var mobileAlignment = 'aH--l';
+  - if (opts.mobileAlignment == 'right')
+    - var mobileAlignment = 'aH--r';
   
   tr
-    td.w100pc(class=mobileAlignment, width=opts.width ? opts.width : '600', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
-    padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
-    padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
-    padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
+    td.w100pc(class=mobileAlignment, width=opts.width ? opts.width : '600', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
+    padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
+    padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
     border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
@@ -246,10 +250,10 @@ mixin btn(opts)
   - !opts.btnTxt ? opts.btnTxt = 'Lorem ipsum' : opts.btnTxt
   
   tr
-    td.w100pc(width=opts.width ? opts.width : '600', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop ? opts.paddingTop : '0') + 'px;\
-    padding-right: ' + ( opts.paddingRight ? opts.paddingRight : '0') + 'px;\
-    padding-bottom: ' + ( opts.paddingBottom ? opts.paddingBottom : '0') + 'px;\
-    padding-left: ' + ( opts.paddingLeft ? opts.paddingLeft : '0') + 'px;\
+    td.w100pc(width=opts.width ? opts.width : '600', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
+    padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
+    padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
     border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
@@ -259,31 +263,43 @@ mixin btn(opts)
         tbody
           tr
             - if (opts.bulletproof)
+              - opts.btnBorder == undefined || opts.btnBorder == '0' ? border = 'f' : border = opts.btnBorder.split(' ')[2] 
               td
                 div
                   // -->
                     <!--[if mso]>
-                    <v:rect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#{opts.btnHref ? opts.btnHref : '#'}" style="height:#{opts.bulletproofHeight ? opts.bulletproofHeight : '40'}px;v-text-anchor:middle;width:#{opts.btnWidth ? opts.btnWidth : '200'}px;" stroke="f" fillcolor="#{opts.btnColor ? opts.btnColor : color.hlight}">
-                      <w:anchorlock/>
-                      <center>
-                    <![endif]-->
-                        <a href="#{opts.btnHref ? opts.btnHref : '#'}"
-                    style="background-color:#{opts.btnColor ? opts.btnColor : color.hlight};color:#{opts.btnTxtColor ? opts.btnTxtColor : color.bg};display:inline-block;font-family:#{opts.btnFontFamily ? opts.btnFontFamily : 'Helvetica'};font-size:#{opts.btnFontSize ? opts.btnFontSize : '14'}px;font-weight:#{opts.btnFontWeight ? opts.btnFontWeight : 'normal'};line-height:#{opts.btnLineHeight ? opts.btnLineHeight : '21'}px;text-align:center;text-decoration:none;width:#{opts.btnWidth ? opts.btnWidth : '200'}px;-webkit-text-size-adjust:none;">#{opts.btnTxt}</a>
-                    <!--[if mso]>
-                      </center>
-                    </v:rect>
+                      <v:#{opts.btnBorderRadius ? 'roundrect' : 'rect'} xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#{opts.btnHref ? opts.btnHref : '#'}" style="height:#{opts.btnHeight == undefined ? '40px' : opts.btnHeight == '0' ? '0' : opts.btnHeight + 'px'};v-text-anchor:middle;width:#{opts.btnWidth == undefined ? '200px' : opts.btnWidth == '0' ? '0' : opts.btnWidth + 'px'};" arcsize="#{opts.btnBorderRadius == undefined || opts.btnBorderRadius == '0' ? '0' : (opts.btnBorderRadius * 2.5) + '%'}" #{opts.btnBorder == undefined || opts.btnBorder == '0' ? 'stroke' : 'strokecolor'}="#{border}" fillcolor="#{opts.btnColor ? opts.btnColor : color.hlight}">
+                        <w:anchorlock/>
+                        <center style="color:#{opts.btnTxtColor ? opts.btnTxtColor : color.bg}; font-family:#{opts.btnFontFamily ? opts.btnFontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif'}; font-size:#{opts.fontSize ? opts.fontSize : '14'}px; font-weight:#{opts.btnFontWeight ? opts.btnFontWeight : 'normal'};">#{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}</center>
+                      </v:roundrect>
                     <![endif]--> <!--
+
+                a(href=opts.btnHref ? opts.btnHref : '#' style='background-color: ' + ( opts.btnColor ? opts.btnColor : color.hlight ) + ';\
+                border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';\
+                border-radius:' + ( opts.btnBorderRadius == undefined || opts.btnBorderRadius == '0' ? '0' : opts.btnBorderRadius + 'px' ) + ';\
+                color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';\
+                display:inline-block;\
+                font-family: ' + ( opts.btnFontFamily ? opts.btnFontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif' ) + ';\
+                font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
+                font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';\
+                line-height: ' + ( opts.btnHeight == undefined ? (opts.btnFontSize * 3) + 'px' : opts.btnHeight == '0' ? '0' : opts.btnHeight + 'px' ) + ';\
+                text-align:center;\
+                text-decoration:none;\
+                width: ' + (opts.btnWidth == undefined ? '200px' : opts.btnWidth == '0' ? '0' : opts.btnWidth + 'px' ) + ';\
+                -webkit-text-size-adjust:none;\
+                mso-hide:all;')=( opts.btnTxt ? opts.btnTxt : 'Call-to-action' )
+                    
             - else
-              td(width=opts.btnWidth ? opts.btnWidth : '200', align='center', valign='middle', bgcolor=opts.btnColor ? opts.btnColor : color.hlight, style='padding-top: ' + ( opts.btnPaddingTop ? opts.btnPaddingTop : '8') + 'px;\
-              padding-right: ' + ( opts.btnPaddingRight ? opts.btnPaddingRight : '16') + 'px;\
-              padding-bottom: ' + ( opts.btnPaddingBottom ? opts.btnPaddingBottom : '8') + 'px;\
-              padding-left: ' + ( opts.btnPaddingLeft ? opts.btnPaddingLeft : '16') + 'px;\
+              td(width=opts.btnWidth ? opts.btnWidth : '200', align='center', valign='middle', bgcolor=opts.btnColor ? opts.btnColor : color.hlight, style='padding-top: ' + ( opts.btnPaddingTop == undefined ? '16px' : opts.btnPaddingTop == '0' ? '0' : opts.btnPaddingTop + 'px' ) + ';\
+              padding-right: ' + ( opts.btnPaddingRight == undefined ? '16px' : opts.btnPaddingRight == '0' ? '0' : opts.btnPaddingRight + 'px' ) + ';\
+              padding-bottom: ' + ( opts.btnPaddingBottom == undefined ? '16px' : opts.btnPaddingBottom == '0' ? '0' : opts.btnPaddingBottom + 'px' ) + ';\
+              padding-left: ' + ( opts.btnPaddingLeft == undefined ? '16px' : opts.btnPaddingLeft == '0' ? '0' : opts.btnPaddingLeft + 'px' ) + ';\
               border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';\
               font-family: ' + ( opts.btnFontFamily ? opts.btnFontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif' ) + ';\
               font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
               font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';\
-              line-height: ' + ( opts.btnLineHeight ? opts.btnLineHeight : '21' ) + 'px;\
+              line-height: ' + ( opts.btnLineHeight ? opts.btnLineHeight : '14' ) + 'px;\
               color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';\
-              width: ' + (opts.btnWidth ? opts.btnWidth : '200') + 'px;')
-                a(href=opts.btnHref ? opts.btnHref : '#', target='_blank', title=opts.btnTitle ? opts.btnTitle : 'title', style='text-decoration: none; border: 0; outline: 0; color:' + (opts.btnTxtColor ? opts.btnTxtColor : color.bg) + ';')=opts.btnTxt
+              width: ' + (opts.btnWidth == undefined ? '200px' : opts.btnWidth == '0' ? '0' : opts.btnWidth + 'px' ) + ';')
+                a(href=opts.btnHref ? opts.btnHref : '#', target='_blank', title=opts.btnTitle ? opts.btnTitle : 'title', style='text-decoration: none; border: 0; outline: 0; color:' + (opts.btnTxtColor ? opts.btnTxtColor : color.bg) + ';')=( opts.btnTxt ? opts.btnTxt : 'Call-to-action' )
                 block
