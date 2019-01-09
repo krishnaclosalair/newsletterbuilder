@@ -20,6 +20,16 @@ block font
     body, table, td, th { font-family: #{font.default != '' ? font.default : 'Helvetica, sans-serif'} !important; }
     </style>
     <![endif]--> <!--
+    
+block customCSS
+
+  // Custom CSS
+  style.
+    @media only screen and (max-width: 600px) {
+      .customClass {
+        
+      }
+    }
 
 block content
  
