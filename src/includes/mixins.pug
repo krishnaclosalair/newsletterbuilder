@@ -14,7 +14,7 @@ mixin wrapper(opts)
         border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
         border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
         width: ' + (opts.width == 'full' ? '100%' : opts.width ? (opts.width + 'px') : '600px') + ';' + 
-        (opts.bulletproof ? 'background-color: ' + ( opts.bgColor ? opts.bgColor : color.bg ) + ';' + 'background-image: ' + ( opts.bgSrc ? opts.bgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth ) + ';' + 'background-position: top center; background-repeat: no-repeat; background-size: cover;' : ''))
+        (opts.bulletproof ? 'background-color: ' + ( opts.bgColor ? opts.bgColor : color.bg ) + ';' + 'background-image: url(' + ( opts.bgSrc ? opts.bgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth ) + ');' + 'background-position: top center; background-repeat: no-repeat; background-size: cover;' : ''))
 
           - if (opts.bulletproof)
             // -->
@@ -136,7 +136,7 @@ mixin column(opts)
   border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
   border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
   width: ' + width + 'px;' + 
-  (opts.bulletproof ? 'background-color: ' + ( opts.bgColor ? opts.bgColor : color.bg ) + ';' + 'background-image: ' + ( opts.bgSrc ? opts.bgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth ) + ';' + 'background-position: top center; background-repeat: no-repeat; background-size: cover;' : ''))
+  (opts.bulletproof ? 'background-color: ' + ( opts.bgColor ? opts.bgColor : color.bg ) + ';' + 'background-image: url(' + ( opts.bgSrc ? opts.bgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth ) + ');' + 'background-position: top center; background-repeat: no-repeat; background-size: cover;' : ''))
   
     - if (opts.bulletproof)
       // -->
