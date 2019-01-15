@@ -20,7 +20,7 @@ mixin wrapper(opts)
             // -->
               <!--[if gte mso 9]>
               <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="#{opts.width == 'full' ? 'mso-width-percent:1000' : ('width:' + opts.width + 'px')};">
-                <v:fill type="tile" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
+                <v:fill type="frame" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
                 <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
               <![endif]--> <!--         
             div
@@ -142,7 +142,7 @@ mixin column(opts)
       // -->
         <!--[if gte mso 9]>
         <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: #{width}px;">
-          <v:fill type="tile" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
+          <v:fill type="frame" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
           <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
         <![endif]--> <!--
       div
@@ -273,20 +273,21 @@ mixin btn(opts)
                       </v:roundrect>
                     <![endif]--> <!--
 
-                a(href=opts.btnHref ? opts.btnHref : '#' style='background-color: ' + ( opts.btnColor ? opts.btnColor : color.hlight ) + ';\
-                border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';\
-                border-radius:' + ( opts.btnBorderRadius == undefined || opts.btnBorderRadius == '0' ? '0' : opts.btnBorderRadius + 'px' ) + ';\
-                color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';\
-                display:inline-block;\
-                font-family: ' + ( opts.btnFontFamily ? opts.btnFontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif' ) + ';\
-                font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
-                font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';\
-                line-height: ' + ( opts.btnHeight == undefined ? (opts.btnFontSize * 3) + 'px' : opts.btnHeight == '0' ? '0' : opts.btnHeight + 'px' ) + ';\
-                text-align:center;\
-                text-decoration:none;\
-                width: ' + (opts.btnWidth == undefined ? '200px' : opts.btnWidth == '0' ? '0' : opts.btnWidth + 'px' ) + ';\
-                -webkit-text-size-adjust:none;\
-                mso-hide:all;')=( opts.btnTxt ? opts.btnTxt : 'Call-to-action' )
+                  a(href=opts.btnHref ? opts.btnHref : '#' style='background-color: ' + ( opts.btnColor ? opts.btnColor : color.hlight ) + ';\
+                  border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';\
+                  border-radius:' + ( opts.btnBorderRadius == undefined || opts.btnBorderRadius == '0' ? '0' : opts.btnBorderRadius + 'px' ) + ';\
+                  color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';\
+                  display:inline-block;\
+                  font-family: ' + ( opts.btnFontFamily ? opts.btnFontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif' ) + ';\
+                  font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
+                  font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';\
+                  line-height: ' + ( opts.btnHeight == undefined ? (opts.btnFontSize * 3) + 'px' : opts.btnHeight == '0' ? '0' : opts.btnHeight + 'px' ) + ';\
+                  text-align:center;\
+                  text-decoration:none;\
+                  width: ' + (opts.btnWidth == undefined ? '200px' : opts.btnWidth == '0' ? '0' : opts.btnWidth + 'px' ) + ';\
+                  -webkit-text-size-adjust:none;\
+                  mso-hide:all;')
+                    | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
                     
             - else
               td(width=opts.btnWidth ? opts.btnWidth : '200', align='center', valign='middle', bgcolor=opts.btnColor ? opts.btnColor : color.hlight, style='padding-top: ' + ( opts.btnPaddingTop == undefined ? '16px' : opts.btnPaddingTop == '0' ? '0' : opts.btnPaddingTop + 'px' ) + ';\
@@ -300,5 +301,5 @@ mixin btn(opts)
               line-height: ' + ( opts.btnLineHeight ? opts.btnLineHeight : '14' ) + 'px;\
               color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';\
               width: ' + (opts.btnWidth == undefined ? '200px' : opts.btnWidth == '0' ? '0' : opts.btnWidth + 'px' ) + ';')
-                a(href=opts.btnHref ? opts.btnHref : '#', target='_blank', title=opts.btnTitle ? opts.btnTitle : 'title', style='text-decoration: none; border: 0; outline: 0; color:' + (opts.btnTxtColor ? opts.btnTxtColor : color.bg) + ';')=( opts.btnTxt ? opts.btnTxt : 'Call-to-action' )
-                block
+                a(href=opts.btnHref ? opts.btnHref : '#', target='_blank', title=opts.btnTitle ? opts.btnTitle : 'title', style='text-decoration: none; border: 0; outline: 0; color:' + (opts.btnTxtColor ? opts.btnTxtColor : color.bg) + ';')
+                  | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
