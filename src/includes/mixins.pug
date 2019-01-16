@@ -303,3 +303,12 @@ mixin btn(opts)
               width: ' + (opts.btnWidth == undefined ? '200px' : opts.btnWidth == '0' ? '0' : opts.btnWidth + 'px' ) + ';')
                 a(href=opts.btnHref ? opts.btnHref : '#', target='_blank', title=opts.btnTitle ? opts.btnTitle : 'title', style='text-decoration: none; border: 0; outline: 0; color:' + (opts.btnTxtColor ? opts.btnTxtColor : color.bg) + ';')
                   | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
+                  
+mixin spcr(opts)
+  - var opts = opts || {};
+  - var cellpadding = Math.round(opts.height / 2);
+  
+  tr
+    td.w100pc(width=opts.width ? opts.width : '600', height=opts.height ? opts.height : '16', cellpadding=cellpadding, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + (opts.width ? opts.width : '600') + 'px;\
+    height: ' + (opts.height ? opts.height : '16') + 'px;')
+      block

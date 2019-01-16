@@ -1,0 +1,411 @@
+extends template.pug
+
+block vars
+
+  - var color = {bg: '#FFFFFF', txt: '#000000', hlight: '#000000'};
+  //- custom only supports fonts found on https://fonts.google.com/
+  - var font = {custom: [{name: 'Playfair Display', weights: [400,700]}], default: ''}
+
+block font
+
+  - if (font.custom !== undefined)
+    each curFont in font.custom
+      - var fontName = curFont.name.split(' ').join('+');
+      - var fontWeights = curFont.weights.join(',');
+      link(href='https://fonts.googleapis.com/css?family=' + fontName + ':' + fontWeights, rel='stylesheet')/
+
+  // -->
+    <!--[if mso]>
+    <style>
+    body, table, td, th { font-family: #{font.default != '' ? font.default : 'Georgia, serif'} !important; }
+    </style>
+    <![endif]--> <!--
+
+block content
+
+  // SPACER
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+  //- PREVIEW SNIPPET
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '16', paddingBottom: '0', paddingLeft: '16', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({width: '568', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '568', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '16', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+        +txt({width: '568', align: 'right', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '11', fontWeight: 'normal', lineHeight: '11', fontColor: '#000000', txt: 'Insert Your Preview Snippet Here'})
+
+  // HEADER
+  +wrapper({width: '600', bgColor: '#000000', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({width: '600', bgColor: '#000000', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '50', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#000000', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '160', mobileWidth: '100%', align: 'center', valign: 'middle', bgColor: '#000000', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '160', align: 'center', valign: 'middle', bgColor: '#000000', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'http://www.edenluxurytravel.co.uk/', imgTitle: 'Eden Luxury Travel Logo', imgSrc: 'http://uploadlibrary.com/edencollection/Pure360Resources/Logo-EdenLuxuryTravel.png', imgWidth: '160'})
+        
+      +column({width: '340', mobileWidth: '100%', align: 'center', valign: 'middle', bgColor: '#000000', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+        +txt({mobileAlignment: 'center', width: '600', align: 'right', valign: 'middle', bgColor: '#000000', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '16', fontWeight: 'normal', lineHeight: '16', fontColor: '#FFFFFF', txt: '<span style="font-style: italic;">The Remarkable in our Nature</span>'})
+      
+      +column({width: '50', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#000000', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+  // Main Article
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({noMobilePadding: 'true', width: '600', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: 'transparent', bgSrc: 'https://images.unsplash.com/photo-1525183995014-bd94c0750cd5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=24d2b1eec575a55fea58fa3958fa067a&auto=format&fit=crop&w=750&q=80', bulletproof: 'true', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +subRow({width: '600', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+          +column({width: '40', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+          
+          +column({width: '520', mobileWidth: '80%', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+          
+            +spcr({width: '520', height: '80', bgColor: 'transparent'})
+        
+            +txt({width: '520', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '10', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '78', fontWeight: 'bold', lineHeight: '78', fontColor: '#FFFFFF', txt: 'lorem ipsum.'})
+
+            +txt({width: '520', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '20', fontWeight: 'lighter', lineHeight: '30', fontColor: '#FFFFFF', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit'})
+            
+            +spcr({width: '520', height: '360', bgColor: 'transparent'})
+            
+          +column({width: '40', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+  // 2 Columns
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({noMobilePadding: 'true', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '250', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '250', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.unsplash.com/photo-1500375592092-40eb2168fd21?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e07d2457879a4e15577ec75a31023e47&auto=format&fit=crop&w=668&q=80', imgWidth: '250'})
+    
+      +column({width: '350', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+        +txt({width: '350', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '24', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '48', fontWeight: 'bold', lineHeight: '48', fontColor: '#000000', txt: 'Lorem ipsum dolor'})
+        
+        +txt({width: '350', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '8', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '20', fontWeight: 'normal', lineHeight: '20', fontColor: '#000000', txt: 'Aenean commodo ligula'})
+        
+        +txt({width: '350', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '16', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '16', fontWeight: 'lighter', lineHeight: '24', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.'})
+        
+        +txt({width: '350', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '8', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '20', fontWeight: 'normal', lineHeight: '20', fontColor: '#000000', txt: 'Aenean commodo ligula'})
+        
+        +txt({width: '350', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '0', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '16', fontWeight: 'lighter', lineHeight: '24', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.'})
+        
+  // 2 Columns
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({direction: 'rtl', noMobilePadding: 'true', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '250', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '250', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.unsplash.com/photo-1510414842594-a61c69b5ae57?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=04c27a9ea6ed87838d712ae831afa974&auto=format&fit=crop&w=1650&q=80', imgWidth: '250'})
+        
+        +img({width: '250', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.unsplash.com/photo-1507295386538-ddd5e86cd597?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=530c7e3fde63061f540c50986ce2a699&auto=format&fit=crop&w=1789&q=80', imgWidth: '250'})
+    
+      +column({width: '350', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +txt({width: '350', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '8', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '20', fontWeight: 'normal', lineHeight: '20', fontColor: '#000000', txt: 'Aenean commodo ligula'})
+        
+        +txt({width: '350', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '24', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '48', fontWeight: 'bold', lineHeight: '48', fontColor: '#000000', txt: 'Lorem ipsum dolor'})
+        
+        +txt({width: '350', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '0', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '16', fontWeight: 'lighter', lineHeight: '24', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'})
+        
+  // 2 Columns
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({noMobilePadding: 'true', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '250', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+        +img({width: '250', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.unsplash.com/photo-1474874055390-459bc92357f3?ixlib=rb-0.3.5&s=486d25c40f172fbc489089ca4ef99878&auto=format&fit=crop&w=1746&q=80', imgWidth: '250'})
+        
+        +img({width: '250', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.unsplash.com/photo-1474433188271-d3f339f41911?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=91227deb86dd751543820e3ac9e41370&auto=format&fit=crop&w=2850&q=80', imgWidth: '250'})
+    
+      +column({width: '350', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+        +txt({width: '350', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '24', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '48', fontWeight: 'bold', lineHeight: '48', fontColor: '#000000', txt: 'Lorem ipsum dolor'})
+        
+        +txt({width: '350', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '8', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '20', fontWeight: 'normal', lineHeight: '20', fontColor: '#000000', txt: 'Aenean commodo ligula'})
+        
+        +txt({width: '350', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '16', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '16', fontWeight: 'lighter', lineHeight: '24', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.'})
+        
+        +txt({width: '350', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '0', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '18', fontWeight: 'bold', lineHeight: '18', fontColor: '#000000', txt: '<a href="#" target="_blank" title="title" style="color: #000000; text-decoration: none;">Integer tincidunt >></a>'})
+        
+  // 2 Columns
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({direction: 'rtl', noMobilePadding: 'true', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '250', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '250', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.unsplash.com/photo-1492831379069-0fe9d118b7c5?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=08d0a9f3e9fe063a417b13257c7d1408&auto=format&fit=crop&w=668&q=80', imgWidth: '250'})
+    
+      +column({width: '350', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +txt({width: '350', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '8', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '20', fontWeight: 'normal', lineHeight: '20', fontColor: '#000000', txt: 'Aenean commodo...'})
+        
+        +txt({width: '350', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '24', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '48', fontWeight: 'bold', lineHeight: '48', fontColor: '#000000', txt: 'Lorem ipsum dolor'})
+        
+        +txt({width: '350', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '0', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '16', fontWeight: 'lighter', lineHeight: '24', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem.'})
+        
+  // Main Article
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({noMobilePadding: 'true', width: '600', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: 'transparent', bgSrc: 'https://images.unsplash.com/photo-1457542510789-5105092ac950?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=660b772282347d729e750c88f68491ae&auto=format&fit=crop&w=1651&q=80', bulletproof: 'true', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +spcr({width: '520', height: '60', bgColor: 'transparent'})
+        
+        +txt({width: '600', align: 'left', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '40', paddingBottom: '12', paddingLeft: '40', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '48', fontWeight: 'bold', lineHeight: '48', fontColor: '#FFFFFF', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.'})
+        
+        +txt({width: '600', align: 'left', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '40', paddingBottom: '16', paddingLeft: '40', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '20', fontWeight: 'lighter', lineHeight: '30', fontColor: '#FFFFFF', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit'})
+        
+        +subRow({width: '600', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+          +column({width: '40', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+          +column({width: '160', mobileWidth: '80%', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +txt({width: '160', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '16', fontWeight: 'bold', lineHeight: '16', fontColor: '#000000', txt: 'Learn More'})
+            
+            +spcr({width: '160', height: '160', bgColor: 'transparent'})
+
+          +column({width: '400', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+          
+  // 2 Columns
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({noMobilePadding: 'true', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '300', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '300', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.unsplash.com/photo-1508669232496-137b159c1cdb?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5e05e923eadbc20a00da3a1a441dd3e3&auto=format&fit=crop&w=668&q=80', imgWidth: '300'})
+    
+      +column({width: '300', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+        +txt({width: '300', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '24', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '48', fontWeight: 'bold', lineHeight: '48', fontColor: '#000000', txt: 'Lorem ipsum dolor'})
+        
+        +txt({width: '300', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '8', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '20', fontWeight: 'normal', lineHeight: '20', fontColor: '#000000', txt: 'Aenean commodo ligula'})
+        
+        +txt({width: '300', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '16', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '16', fontWeight: 'lighter', lineHeight: '24', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.'})
+        
+        +txt({width: '300', align: 'left', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '20', paddingBottom: '0', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '16', fontWeight: 'lighter', lineHeight: '24', fontColor: '#000000', txt: 'Quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut.'})
+        
+  // 2 Columns
+  +wrapper({width: '600', bgColor: '#22222f', paddingTop: '40', paddingRight: '0', paddingBottom: '40', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({noMobilePadding: 'true', width: '600', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '20', paddingBottom: '30', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '48', fontWeight: 'bold', lineHeight: '48', fontColor: '#FFFFFF', txt: 'Lorem ipsum dolor'})
+        
+    +row({noMobilePadding: 'true', width: '600', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '200', mobileWidth: '35%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+      +column({width: '200', mobileWidth: '30%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '2px solid #FFFFFF', borderLeft: '0'})
+      
+      +column({width: '200', mobileWidth: '35%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({width: '600', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '20', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '260', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '260', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.unsplash.com/photo-1506318164473-2dfd3ede3623?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d7aca7e915a70f426aa75aacaa56c6d0&auto=format&fit=crop&w=1650&q=80', imgWidth: '260'})
+        
+        +txt({width: '260', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '20', paddingBottom: '8', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '20', fontWeight: 'normal', lineHeight: '20', fontColor: '#FFFFFF', txt: 'Aenean commodo ligula'})
+        
+        +txt({width: '260', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '20', paddingBottom: '0', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '16', fontWeight: 'lighter', lineHeight: '24', fontColor: '#FFFFFF', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.'})
+        
+      +column({width: '40', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '260', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '260', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.unsplash.com/photo-1515601915049-08c8836c2204?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=133c7e7a614c3a168bbaa5f456b13cc9&auto=format&fit=crop&w=1650&q=80', imgWidth: '260'})
+        
+        +txt({width: '260', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '20', paddingBottom: '8', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '20', fontWeight: 'normal', lineHeight: '20', fontColor: '#FFFFFF', txt: 'Aenean commodo ligula'})
+        
+        +txt({width: '260', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '20', paddingBottom: '0', paddingLeft: '20', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '16', fontWeight: 'lighter', lineHeight: '24', fontColor: '#FFFFFF', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.'})
+        
+      +column({width: '20', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+  // Main Article
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({noMobilePadding: 'true', width: '600', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: 'transparent', bgSrc: 'https://images.unsplash.com/photo-1495808985667-ba4ce2ef31b3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8fb9091f3f7760635761f985d12b333d&auto=format&fit=crop&w=1650&q=80', bulletproof: 'true', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +spcr({width: '520', height: '160', bgColor: 'transparent'})
+        
+        +txt({width: '600', align: 'left', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '40', paddingBottom: '12', paddingLeft: '40', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '48', fontWeight: 'bold', lineHeight: '48', fontColor: '#FFFFFF', txt: 'Lorem ipsum dolor sit amet.'})
+        
+        +txt({width: '600', align: 'left', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '40', paddingBottom: '16', paddingLeft: '40', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '20', fontWeight: 'lighter', lineHeight: '30', fontColor: '#FFFFFF', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor.'})
+        
+        +subRow({width: '600', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+          +column({width: '40', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+          +column({width: '160', mobileWidth: '80%', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +txt({width: '160', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '20', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '16', fontWeight: 'bold', lineHeight: '16', fontColor: '#000000', txt: '<a href="#" target="_blank" title="title" style="color: #000000; text-decoration: none;">Learn More</a>'})
+            
+            +spcr({width: '520', height: '60', bgColor: 'transparent'})
+
+          +column({width: '400', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+          
+  // FOOTER
+  +wrapper({width: '600', bgColor: '#22222f', paddingTop: '20', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({width: '600', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '220', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '30', paddingRight: '0', paddingBottom: '30', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '160', mobileWidth: '100%', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '30', paddingRight: '0', paddingBottom: '30', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '160', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'http://www.edenluxurytravel.co.uk/', imgTitle: 'Eden Luxury Travel Logo', imgSrc: 'http://uploadlibrary.com/edencollection/Pure360Resources/Logo-EdenLuxuryTravel.png', imgWidth: '160'})
+        
+      +column({width: '220', mobileWidth: 'hide', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '30', paddingRight: '0', paddingBottom: '30', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+    +row({width: '600', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '65', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '40', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '470', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '40', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +txt({width: '480', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '40', paddingBottom: '0', paddingLeft: '40', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '22', fontWeight: 'normal', lineHeight: '33', fontColor: '#FFFFFF', txt: "You'll never pay more with Eden than if you booked your trip yourself"})
+        
+      +column({width: '65', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '40', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+    +row({width: '600', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '60', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '40', paddingBottom: '8', paddingLeft: '40', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#FFFFFF', txt: '<a href="http://{~customDomain~}/interface/external_view_email.php?{~mailId~}" target="_blank" title="View in browser" style="color: #FFFFFF; text-decoration: none;">View in browser</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="http://www.edenluxurytravel.co.uk/privacy" target="_blank" title="Privacy Policy" style="color: #FFFFFF; text-decoration: none;">Our Privacy Policy</a>&nbsp;&nbsp;/&nbsp;&nbsp;<a href="http://{~customDomain~}/_act/optout.php?{~mailId~}" target="_blank" title="Unsubscribe" style="color: #FFFFFF; text-decoration: none;">Unsubscribe</a>'})
+        
+        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '40', paddingBottom: '8', paddingLeft: '40', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#FFFFFF', txt: 'Speak to an expert on <a href="tel:01244567000" target="_blank" title="Eden Luxury Hotels Chester Contact Number" style="text-decoration: none; color: #FFFFFF;">01244 567 000</a> (Chester) / <a href="tel:02071580997" target="_blank" title="Eden Luxury Hotels London Contact Number" style="text-decoration: none; color: #FFFFFF;">0207 158 0997</a> (London)'})
+        
+        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '40', paddingBottom: '0', paddingLeft: '40', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Playfair Display, Georgia, serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#FFFFFF', txt: '<a href="https://goo.gl/maps/mAxwf1tdyjM2" title="Eden Luxury Travel Google Maps" target="_blank" style="text-decoration: none; color: #FFFFFF;">Heritage Court, 1, Lower Bridge St, Chester CH1 1RD</a>'})
+
+    +row({width: '600', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      // Spacer
+      +column({width: '40', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      // Social Icons
+      +column({width: '110', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +subRow({width: '110', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+          // Spacer
+          +column({width: '0', mobileWidth: '30%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+          // Facebook
+          +column({width: '30', mobileWidth: '10%', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +img({width: '30', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'http://www.facebook.com/edenluxurytravel/', imgTitle: 'Eden Luxury Travel Facebook', imgSrc: 'http://uploadlibrary.com/edencollection/Pure360Resources/Logo-Facebook.png', imgWidth: '30'})
+
+          // Spacer
+          +column({width: '10', mobileWidth: '5%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+          // Twitter
+          +column({width: '30', mobileWidth: '10%', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +img({width: '30', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://twitter.com/edencollection', imgTitle: 'Eden Luxury Travel Twitter', imgSrc: 'http://uploadlibrary.com/edencollection/Pure360Resources/Logo-Twitter.png', imgWidth: '30'})
+
+          // Spacer
+          +column({width: '10', mobileWidth: '5%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+          // Instagram
+          +column({width: '30', mobileWidth: '10%', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +img({width: '30', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://www.instagram.com/eden_luxury_travel/?hl=en', imgTitle: 'Eden Luxury Travel Instagram', imgSrc: 'http://uploadlibrary.com/edencollection/Pure360Resources/Logo-Instagram.png', imgWidth: '30'})
+            
+          // Spacer
+          +column({width: '0', mobileWidth: '30%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+      // Main Spacer
+      +column({width: '180', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+      // Accreditation Icons
+      +column({width: '170', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +subRow({width: '170', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        
+          // Spacer
+          +column({width: '0', mobileWidth: '20%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+          // ABTA
+          +column({width: '60', mobileWidth: '15%', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '30', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +img({width: '60', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'http://edencollection.co.uk/about/protection/', imgTitle: 'Eden Luxury Travel ABTA', imgSrc: 'http://uploadlibrary.com/edencollection/Pure360Resources/Logo-ABTA.png', imgWidth: '60'})
+
+          // Spacer
+          +column({width: '10', mobileWidth: '5%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+          // British Airways
+          +column({width: '120', mobileWidth: '25%', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '30', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +img({width: '120', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'http://edencollection.co.uk/about/britishairways/', imgTitle: 'Eden Luxury Travel British Airways', imgSrc: 'http://uploadlibrary.com/edencollection/Pure360Resources/Logo-BritishAirways.png', imgWidth: '120'})
+
+          // Spacer
+          +column({width: '10', mobileWidth: '5%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+          // Protection
+          +column({width: '30', mobileWidth: '10%', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '30', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+            +img({width: '30', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'http://edencollection.co.uk/about/protection/', imgTitle: 'Eden Luxury Travel ATOL', imgSrc: 'http://uploadlibrary.com/edencollection/Pure360Resources/Logo-ATOL.png', imgWidth: '30'})
+            
+          // Spacer
+          +column({width: '0', mobileWidth: '20%', align: 'center', valign: 'top', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+      // Spacer
+      +column({width: '40', mobileWidth: 'hide', align: 'center', valign: 'middle', bgColor: '#22222f', paddingTop: '0', paddingRight: '0', paddingBottom: '20', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+  // 1 Columns
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({noMobilePadding: 'true', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: '', imgWidth: '600'})
+        
+  // 2 Columns
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({noMobilePadding: 'true', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '300', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '300', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: '', imgWidth: '300'})
+        
+      +column({width: '300', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '300', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: '', imgWidth: '300'})
+        
+  // 3 Columns
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({noMobilePadding: 'true', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '200', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '200', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: '', imgWidth: '200'})
+        
+      +column({width: '200', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '200', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: '', imgWidth: '200'})
+        
+      +column({width: '200', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +img({width: '200', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: '', imgWidth: '200'})
