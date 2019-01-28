@@ -13,66 +13,67 @@
     
     -->
     <!-- -->
-    <!--[if gte mso 9]><xml>
-      <o:OfficeDocumentSettings>
-        <o:AllowPNG/>
-        <o:PixelsPerInch>96</o:PixelsPerInch>
-      </o:OfficeDocumentSettings>
-    </xml><![endif]--> <!--
+    <!--[if mso]>
+    <xml>
+    <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+    </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]--> <!--
     
     -->
     <style>
-      /* CSS Reset */ 
+      /* RESET */ 
       
       body {
-        width: 100% !important;
-        height: 100% !important;
-        min-width: 100% !important;
-        -webkit-text-size-adjust: 100% !important;
-        -ms-text-size-adjust: 100% !important;
-        margin: 0 !important;
-        Margin: 0 !important;
-        padding: 0 !important;
+        width: 100%;
+        height: 100%;
+        min-width: 100%;
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+        margin: 0;
+        padding: 0;
       }
       
-      td, th {
-        -moz-box-sizing: border-box !important;
-        -webkit-box-sizing: border-box !important;
-        box-sizing: border-box !important;
+      table {
+        border-spacing: 0;
+      }
+      
+      td, 
+      th {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
         font-weight: normal;
+        word-wrap: break-word;
+        -webkit-hyphens: auto;
+        -moz-hyphens: auto;
+         hyphens: auto;
+      }
+      
+      table, 
+      td {
+        border-collapse:collapse;
       }
       
       img {
         border:0 none;
-        height:auto;
+        height: auto;
         max-width: 100%;
-        line-height:100% !important;
-        outline:none !important;
-        text-decoration:none !important;
-        display: block !important;
+        line-height:100%;
+        outline:none;
+        text-decoration:none;
+        display: block;
       }
       
       a img {
         border:0 none;
       }
       
-      table {
-        border-spacing: 0 !important;
-      }
       
-      td, th {
-      word-wrap: break-word !important;
-      /* -webkit-hyphens: auto !important;
-      -moz-hyphens: auto !important;
-       hyphens: auto !important; */
-      }
+      /* CLIENT-SPECIFIC */
       
-      table, 
-      td {
-        border-collapse:collapse !important;
-      }
-      
-      /* Client-specific CSS Styles */
       /* Samsung Mail */
       
         /* Blue Links */
@@ -93,12 +94,7 @@
             width:100% !important;
         }
       
-        .ExternalClass,
-        .ExternalClass p,
-        .ExternalClass span,
-        .ExternalClass font,
-        .ExternalClass td,
-        .ExternalClass div {
+        .ExternalClass * {
             line-height: 100% !important;
         }
       
@@ -107,12 +103,12 @@
       
         /* Visited Link Color */
         span.MsoHyperlink {
-          mso-style-priority:99;
-          color:inherit;
+          mso-style-priority:99 !important;
+          color:inherit !important;
         }
         span.MsoHyperlinkFollowed {
-          mso-style-priority:99;
-          color:inherit;
+          mso-style-priority:99 !important;
+          color:inherit !important;
         }
       
         /* "Read in Browser" Link */
@@ -151,10 +147,14 @@
           font-weight: inherit !important;
           line-height: inherit !important;
         }
-        .appleFooter a {color:#999999!important; text-decoration: none!important;}
+        .appleFooter a {
+          color:#99999 !important;
+          text-decoration: none !important;
+        }
         
         /* Legacy iOS Blue Link */
-        .appleLinks, .appleLinks a {
+        .appleLinks,
+        .appleLinks a {
           color: inherit !important;
           text-decoration: none !important;
         }
@@ -177,9 +177,9 @@
         }
         
         
-      /* Video-Related */
+      /* VIDEO */
         .vid {
-          display: none;
+          display: none !important;
         }
       
         @media (-webkit-min-device-pixel-ratio: 0) and (min-device-width:1024px) {
@@ -213,7 +213,7 @@
         }
       
       
-      /* Custom CSS */ 
+      /* CUSTOM */ 
       
       @media only screen and (max-width: 600px) {
         .hide {
@@ -322,13 +322,13 @@
         }
         
         .aH--c {
-          text-align: center;
+          text-align: center !important;
         }
         .aH--l {
-          text-align: left;
+          text-align: left !important;
         }
         .aH--r {
-          text-align: right;
+          text-align: right !important;
         }
       }
     </style>

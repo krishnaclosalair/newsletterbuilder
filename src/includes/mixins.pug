@@ -2,7 +2,7 @@ mixin wrapper(opts)
   - var opts = opts || {};
   - var calculatedImgWidth = Math.round((width / 3) * 2)
   
-  table.w100pc.backgroundTable.zwrapper(width=(opts.width == 'full' ? '100%' : opts.width ? opts.width : '600'), align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width == 'full' ? '100%' : opts.width ? (opts.width + 'px') : '600px') + ';')
+  table.w100pc.backgroundTable.zwrapper(width=( opts.width == 'full' ? '100%' : opts.width ? opts.width : '600' ), align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + ( opts.width == 'full' ? '100%' : opts.width ? ( opts.width + 'px' ) : '600px') + ';' )
     tbody
       tr
         td.w100pc.zwrapper(class=opts.customClass, width=( opts.width == 'full' ? '100%' : opts.width ? opts.width : '600' ), valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bulletproof && opts.bgSrc ? opts.bgSrc : opts.bulletproof ? 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth : 'none', style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
@@ -13,8 +13,8 @@ mixin wrapper(opts)
         border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
         border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
         border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
-        width: ' + (opts.width == 'full' ? '100%' : opts.width ? (opts.width + 'px') : '600px') + ';' + 
-        (opts.bulletproof ? 'background-color: ' + ( opts.bgColor ? opts.bgColor : color.bg ) + ';' + 'background-image: url(' + ( opts.bgSrc ? opts.bgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth ) + ');' + 'background-position: top center; background-repeat: no-repeat; background-size: cover;' : ''))
+        width: ' + ( opts.width == 'full' ? '100%' : opts.width ? ( opts.width + 'px' ) : '600px' ) + ';' + 
+        ( opts.bulletproof ? 'background-color: ' + ( opts.bgColor ? opts.bgColor : color.bg ) + ';' + 'background-image: url(' + ( opts.bgSrc ? opts.bgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth ) + ');' + 'background-position: top center; background-repeat: no-repeat; background-size: cover;' : ''))
 
           - if (opts.bulletproof)
             // -->
@@ -66,7 +66,7 @@ mixin subRow(opts)
   - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   
   tr
-    td.w100pc.zsubRow(class=opts.customClass, width=width, align='center', valign=opts.valign? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    td.w100pc.zsubRow(class=opts.customClass, width=width, align='center', valign=opts.valign? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + (opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
     padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
     padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
     padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
@@ -74,7 +74,7 @@ mixin subRow(opts)
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
     border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
-    width: ' + (opts.width ? opts.width : '600') + 'px;')
+    width: ' + ( opts.width ? opts.width : '600' ) + 'px;')
       table.w100pc.zsubrow(width=calculatedWidth, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
         tbody
           tr
@@ -88,43 +88,43 @@ mixin column(opts)
   - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   - var calculatedImgWidth = Math.round((width / 3) * 2)
   
-  - if (opts.mobileWidth == '100%')
+  - if ( opts.mobileWidth == '100%' )
     - var mobileWidth = 'w100pc full';
-  - else if (opts.mobileWidth == '95%')
+  - else if ( opts.mobileWidth == '95%' )
     - var mobileWidth = 'w95pc';
-  - else if (opts.mobileWidth == '90%')
+  - else if ( opts.mobileWidth == '90%' )
     - var mobileWidth = 'w90pc';
-  - else if (opts.mobileWidth == '85%')
+  - else if ( opts.mobileWidth == '85%' )
     - var mobileWidth = 'w85pc';
-  - else if (opts.mobileWidth == '80%')
+  - else if ( opts.mobileWidth == '80%' )
     - var mobileWidth = 'w80pc';
-  - else if (opts.mobileWidth == '75%')
+  - else if ( opts.mobileWidth == '75%' )
     - var mobileWidth = 'w75pc';
-  - else if (opts.mobileWidth == '70%')
+  - else if ( opts.mobileWidth == '70%' )
     - var mobileWidth = 'w70pc';
-  - else if (opts.mobileWidth == '65%')
+  - else if ( opts.mobileWidth == '65%' )
     - var mobileWidth = 'w65pc';
-  - else if (opts.mobileWidth == '60%')
+  - else if ( opts.mobileWidth == '60%' )
     - var mobileWidth = 'w60pc';
-  - else if (opts.mobileWidth == '55%')
+  - else if ( opts.mobileWidth == '55%' )
     - var mobileWidth = 'w55pc';
-  - else if (opts.mobileWidth == '50%')
+  - else if ( opts.mobileWidth == '50%' )
     - var mobileWidth = 'w50pc';
-  - else if (opts.mobileWidth == '45%')
+  - else if ( opts.mobileWidth == '45%' )
     - var mobileWidth = 'w45pc';
-  - else if (opts.mobileWidth == '30%')
+  - else if ( opts.mobileWidth == '30%' )
     - var mobileWidth = 'w30pc';
-  - else if (opts.mobileWidth == '25%')
+  - else if ( opts.mobileWidth == '25%' )
     - var mobileWidth = 'w25pc';
-  - else if (opts.mobileWidth == '20%')
+  - else if ( opts.mobileWidth == '20%' )
     - var mobileWidth = 'w20pc';
-  - else if (opts.mobileWidth == '15%')
+  - else if ( opts.mobileWidth == '15%' )
     - var mobileWidth = 'w15pc';
-  - else if (opts.mobileWidth == '10%')
+  - else if ( opts.mobileWidth == '10%' )
     - var mobileWidth = 'w10pc';
-  - else if (opts.mobileWidth == '5%')
+  - else if ( opts.mobileWidth == '5%' )
     - var mobileWidth = 'w5pc';
-  - else if (opts.mobileWidth == 'hide')
+  - else if ( opts.mobileWidth == 'hide' )
     - var mobileWidth = 'hide';
   
   th.zcolumn(class=mobileWidth, class=opts.customClass, width=width, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bulletproof && opts.bgSrc ? opts.bgSrc : opts.bulletproof ? 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth : 'none', style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
@@ -178,12 +178,12 @@ mixin img(opts)
     border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
     width: ' + width + 'px;')
       - if (opts.removeLink)
-        img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.imgSrc ? opts.imgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth, alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.imgWidth ? opts.imgWidth : width) + 'px;')/
+        img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.imgSrc ? opts.imgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth, alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : width, border='0', style='display: block; border: none; width: ' + ( opts.imgWidth ? opts.imgWidth : width ) + 'px;')/
         block
         
       - else
         a(href=opts.imgHref ? opts.imgHref : '#', target='_blank', title=opts.imgTitle ? opts.imgTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
-          img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.imgSrc ? opts.imgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth, alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.imgWidth ? opts.imgWidth : width) + 'px;')/
+          img( class=opts.responsive ? 'w100pc hauto' : '', src=opts.imgSrc ? opts.imgSrc: 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth, alt=opts.imgTitle ? opts.imgTitle : 'alt', width=opts.imgWidth ? opts.imgWidth : width, border='0', style='display: block; border: none; width: ' + ( opts.imgWidth ? opts.imgWidth : width ) + 'px;')/
         block
       
       
@@ -219,11 +219,11 @@ mixin txt(opts)
   - var opts = opts || {};
   - !opts.txt ? opts.txt = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' : opts.txt
   
-  - if (opts.mobileAlignment == 'center')
+  - if ( opts.mobileAlignment == 'center' )
     - var mobileAlignment = 'aH--c';
-  - if (opts.mobileAlignment == 'left')
+  - if ( opts.mobileAlignment == 'left' )
     - var mobileAlignment = 'aH--l';
-  - if (opts.mobileAlignment == 'right')
+  - if ( opts.mobileAlignment == 'right' )
     - var mobileAlignment = 'aH--r';
   
   tr
@@ -240,7 +240,7 @@ mixin txt(opts)
     font-weight: ' + ( opts.fontWeight ? opts.fontWeight : 'normal' ) + ';\
     line-height: ' + ( opts.lineHeight ? opts.lineHeight : '21' ) + 'px;\
     color: ' + ( opts.fontColor ? opts.fontColor : color.txt ) + ';\
-    width: ' + (opts.width ? opts.width : '600') + 'px;')
+    width: ' + ( opts.width ? opts.width : '600' ) + 'px;')
       | !{opts.txt}
       block
 
@@ -261,7 +261,7 @@ mixin btn(opts)
       table(align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0', cellpadding='0', cellspacing='0', width=opts.btnWidth, style='width: ' + opts.btnWidth + 'px;')
         tbody
           tr
-            - if (opts.bulletproof)
+            - if ( opts.bulletproof )
               - opts.btnBorder == undefined || opts.btnBorder == '0' ? border = 'f' : border = opts.btnBorder.split(' ')[2] 
               td
                 div
@@ -309,6 +309,6 @@ mixin spcr(opts)
   - var cellpadding = Math.round(opts.height / 2);
   
   tr
-    td.w100pc(width=opts.width ? opts.width : '600', height=opts.height ? opts.height : '16', cellpadding=cellpadding, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + (opts.width ? opts.width : '600') + 'px;\
-    height: ' + (opts.height ? opts.height : '16') + 'px;')
+    td.w100pc(width=opts.width ? opts.width : '600', height=opts.height ? opts.height : '16', cellpadding=cellpadding, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + ( opts.width ? opts.width : '600' ) + 'px;\
+    height: ' + ( opts.height ? opts.height : '16' ) + 'px;')
       block
