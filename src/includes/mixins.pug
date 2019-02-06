@@ -244,21 +244,23 @@ mixin txt(opts)
       | !{opts.txt}
       block
 
+
+
 mixin btn(opts)
   - var opts = opts || {};
   - !opts.btnTxt ? opts.btnTxt = 'Lorem ipsum' : opts.btnTxt
+  - ( opts.btnBorderRadius && !opts.bulletproof ? width = undefined : width = ( opts.width ? opts.width : '600' ) )
   
   tr
-    td.w100pc(class=opts.customClass, width=opts.width ? opts.width : '600', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    td.w100pc(class=opts.customClass, width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
     padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
     padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
     padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
     border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
-    border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
-    width: ' + (opts.width ? opts.width : '600') + 'px;')
-      table(align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0', cellpadding='0', cellspacing='0', width=opts.btnWidth, style='width: ' + opts.btnWidth + 'px;')
+    border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';' + ( opts.btnBorderRadius ? '' : 'width: ' + width + 'px;' ) )
+      table(align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0', cellpadding='0', cellspacing='0', width=width, style=opts.btnBorderRadius ? '' : 'width: ' + width + 'px;')
         tbody
           tr
             - if ( opts.bulletproof )
@@ -287,23 +289,33 @@ mixin btn(opts)
                   width: ' + (opts.btnWidth == undefined ? '200px' : opts.btnWidth == '0' ? '0' : opts.btnWidth + 'px' ) + ';\
                   -webkit-text-size-adjust:none;\
                   mso-hide:all;')
-                    | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
-                    
+                    span(style='color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';\
+                    font-family: ' + ( opts.btnFontFamily ? opts.btnFontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif' ) + ';\
+                    font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
+                    font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';\
+                    line-height: ' + ( opts.btnHeight == undefined ? (opts.btnFontSize * 3) + 'px' : opts.btnHeight == '0' ? '0' : opts.btnHeight + 'px' ) + ';') 
+                      | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
+                        
             - else
-              td(width=opts.btnWidth ? opts.btnWidth : '200', align='center', valign='middle', bgcolor=opts.btnColor ? opts.btnColor : color.hlight, style='padding-top: ' + ( opts.btnPaddingTop == undefined ? '16px' : opts.btnPaddingTop == '0' ? '0' : opts.btnPaddingTop + 'px' ) + ';\
-              padding-right: ' + ( opts.btnPaddingRight == undefined ? '16px' : opts.btnPaddingRight == '0' ? '0' : opts.btnPaddingRight + 'px' ) + ';\
-              padding-bottom: ' + ( opts.btnPaddingBottom == undefined ? '16px' : opts.btnPaddingBottom == '0' ? '0' : opts.btnPaddingBottom + 'px' ) + ';\
-              padding-left: ' + ( opts.btnPaddingLeft == undefined ? '16px' : opts.btnPaddingLeft == '0' ? '0' : opts.btnPaddingLeft + 'px' ) + ';\
-              border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';\
+            
+              - opts.btnBorderRadius ? width = undefined : width = (opts.btnWidth ? opts.btnWidth : '200')
+            
+              td(width=width, align='center', valign='middle', bgcolor=opts.btnColor ? opts.btnColor : color.hlight, style=
+              ( opts.btnBorderRadius ? 'border-radius:' + ( opts.btnBorderRadius ? opts.btnBorderRadius + 'px' : '200px' ) + ';' : 'padding-top: ' + ( opts.btnPaddingTop == undefined ? '16px' : opts.btnPaddingTop == '0' ? '0' : opts.btnPaddingTop + 'px' ) + '; ' + 'padding-right: ' + ( opts.btnPaddingRight == undefined ? '16px' : opts.btnPaddingRight == '0' ? '0' : opts.btnPaddingRight + 'px' ) + '; ' + 'padding-right: ' + ( opts.btnPaddingRight == undefined ? '16px' : opts.btnPaddingRight == '0' ? '0' : opts.btnPaddingRight + 'px' ) + '; ' + 'padding-bottom: ' + ( opts.btnPaddingBottom == undefined ? '16px' : opts.btnPaddingBottom == '0' ? '0' : opts.btnPaddingBottom + 'px' ) + '; ' + 'padding-left: ' + ( opts.btnPaddingLeft == undefined ? '16px' : opts.btnPaddingLeft == '0' ? '0' : opts.btnPaddingLeft + 'px' ) + ';' + 'border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';') + '\
               font-family: ' + ( opts.btnFontFamily ? opts.btnFontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif' ) + ';\
               font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
               font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';\
               line-height: ' + ( opts.btnLineHeight ? opts.btnLineHeight : '14' ) + 'px;\
-              color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';\
-              width: ' + (opts.btnWidth == undefined ? '200px' : opts.btnWidth == '0' ? '0' : opts.btnWidth + 'px' ) + ';')
-                a(href=opts.btnHref ? opts.btnHref : '#', target='_blank', title=opts.btnTitle ? opts.btnTitle : 'title', style='text-decoration: none; border: 0; outline: 0; color:' + (opts.btnTxtColor ? opts.btnTxtColor : color.bg) + ';')
-                  | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
-                  
+              color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';' + ( opts.btnBorderRadius ? '' : 'width: ' + width + 'px;' ) )
+                a(href=opts.btnHref ? opts.btnHref : '#', target='_blank', title=opts.btnTitle ? opts.btnTitle : 'title', style='text-decoration: none; border: 0; outline: 0; color:' + (opts.btnTxtColor ? opts.btnTxtColor : color.bg) + '; ' + ( opts.btnBorderRadius ? 'border-radius:' + opts.btnBorderRadius + 'px; ' + 'background-color: ' + ( opts.btnColor ? opts.btnColor : color.hlight ) + '; ' + 'display: block; ' + 'padding-top: ' + ( opts.btnPaddingTop == undefined ? '16px' : opts.btnPaddingTop == '0' ? '0' : opts.btnPaddingTop + 'px' ) + '; ' + 'padding-right: ' + ( opts.btnPaddingRight == undefined ? '16px' : opts.btnPaddingRight == '0' ? '0' : opts.btnPaddingRight + 'px' ) + '; ' + 'padding-right: ' + ( opts.btnPaddingRight == undefined ? '16px' : opts.btnPaddingRight == '0' ? '0' : opts.btnPaddingRight + 'px' ) + '; ' + 'padding-bottom: ' + ( opts.btnPaddingBottom == undefined ? '16px' : opts.btnPaddingBottom == '0' ? '0' : opts.btnPaddingBottom + 'px' ) + '; ' + 'padding-left: ' + ( opts.btnPaddingLeft == undefined ? '16px' : opts.btnPaddingLeft == '0' ? '0' : opts.btnPaddingLeft + 'px' ) + '; ' + 'border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + '; ' + 'width: ' + ( opts.btnWidth ? opts.btnWidth + 'px' : '200px' ) + ';' : '') )
+                  span(style='color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : color.bg ) + ';\
+                      font-family: ' + ( opts.btnFontFamily ? opts.btnFontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif' ) + ';\
+                      font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
+                      font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + ';') 
+                        | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
+            
+            
+            
 mixin spcr(opts)
   - var opts = opts || {};
   - var cellpadding = Math.round(opts.height / 2);
