@@ -274,7 +274,6 @@ mixin btn(opts)
                         <center style="color:#{opts.btnTxtColor ? opts.btnTxtColor : color.bg}; font-family:#{opts.btnFontFamily ? opts.btnFontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif'}; font-size:#{opts.fontSize ? opts.fontSize : '14'}px; font-weight:#{opts.btnFontWeight ? opts.btnFontWeight : 'normal'};">#{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}</center>
                       </v:roundrect>
                     <![endif]--> <!--
-
                   a(href=opts.btnHref ? opts.btnHref : '#', title="_blank", style='background-color: ' + ( opts.btnColor ? opts.btnColor : color.hlight ) + ';\
                   border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';\
                   border-radius:' + ( opts.btnBorderRadius == undefined || opts.btnBorderRadius == '0' ? '0' : opts.btnBorderRadius + 'px' ) + ';\

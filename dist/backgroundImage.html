@@ -184,45 +184,8 @@
         a {
           -ms-text-size-adjust:100% !important;
         }
-        
-        
-      /* VIDEO */
-        .vid {
-          display: none !important;
-        }
       
-        @media (-webkit-min-device-pixel-ratio: 0) and (min-device-width:1024px) {
-          .vid {
-            display: block !important;
-          }
-      
-          .vid-fallback {
-            display: none !important;
-          }
-        }
-      
-        /* iOS 10+ Video Support */
-        @supports (-webkit-overflow-scrolling:touch) and (color:#ffffff) {
-          div[class^=vid] {
-            display: block !important;
-          }
-      
-          div[class^=vid-fallback] {
-            display: none !important;
-          }
-        }
-      
-        /* Samsung Video Support */
-        #MessageViewBody .vid {
-          display: block !important;
-        }
-      
-        #MessageViewBody .vid-fallback {
-          display: none !important;
-        }
-      
-      
-      /* CUSTOM */ 
+      /* MEDIA QUERIES */ 
       
       @media only screen and (max-width: 600px) {
         .hide {
