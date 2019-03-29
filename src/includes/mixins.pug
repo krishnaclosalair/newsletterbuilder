@@ -1,11 +1,24 @@
+// Default Attributes
+- 
+  defaults = [
+    {
+      cellpadding: '0',
+      cellspacing: '0',
+      border: '0'
+    },
+    {
+
+    }
+  ]
+
 mixin wrapper(opts)
-  - var opts = opts || {};
-  - var calculatedImgWidth = Math.round((width / 3) * 2)
+  - opts = opts || {}
+  - calculatedImgWidth = Math.round((width / 3) * 2)
   
-  table.w100pc.backgroundTable.zwrapper(width=( opts.width == 'full' ? '100%' : opts.width ? opts.width : '600' ), align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + ( opts.width == 'full' ? '100%' : opts.width ? ( opts.width + 'px' ) : '600px') + ';' )
+  table.w100pc.backgroundTable(data-component='wrapper', width=( opts.width == 'full' ? '100%' : opts.width ? opts.width : '600' ), height=( opts.height ? opts.height : 'auto' ) align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + ( opts.width == 'full' ? '100%' : opts.width ? ( opts.width + 'px' ) : '600px') + ';' + 'height: ' + ( opts.height ? opts.height + 'px' : 'auto' ) + ';' )&attributes(defaults[0])
     tbody
       tr
-        td.w100pc.zwrapper(class=opts.customClass, width=( opts.width == 'full' ? '100%' : opts.width ? opts.width : '600' ), valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bulletproof && opts.bgSrc ? opts.bgSrc : opts.bulletproof ? 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth : 'none', style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+        td.w100pc(data-component='wrapper', class=opts.customClass, width=( opts.width == 'full' ? '100%' : opts.width ? opts.width : '600' ), valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bulletproof && opts.bgSrc ? opts.bgSrc : opts.bulletproof ? 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth : 'none', style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
         padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
         padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
         padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
@@ -19,11 +32,11 @@ mixin wrapper(opts)
           - if (opts.bulletproof)
             // -->
               <!--[if gte mso 9]>
-              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="#{opts.width == 'full' ? 'mso-width-percent:1000' : ('width:' + opts.width + 'px')};">
-                <v:fill type="frame" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
-                <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
+              <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="#{opts.width == 'full' ? 'mso-width-percent:1000' : ('width:' + opts.width + 'px')};#{opts.height ? 'height:' + opts.height + 'px;' : 'auto'}">
+                <v:fill type="tile" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
+                <v:textbox #{opts.height ? '' : 'style="mso-fit-shape-to-text:true" '}inset="0,0,0,0">
               <![endif]--> <!--         
-            div
+            div(data-component='wrapper')
               block      
             // -->
               <!--[if gte mso 9]>
@@ -37,14 +50,14 @@ mixin wrapper(opts)
 
 
 mixin row(opts)
-  - var opts = opts || {};
+  - opts = opts || {}
   - !opts.width ? width = '600' : width = opts.width
   - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   
-  table.w100pc.zrow(width=width, align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
+  table.w100pc(data-component='row', width=width, align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
     tbody
       tr
-        td.w100pc.zrow(class=opts.noMobilePadding ? '' : 'pH', class=opts.customClass, width=calculatedWidth, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+        td.w100pc(data-component='row', class=opts.noMobilePadding ? '' : 'pH', class=opts.customClass, width=calculatedWidth, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
         padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
         padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
         padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
@@ -53,7 +66,7 @@ mixin row(opts)
         border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
         border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
         width: ' + (opts.width ? opts.width : '600') + 'px;')
-          table.w100pc.zrow(width=opts.width ? opts.width : '600', dir=opts.direction ? opts.direction : 'ltr', align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
+          table.w100pc(data-component='row', width=opts.width ? opts.width : '600', dir=opts.direction ? opts.direction : 'ltr', align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
             tbody
               tr
                 block
@@ -61,12 +74,12 @@ mixin row(opts)
                 
                 
 mixin subRow(opts)
-  - var opts = opts || {};
+  - opts = opts || {}
   - !opts.width ? width = '600' : width = opts.width
   - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   
   tr
-    td.w100pc.zsubRow(class=opts.customClass, width=width, align='center', valign=opts.valign? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + (opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    td.w100pc(data-component='subRow', class=opts.customClass, width=width, align='center', valign=opts.valign? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + (opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
     padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
     padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
     padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
@@ -75,7 +88,7 @@ mixin subRow(opts)
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
     border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
     width: ' + ( opts.width ? opts.width : '600' ) + 'px;')
-      table.w100pc.zsubrow(width=calculatedWidth, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
+      table.w100pc(data-component='subRow', width=calculatedWidth, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
         tbody
           tr
             block
@@ -83,7 +96,7 @@ mixin subRow(opts)
 
 
 mixin column(opts)
-  - var opts = opts || {};
+  - opts = opts || {}
   - !opts.width ? width = '600' : width = opts.width
   - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   - var calculatedImgWidth = Math.round((width / 3) * 2)
@@ -127,7 +140,7 @@ mixin column(opts)
   - else if ( opts.mobileWidth == 'hide' )
     - var mobileWidth = 'hide';
   
-  th.zcolumn(class=mobileWidth, class=opts.customClass, width=width, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bulletproof && opts.bgSrc ? opts.bgSrc : opts.bulletproof ? 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth : 'none', style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+  th(data-component='column', class=mobileWidth, class=opts.customClass, width=width, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bulletproof && opts.bgSrc ? opts.bgSrc : opts.bulletproof ? 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth : 'none', style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
   padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
   padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
   padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
@@ -145,8 +158,8 @@ mixin column(opts)
           <v:fill type="frame" src="#{opts.bgSrc}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
           <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
         <![endif]--> <!--
-      div
-        table.w100pc.zcolumn(width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + calculatedWidth + 'px;')
+      div(data-component='column')
+        table.w100pc(data-component='column', width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + calculatedWidth + 'px;')
           tbody
             block
       // -->
@@ -156,19 +169,19 @@ mixin column(opts)
         <![endif]--> <!-- 
     - else
 
-      table.w100pc.zcolumn(width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + calculatedWidth + 'px;')
+      table.w100pc(data-component='column', width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + calculatedWidth + 'px;')
         tbody
           block  
 
 
               
 mixin img(opts)
-  - var opts = opts || {};
+  - opts = opts || {}
   - !opts.width ? width = '600' : width = opts.width
   - var calculatedImgWidth = Math.round((width / 3) * 2)
 
   tr
-    td.w100pc(class=opts.customClass, width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    td.w100pc(data-component='img', class=opts.customClass, width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
     padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
     padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
     padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
@@ -189,12 +202,12 @@ mixin img(opts)
       
   
 mixin vid(opts)
-  - var opts = opts || {};
+  - opts = opts || {}
   - !opts.width ? width = '600' : width = opts.width
   - var calculatedVidImgWidth = Math.round((width / 16) * 9)
 
   tr
-    td.w100pc(class=opts.customClass, width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    td.w100pc(data-component='vid', class=opts.customClass, width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
     padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
     padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
     padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
@@ -216,7 +229,7 @@ mixin vid(opts)
 
 
 mixin txt(opts)
-  - var opts = opts || {};
+  - opts = opts || {}
   - !opts.txt ? opts.txt = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' : opts.txt
   
   - if ( opts.mobileAlignment == 'center' )
@@ -227,7 +240,7 @@ mixin txt(opts)
     - var mobileAlignment = 'aH--r';
   
   tr
-    td.w100pc(class=mobileAlignment, class=opts.customClass, width=opts.width ? opts.width : '600', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    td.w100pc(data-component='txt', class=mobileAlignment, class=opts.customClass, width=opts.width ? opts.width : '600', align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
     padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
     padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
     padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
@@ -247,12 +260,12 @@ mixin txt(opts)
 
 
 mixin btn(opts)
-  - var opts = opts || {};
+  - opts = opts || {}
   - !opts.btnTxt ? opts.btnTxt = 'Lorem ipsum' : opts.btnTxt
   - ( opts.btnBorderRadius && !opts.bulletproof ? width = undefined : width = ( opts.width ? opts.width : '600' ) )
   
   tr
-    td.w100pc(class=opts.customClass, width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    td.w100pc(data-component='btn', class=opts.customClass, width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
     padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
     padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
     padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
@@ -260,12 +273,12 @@ mixin btn(opts)
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
     border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';' + ( opts.btnBorderRadius ? '' : 'width: ' + width + 'px;' ) )
-      table.w100pc(align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0', cellpadding='0', cellspacing='0', width=width, style=opts.btnBorderRadius ? '' : 'width: ' + width + 'px;')
+      table.w100pc(data-component='btn', align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0', cellpadding='0', cellspacing='0', width=width, style=opts.btnBorderRadius ? '' : 'width: ' + width + 'px;')
         tbody
           tr
             - if ( opts.bulletproof )
               - opts.btnBorder == undefined || opts.btnBorder == '0' ? border = 'f' : border = opts.btnBorder.split(' ')[2] 
-              td(align=opts.align ? opts.align : 'center')
+              td(data-component='btn', align=opts.align ? opts.align : 'center')
                 div
                   // -->
                     <!--[if mso]>
@@ -299,7 +312,7 @@ mixin btn(opts)
             
               - opts.btnBorderRadius ? width = undefined : width = (opts.btnWidth ? opts.btnWidth : '200')
             
-              td(width=width, align='center', valign='middle', bgcolor=opts.btnColor ? opts.btnColor : color.hlight, style=
+              td(data-component='btn', width=width, align='center', valign='middle', bgcolor=opts.btnColor ? opts.btnColor : color.hlight, style=
               ( opts.btnBorderRadius ? 'border-radius:' + ( opts.btnBorderRadius ? opts.btnBorderRadius + 'px' : '200px' ) + ';' : 'padding-top: ' + ( opts.btnPaddingTop == undefined ? '16px' : opts.btnPaddingTop == '0' ? '0' : opts.btnPaddingTop + 'px' ) + '; ' + 'padding-right: ' + ( opts.btnPaddingRight == undefined ? '16px' : opts.btnPaddingRight == '0' ? '0' : opts.btnPaddingRight + 'px' ) + '; ' + 'padding-right: ' + ( opts.btnPaddingRight == undefined ? '16px' : opts.btnPaddingRight == '0' ? '0' : opts.btnPaddingRight + 'px' ) + '; ' + 'padding-bottom: ' + ( opts.btnPaddingBottom == undefined ? '16px' : opts.btnPaddingBottom == '0' ? '0' : opts.btnPaddingBottom + 'px' ) + '; ' + 'padding-left: ' + ( opts.btnPaddingLeft == undefined ? '16px' : opts.btnPaddingLeft == '0' ? '0' : opts.btnPaddingLeft + 'px' ) + ';' + 'border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + ';') + '\
               font-family: ' + ( opts.btnFontFamily ? opts.btnFontFamily : font.default !== undefined ? font.default : 'Helvetica, sans-serif' ) + ';\
               font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px;\
@@ -316,10 +329,10 @@ mixin btn(opts)
             
             
 mixin spcr(opts)
-  - var opts = opts || {};
-  - var cellpadding = Math.round(opts.height / 2);
+  - opts = opts || {}
+  - cellpadding = Math.round(opts.height / 2)
   
   tr
-    td.w100pc(width=opts.width ? opts.width : '600', height=opts.height ? opts.height : '16', cellpadding=cellpadding, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + ( opts.width ? opts.width : '600' ) + 'px;\
+    td.w100pc(data-component='spcr', width=opts.width ? opts.width : '600', height=opts.height ? opts.height : '16', cellpadding=cellpadding, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + ( opts.width ? opts.width : '600' ) + 'px;\
     height: ' + ( opts.height ? opts.height : '16' ) + 'px;')
       block
