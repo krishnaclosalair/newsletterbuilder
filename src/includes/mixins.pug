@@ -1,21 +1,21 @@
-// Default Attributes
 - 
-  defaults = [
-    {
+  opts = opts || {}
+  calculatedImgWidth = Math.round((width / 3) * 2)
+  calculatedVidImgWidth = Math.round((width / 16) * 9)
+  cellpadding = Math.round(opts.height / 2)
+  defaults = {
+    table: {
       cellpadding: '0',
       cellspacing: '0',
       border: '0'
     },
-    {
-
+    td: {
     }
-  ]
+  }
 
 mixin wrapper(opts)
-  - opts = opts || {}
-  - calculatedImgWidth = Math.round((width / 3) * 2)
   
-  table.w100pc.backgroundTable(data-component='wrapper', width=( opts.width == 'full' ? '100%' : opts.width ? opts.width : '600' ), height=( opts.height ? opts.height : 'auto' ) align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + ( opts.width == 'full' ? '100%' : opts.width ? ( opts.width + 'px' ) : '600px') + ';' + 'height: ' + ( opts.height ? opts.height + 'px' : 'auto' ) + ';' )&attributes(defaults[0])
+  table.w100pc.backgroundTable(data-component='wrapper', width=( opts.width == 'full' ? '100%' : opts.width ? opts.width : '600' ), height=( opts.height ? opts.height : 'auto' ) align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + ( opts.width == 'full' ? '100%' : opts.width ? ( opts.width + 'px' ) : '600px') + ';' + 'height: ' + ( opts.height ? opts.height + 'px' : 'auto' ) + ';' )&attributes(defaults.table)
     tbody
       tr
         td.w100pc(data-component='wrapper', class=opts.customClass, width=( opts.width == 'full' ? '100%' : opts.width ? opts.width : '600' ), valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, background=opts.bulletproof && opts.bgSrc ? opts.bgSrc : opts.bulletproof ? 'https://www.placehold.it/' + width + 'x' + calculatedImgWidth : 'none', style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
@@ -50,11 +50,11 @@ mixin wrapper(opts)
 
 
 mixin row(opts)
-  - opts = opts || {}
+
   - !opts.width ? width = '600' : width = opts.width
   - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   
-  table.w100pc(data-component='row', width=width, align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
+  table.w100pc(data-component='row', width=width, align='center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + (opts.width ? opts.width : '600') + 'px;')&attributes(defaults.table)
     tbody
       tr
         td.w100pc(data-component='row', class=opts.noMobilePadding ? '' : 'pH', class=opts.customClass, width=calculatedWidth, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
@@ -74,7 +74,7 @@ mixin row(opts)
                 
                 
 mixin subRow(opts)
-  - opts = opts || {}
+
   - !opts.width ? width = '600' : width = opts.width
   - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
   
@@ -88,7 +88,7 @@ mixin subRow(opts)
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
     border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
     width: ' + ( opts.width ? opts.width : '600' ) + 'px;')
-      table.w100pc(data-component='subRow', width=calculatedWidth, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + (opts.width ? opts.width : '600') + 'px;')
+      table.w100pc(data-component='subRow', width=calculatedWidth, dir=opts.direction ? opts.direction : 'ltr', align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + (opts.width ? opts.width : '600') + 'px;')&attributes(defaults.table)
         tbody
           tr
             block
@@ -96,10 +96,9 @@ mixin subRow(opts)
 
 
 mixin column(opts)
-  - opts = opts || {}
+
   - !opts.width ? width = '600' : width = opts.width
   - ( opts.paddingRight && opts.paddingLeft ) ? calculatedWidth = ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? calculatedWidth = ( width - opts.paddingRight ) : opts.paddingLeft ? calculatedWidth = ( width - opts.paddingLeft ) : calculatedWidth = width
-  - var calculatedImgWidth = Math.round((width / 3) * 2)
   
   - if ( opts.mobileWidth == '100%' )
     - var mobileWidth = 'w100pc full';
@@ -159,7 +158,7 @@ mixin column(opts)
           <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
         <![endif]--> <!--
       div(data-component='column')
-        table.w100pc(data-component='column', width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + calculatedWidth + 'px;')
+        table.w100pc(data-component='column', width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + calculatedWidth + 'px;')&attributes(defaults.table)
           tbody
             block
       // -->
@@ -169,16 +168,13 @@ mixin column(opts)
         <![endif]--> <!-- 
     - else
 
-      table.w100pc(data-component='column', width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, cellpadding='0', cellspacing='0', border='0', style='width: ' + calculatedWidth + 'px;')
+      table.w100pc(data-component='column', width=calculatedWidth, align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + calculatedWidth + 'px;')&attributes(defaults.table)
         tbody
           block  
-
-
               
 mixin img(opts)
-  - opts = opts || {}
+
   - !opts.width ? width = '600' : width = opts.width
-  - var calculatedImgWidth = Math.round((width / 3) * 2)
 
   tr
     td.w100pc(data-component='img', class=opts.customClass, width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
@@ -202,9 +198,8 @@ mixin img(opts)
       
   
 mixin vid(opts)
-  - opts = opts || {}
+
   - !opts.width ? width = '600' : width = opts.width
-  - var calculatedVidImgWidth = Math.round((width / 16) * 9)
 
   tr
     td.w100pc(data-component='vid', class=opts.customClass, width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
@@ -229,7 +224,7 @@ mixin vid(opts)
 
 
 mixin txt(opts)
-  - opts = opts || {}
+
   - !opts.txt ? opts.txt = 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' : opts.txt
   
   - if ( opts.mobileAlignment == 'center' )
@@ -260,7 +255,7 @@ mixin txt(opts)
 
 
 mixin btn(opts)
-  - opts = opts || {}
+
   - !opts.btnTxt ? opts.btnTxt = 'Lorem ipsum' : opts.btnTxt
   - ( opts.btnBorderRadius && !opts.bulletproof ? width = undefined : width = ( opts.width ? opts.width : '600' ) )
   
@@ -273,7 +268,7 @@ mixin btn(opts)
     border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
     border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
     border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';' + ( opts.btnBorderRadius ? '' : 'width: ' + width + 'px;' ) )
-      table.w100pc(data-component='btn', align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0', cellpadding='0', cellspacing='0', width=width, style=opts.btnBorderRadius ? '' : 'width: ' + width + 'px;')
+      table.w100pc(data-component='btn', align=opts.align ? opts.align : 'center', bgcolor=opts.bgColor ? opts.bgColor : color.bg, width=width, style=opts.btnBorderRadius ? '' : 'width: ' + width + 'px;')&attributes(defaults.table)
         tbody
           tr
             - if ( opts.bulletproof )
@@ -329,8 +324,6 @@ mixin btn(opts)
             
             
 mixin spcr(opts)
-  - opts = opts || {}
-  - cellpadding = Math.round(opts.height / 2)
   
   tr
     td.w100pc(data-component='spcr', width=opts.width ? opts.width : '600', height=opts.height ? opts.height : '16', cellpadding=cellpadding, align='center', valign='top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='width: ' + ( opts.width ? opts.width : '600' ) + 'px;\
