@@ -1,4 +1,5 @@
 
+
 # NewsletterBuilder
 
 Responsive emails made easy.
@@ -14,54 +15,53 @@ Responsive emails made easy.
 
 ### To render complicated nested tables like this:
 
-        <table class="w100pc backgroundTable zwrapper" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
-          <tbody>
-            <tr>
-              <td class="w100pc zwrapper" width="600" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0px;        padding-right: 0px;        padding-bottom: 0px;        padding-left: 0px;        border-top: 0;        border-right: 0;        border-bottom: 0;        border-left: 0;        background-size: auto;        background-position: auto;        background-repeat: auto;        width: 600px;">
-                    <table class="w100pc zrow" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
-                      <tbody>
-                        <tr>
-                          <td class="w100pc zrow pH" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;        padding-right: 0px;        padding-bottom: 0px;        padding-left: 0px;        border-top: 0;        border-right: 0;        border-bottom: 0;        border-left: 0;        width: 600px;">
-                            <table class="w100pc zrow" width="600" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
-                              <tbody>
-                                <tr>
-                                      <th class="zcolumn" width="600" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0px;  padding-right: 0px;  padding-bottom: 0px;  padding-left: 0px;  border-top: 0;  border-right: 0;  border-bottom: 0;  border-left: 0;  background-position: auto;  background-repeat: auto;  width: 600px;">
-                                        <table class="w100pc zcolumn" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
-                                          <tbody>
-                                                <tr>
-                                                  <td class="w100pc" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    width: 600px;"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0;"><img src="https://www.placehold.it/600x400" alt="alt" width="600" border="0" style="display: block; border: none; width: 600px;"/></a>
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td class="w100pc" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    font-family: Helvetica, sans-serif;    font-size: 14px;    font-weight: normal;    line-height: 21px;    color: #000000;    width: 600px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                                  </td>
-                                                </tr>
-                                                <tr>
-                                                  <td class="w100pc" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0px;    padding-right: 0px;    padding-bottom: 0px;    padding-left: 0px;    border-top: 0;    border-right: 0;    border-bottom: 0;    border-left: 0;    width: 600px;">
-                                                    <table align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" style="width: undefinedpx;">
-                                                      <tbody>
-                                                        <tr>
-                                                          <td width="200" align="center" valign="middle" bgcolor="#000000" style="padding-top: 8px;              padding-right: 16px;              padding-bottom: 8px;              padding-left: 16px;              border: 0;              font-family: Helvetica, sans-serif;              font-size: 14px;              font-weight: normal;              line-height: 21px;              color: #FFFFFF;              width: 200px;"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0; color:#FFFFFF;">Lorem ipsum</a>
-                                                          </td>
-                                                        </tr>
-                                                      </tbody>
-                                                    </table>
-                                                  </td>
-                                                </tr>
-                                          </tbody>
-                                        </table>
-                                      </th>
-                                </tr>
-                              </tbody>
-                            </table>
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+	<table class="w100pc backgroundTable" data-component="wrapper" width="600" height="auto" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px; height: auto;">
+        <tbody>
+          <tr>
+            <td class="w100pc" data-component="wrapper" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;"> 
+                  <table class="w100pc" data-component="row" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                    <tbody>
+                      <tr>
+                        <td class="w100pc pH" data-component="row" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                          <table class="w100pc" data-component="row" width="600" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                            <tbody>
+                              <tr>
+                                    <th data-component="column" width="600" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                                      <table class="w100pc" data-component="column" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                                        <tbody>
+                                              <tr>
+                                                <td class="w100pc" data-component="img" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0;"><img src="https://www.placehold.it/600x400" alt="alt" width="600" border="0" style="display: block; border: none; width: 600px;"></a>
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="w100pc" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 21px; color: #000000; width: 600px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+                                                </td>
+                                              </tr>
+                                              <tr>
+                                                <td class="w100pc" data-component="btn" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0;width: 600px;">
+                                                  <table class="w100pc" data-component="btn" align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="600" style="width: 600px;">
+                                                    <tbody>
+                                                      <tr>
+                                                        <td data-component="btn" width="200" align="center" valign="middle" bgcolor="#000000" style="padding-top: 16px; padding-right: 16px; padding-right: 16px; padding-bottom: 16px; padding-left: 16px; border: 0; font-family: Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 14px; color: #FFFFFF;width: 200px;"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0; color:#FFFFFF; "><span style="color: #FFFFFF; font-family: Helvetica, sans-serif; font-size: 14px; font-weight: normal;">Call-to-action</span></a></td>
+                                                      </tr>
+                                                    </tbody>
+                                                  </table>
+                                                </td>
+                                              </tr>
+                                        </tbody>
+                                      </table>
+                                    </th>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
 ## Getting started
 
@@ -93,82 +93,69 @@ After this point, any .pug files saved/updated under the src folder should rende
 Create a copy of the newProject.pug file found inside the src folder.
 
 Code looks like this: 
-
-    extends template.pug
-
-    block vars
-
-      - var color = {bg: '#FFFFFF', txt: '#000000', hlight: '#000000'};
-      //- custom only supports fonts found on https://fonts.google.com/
-      - var font = {custom: [{name: 'Open Sans', weights: [400,700]}], default: 'Helvetica, sans-serif'}
-
-    block font
-
-      - if (font.custom !== undefined)
-        each curFont in font.custom
-          - var fontName = curFont.name.split(' ').join('+');
-          - var fontWeights = curFont.weights.join(',');
-          link(href='https://fonts.googleapis.com/css?family=' + fontName + ':' + fontWeights, rel='stylesheet')/
-
-      // -->
-        <!--[if mso]>
-        <style>
-        body, table, td, th { font-family: #{font.default != '' ? font.default : 'Helvetica, sans-serif'} !important; }
-        </style>
-        <![endif]--> <!--
-
-    block content
-
-      //- START HERE
-
-      //- Sample 1 Column Block
-      +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '32', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-        +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-          +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-            +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.pexels.com/photos/1345089/pexels-photo-1345089.jpeg', imgWidth: '600'})
-
-            +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '28', fontWeight: 'bold', lineHeight: '28', fontColor: '#000000', txt: 'Lorem ipsum'})
-
-            +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
-
-            +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnPaddingTop: '16', btnPaddingRight: '16', btnPaddingBottom: '16', btnPaddingLeft: '16', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
-
-      //- Sample 2 Column Block 
-      +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-        +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-          // 1st Column
-          +column({width: '284', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-            +img({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.pexels.com/photos/373076/pexels-photo-373076.jpeg', imgWidth: '284'})
-
-            +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '28', fontWeight: 'bold', lineHeight: '28', fontColor: '#000000', txt: 'Lorem ipsum'})
-
-            +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
-
-            +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnPaddingTop: '16', btnPaddingRight: '16', btnPaddingBottom: '16', btnPaddingLeft: '16', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
-
-          // Divider
-          +column({width: '32', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-          // 2nd Column
-          +column({width: '284', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-            +img({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://images.pexels.com/photos/273238/pexels-photo-273238.jpeg', imgWidth: '284'})
-
-            +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '28', fontWeight: 'bold', lineHeight: '28', fontColor: '#000000', txt: 'Lorem ipsum'})
-
-            +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
-
-            +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnPaddingTop: '16', btnPaddingRight: '16', btnPaddingBottom: '16', btnPaddingLeft: '16', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
+	 
+	  //- START HERE
+	  
+	  // ########## 1 COLUMN BLOCK ##########
+	  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '32', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+	  
+	    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+	    
+	      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+	      
+	        // Image
+	        +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: ''})
+	        
+	        // Heading
+	        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '28', fontWeight: 'bold', lineHeight: '28', fontColor: '#000000', txt: 'Lorem ipsum'})
+	        
+	        // Body Text
+	        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
+	        
+	        // Button
+	        +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnPaddingTop: '16', btnPaddingRight: '16', btnPaddingBottom: '16', btnPaddingLeft: '16', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
+	        
+	  // ########## 2 COLUMN BLOCK ##########
+	  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+	  
+	    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+	    
+	      // 1st Column
+	      +column({width: '284', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+	      
+	        // Image
+	        +img({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: ''})
+	        
+	        // Heading
+	        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '28', fontWeight: 'bold', lineHeight: '28', fontColor: '#000000', txt: 'Lorem ipsum'})
+	        
+	        // Body Text
+	        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
+	        
+	        // Button
+	        +btn({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnPaddingTop: '16', btnPaddingRight: '16', btnPaddingBottom: '16', btnPaddingLeft: '16', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
+	      
+	      // Divider
+	      +column({width: '32', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+	      
+	      // 2nd Column
+	      +column({width: '284', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+	      
+	        // Image
+	        +img({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: ''})
+	        
+	        // Heading
+	        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '28', fontWeight: 'bold', lineHeight: '28', fontColor: '#000000', txt: 'Lorem ipsum'})
+	        
+	        // Body Text
+	        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
+	        
+	        // Button
+	        +btn({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnPaddingTop: '16', btnPaddingRight: '16', btnPaddingBottom: '16', btnPaddingLeft: '16', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
 
 Which should render to this:
 
-![New Project](https://i.ibb.co/VmBJkF2/Newsletter-Builder-Sample.png)
+![enter image description here](https://i.ibb.co/pv97Pfh/Newsletter-Builder.png)
 
 This is your starting point.
 

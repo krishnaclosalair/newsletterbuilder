@@ -439,8 +439,10 @@ mixin txt(opts)
     td.w100pc(
       data-component='txt',
       class=mobileAlignment,
-      class=opts.customClass, width=opts.width ? opts.width : '600',
-      align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top',
+      class=opts.customClass, 
+      width=opts.width ? opts.width : '600',
+      align=opts.align ? opts.align : 'center', 
+      valign=opts.valign ? opts.valign : 'top',
       bgcolor=opts.bgColor ? opts.bgColor : color.bg,
       style=(
         'padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + '; ' +
