@@ -256,7 +256,7 @@ mixin column(opts)
     - if ( opts.bulletproof )
       // -->
         <!--[if gte mso 9]>
-        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: #{width}px;">
+        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: #{opts.width ? opts.width : '600'}px;">
           <v:fill type="frame" src="#{( opts.bgSrc ? opts.bgSrc: 'http://placehold.jp/' + (opts.width == 'full' ? '600' : opts.width) + 'x' + ( Math.round(( opts.width == 'full' ? '600' : opts.width ) / 3) * 2 ) + '.jpg' )}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
           <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
         <![endif]--> <!--
@@ -494,7 +494,12 @@ mixin btn(opts)
         bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0',
         cellpadding='0',
         cellspacing='0',
-        width=width,
+        width=(
+            ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
+            : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
+            : opts.paddingLeft ? ( ( opts.width ? opts.width : '600' ) - opts.paddingLeft ) 
+            : ( opts.width ? opts.width : '600' )
+          ),
         style=(
           opts.btnBorderRadius ? '' : ( 'width: ' + width + 'px;' )
         )

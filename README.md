@@ -284,7 +284,6 @@ These options are available to all tags.
 | imgHref | # | Anchor path | Takes url as value
 | imgTitle | title | Image alt text | takes text as value
 | imgSrc | placeholder | Image source | Takes url as value
-| imgWidth | none (scaling) | Image width | Takes natural numbers as value
 | responsive | none | Images take the width of its container and sets height to adjust accordingly | ({responsive: 'true')}
 
           +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgTitle: 'title', responsive: 'true', imgSrc: 'https://www.placehold.it/600x400', imgWidth: '600'})
