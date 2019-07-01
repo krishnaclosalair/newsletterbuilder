@@ -38,8 +38,6 @@
         width: 100%;
         height: 100%;
         min-width: 100%;
-        -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
         margin: 0;
         padding: 0;
       }
@@ -79,12 +77,19 @@
         border:0 none;
       }
       
+      /* GENERAL */
+      
+      /* Prevent Small Text Resize */
+      * {
+        -webkit-text-size-adjust: 100%;
+        -ms-text-size-adjust: 100%;
+      }
       
       /* CLIENT-SPECIFIC */
       
       /* Samsung Mail */
       
-        /* Blue Links */
+        /* Prevent Link Restyle */
         #MessageViewBody a {
         color: inherit !important;
         text-decoration: none !important;
@@ -97,13 +102,13 @@
       
       /* Outlook.com / Hotmail */
       
-        /* .External Class Override */
+        /* Display Email Full Width */
         .ExternalClass {
-            width:100% !important;
+          width:100% !important;
         }
       
         .ExternalClass * {
-            line-height: 100% !important;
+          line-height: 100% !important;
         }
       
       
@@ -124,14 +129,14 @@
           padding:0 !important;
         }
       
-        /* table td Element Spacing */
+        /* Prevent Extra Table Spacing */
         table, 
         td {
           mso-table-lspace:0pt !important;
           mso-table-rspace:0pt !important;
         }
       
-        /* Image Resizing */
+        /* Improve Rendering Method On Image Resize (IE) */
         img {
           -ms-interpolation-mode:bicubic !important;
         }
@@ -160,20 +165,20 @@
           text-decoration: none !important;
         }
         
-        /* Legacy iOS Blue Link */
-        .appleLinks,
-        .appleLinks a {
-          color: inherit !important;
-          text-decoration: none !important;
-        }
-        
       /* Android */
       
         /* Center Fix */
         div[style*="margin: 16px 0;"] {
         margin: 0 !important;
         }
-         
+      
+      /* Yahoo */
+      
+        /* Prevent Link Restyle */
+        .yshortcuts a {
+          border-bottom: none !important;
+        } 
+      
       /* Windows Mobile */
         
        /* Windows Mobile Text Size Adjustment */
@@ -310,7 +315,7 @@
     </style>
   </head>
   <body>
-    <!-- ########## 1 COLUMN BLOCK ##########-->
+    <!-- ########## PREVIEW SNIPPET ##########-->
         <table class="w100pc backgroundTable" data-component="wrapper" width="600" height="auto" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px; height: auto;">
           <tbody>
             <tr>
@@ -323,7 +328,89 @@
                               <tbody>
                                 <tr>
                                       <th class="w100pc full" data-component="column" width="600" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
-                                        <table class="w100pc" data-component="column" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                                        <table class="w100pc" data-component="column" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px; ">
+                                          <tbody>
+                                                <tr>
+                                                  <td class="w100pc" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 11px; font-weight: normal; line-height: 16px; color: #000000; width: 600px;">Preview Snippet | <a href="#" target="_blank" title="title" style="text-decoration: none; color: #000000;">View in browser</a>
+                                                  </td>
+                                                </tr>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    <!-- ########## HEADER ##########-->
+        <table class="w100pc backgroundTable" data-component="wrapper" width="600" height="auto" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px; height: auto;">
+          <tbody>
+            <tr>
+              <td class="w100pc" data-component="wrapper" width="600" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 32px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                <!-- Logo-->
+                    <table class="w100pc" data-component="row" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                      <tbody>
+                        <tr>
+                          <td class="w100pc pH" data-component="row" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                            <table class="w100pc" data-component="row" width="600" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                              <tbody>
+                                <tr>
+                                  <!-- Left Spacer-->
+                                      <th class="hide" data-component="column" width="225" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 225px;">
+                                        <table class="w100pc" data-component="column" width="225" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 225px; ">
+                                          <tbody>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                  <!-- Image-->
+                                      <th class="w100pc full" data-component="column" width="150" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 150px;">
+                                        <table class="w100pc" data-component="column" width="150" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 150px; ">
+                                          <tbody>
+                                                <tr>
+                                                  <td class="w100pc" data-component="img" width="150" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 150px;"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0;"><img src="http://placehold.jp/150x100.jpg" alt="title" width="150" border="0" style="display: block; border: none; width: 150px;"></a>
+                                                  </td>
+                                                </tr>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                  <!-- Right Spacer-->
+                                      <th class="hide" data-component="column" width="225" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 225px;">
+                                        <table class="w100pc" data-component="column" width="225" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 225px; ">
+                                          <tbody>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    <!-- ########## 1 COLUMN BLOCK ##########-->
+        <table class="w100pc backgroundTable" data-component="wrapper" width="600" height="auto" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px; height: auto;">
+          <tbody>
+            <tr>
+              <td class="w100pc" data-component="wrapper" width="600" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 32px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                    <table class="w100pc" data-component="row" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                      <tbody>
+                        <tr>
+                          <td class="w100pc pH" data-component="row" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                            <table class="w100pc" data-component="row" width="600" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                              <tbody>
+                                <tr>
+                                      <th class="w100pc full" data-component="column" width="600" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                                        <table class="w100pc" data-component="column" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px; ">
                                           <tbody>
                                             <!-- Image-->
                                                 <tr>
@@ -332,7 +419,7 @@
                                                 </tr>
                                             <!-- Heading-->
                                                 <tr>
-                                                  <td class="w100pc" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 28px; color: #000000; width: 600px;">Lorem ipsum
+                                                  <td class="w100pc" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 28px; color: #000000; width: 600px;">Heading
                                                   </td>
                                                 </tr>
                                             <!-- Body Text-->
@@ -381,7 +468,7 @@
         <table class="w100pc backgroundTable" data-component="wrapper" width="600" height="auto" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px; height: auto;">
           <tbody>
             <tr>
-              <td class="w100pc" data-component="wrapper" width="600" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+              <td class="w100pc" data-component="wrapper" width="600" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 32px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
                     <table class="w100pc" data-component="row" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
                       <tbody>
                         <tr>
@@ -391,7 +478,7 @@
                                 <tr>
                                   <!-- 1st Column-->
                                       <th class="w100pc full" data-component="column" width="284" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 32px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 284px;">
-                                        <table class="w100pc" data-component="column" width="284" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 284px;">
+                                        <table class="w100pc" data-component="column" width="284" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 284px; ">
                                           <tbody>
                                             <!-- Image-->
                                                 <tr>
@@ -400,7 +487,7 @@
                                                 </tr>
                                             <!-- Heading-->
                                                 <tr>
-                                                  <td class="w100pc" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 28px; color: #000000; width: 284px;">Lorem ipsum
+                                                  <td class="w100pc" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 28px; color: #000000; width: 284px;">Heading
                                                   </td>
                                                 </tr>
                                             <!-- Body Text-->
@@ -436,14 +523,14 @@
                                       </th>
                                   <!-- Divider-->
                                       <th class="hide" data-component="column" width="32" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 32px;">
-                                        <table class="w100pc" data-component="column" width="32" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 32px;">
+                                        <table class="w100pc" data-component="column" width="32" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 32px; ">
                                           <tbody>
                                           </tbody>
                                         </table>
                                       </th>
                                   <!-- 2nd Column-->
                                       <th class="w100pc full" data-component="column" width="284" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 32px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 284px;">
-                                        <table class="w100pc" data-component="column" width="284" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 284px;">
+                                        <table class="w100pc" data-component="column" width="284" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 284px; ">
                                           <tbody>
                                             <!-- Image-->
                                                 <tr>
@@ -452,7 +539,7 @@
                                                 </tr>
                                             <!-- Heading-->
                                                 <tr>
-                                                  <td class="w100pc" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 28px; color: #000000; width: 284px;">Lorem ipsum
+                                                  <td class="w100pc" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 28px; color: #000000; width: 284px;">Heading
                                                   </td>
                                                 </tr>
                                             <!-- Body Text-->
@@ -481,6 +568,139 @@
                                                         </tr>
                                                       </tbody>
                                                     </table>
+                                                  </td>
+                                                </tr>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    <!-- ########## FOOTER ##########-->
+        <table class="w100pc backgroundTable" data-component="wrapper" width="600" height="auto" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px; height: auto;">
+          <tbody>
+            <tr>
+              <td class="w100pc" data-component="wrapper" width="600" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 32px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                <!-- Footer Social Icons-->
+                    <table class="w100pc" data-component="row" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                      <tbody>
+                        <tr>
+                          <td class="w100pc pH" data-component="row" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                            <table class="w100pc" data-component="row" width="600" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                              <tbody>
+                                <tr>
+                                  <!-- Left Spacer-->
+                                      <th data-component="column" width="260" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 260px;">
+                                        <table class="w100pc" data-component="column" width="260" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 260px; ">
+                                          <tbody>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                  <!-- Social Icons-->
+                                      <th class="w20pc" data-component="column" width="80" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 80px;">
+                                        <table class="w100pc" data-component="column" width="80" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 80px; ">
+                                          <tbody>
+                                                <tr>
+                                                  <td class="w100pc" data-component="subRow" width="80" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 80px;">
+                                                    <table class="w100pc" data-component="subRow" width="80" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 80px;">
+                                                      <tbody>
+                                                        <tr>
+                                                              <th data-component="column" width="80" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 80px;">
+                                                                <table class="w100pc" data-component="column" width="80" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 80px; ">
+                                                                  <tbody>
+                                                                    <!-- Twitter-->
+                                                                        <th data-component="column" width="20" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 20px;">
+                                                                          <table class="w100pc" data-component="column" width="20" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 20px; ">
+                                                                            <tbody>
+                                                                                  <tr>
+                                                                                    <td class="w100pc" data-component="img" width="20" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 20px;"><a href="https://twitter.com/" target="_blank" title="Pure360 Twitter" style="text-decoration: none; border: 0; outline: 0;"><img src="Resources/Twitter.png" alt="Pure360 Twitter" width="20" border="0" style="display: block; border: none; width: 20px;"></a>
+                                                                                    </td>
+                                                                                  </tr>
+                                                                            </tbody>
+                                                                          </table>
+                                                                        </th>
+                                                                    <!-- Spacer-->
+                                                                        <th data-component="column" width="15" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 15px;">
+                                                                          <table class="w100pc" data-component="column" width="15" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 15px; ">
+                                                                            <tbody>
+                                                                            </tbody>
+                                                                          </table>
+                                                                        </th>
+                                                                    <!-- Facebook-->
+                                                                        <th data-component="column" width="10" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 10px;">
+                                                                          <table class="w100pc" data-component="column" width="10" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 10px; ">
+                                                                            <tbody>
+                                                                                  <tr>
+                                                                                    <td class="w100pc" data-component="img" width="10" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 10px;"><a href="https://www.facebook.com/" target="_blank" title="Pure360 Facebook" style="text-decoration: none; border: 0; outline: 0;"><img src="Resources/Facebook.png" alt="Pure360 Facebook" width="10" border="0" style="display: block; border: none; width: 10px;"></a>
+                                                                                    </td>
+                                                                                  </tr>
+                                                                            </tbody>
+                                                                          </table>
+                                                                        </th>
+                                                                    <!-- Spacer-->
+                                                                        <th data-component="column" width="15" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 15px;">
+                                                                          <table class="w100pc" data-component="column" width="15" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 15px; ">
+                                                                            <tbody>
+                                                                            </tbody>
+                                                                          </table>
+                                                                        </th>
+                                                                    <!-- Linkedin-->
+                                                                        <th data-component="column" width="20" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 20px;">
+                                                                          <table class="w100pc" data-component="column" width="20" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 20px; ">
+                                                                            <tbody>
+                                                                                  <tr>
+                                                                                    <td class="w100pc" data-component="img" width="20" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 20px;"><a href="https://www.linkedin.com/" target="_blank" title="Pure360 Linkedin" style="text-decoration: none; border: 0; outline: 0;"><img src="Resources/Linkedin.png" alt="Pure360 Linkedin" width="20" border="0" style="display: block; border: none; width: 20px;"></a>
+                                                                                    </td>
+                                                                                  </tr>
+                                                                            </tbody>
+                                                                          </table>
+                                                                        </th>
+                                                                  </tbody>
+                                                                </table>
+                                                              </th>
+                                                        </tr>
+                                                      </tbody>
+                                                    </table>
+                                                  </td>
+                                                </tr>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                  <!-- Rightr Spacer-->
+                                      <th data-component="column" width="260" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 260px;">
+                                        <table class="w100pc" data-component="column" width="260" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 260px; ">
+                                          <tbody>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                <!-- Footer Navigation-->
+                    <table class="w100pc" data-component="row" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                      <tbody>
+                        <tr>
+                          <td class="w100pc pH" data-component="row" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                            <table class="w100pc" data-component="row" width="600" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+                              <tbody>
+                                <tr>
+                                      <th class="w100pc full" data-component="column" width="600" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                                        <table class="w100pc" data-component="column" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px; ">
+                                          <tbody>
+                                                <tr>
+                                                  <td class="w100pc" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 11px; font-weight: normal; line-height: 16px; color: #000000; width: 600px;"><a href="#" target="_blank" title="title" style="text-decoration: none; color: #000000;">About Us</a> | <a href="#" target="_blank" title="title" style="text-decoration: none; color: #000000;">Contact Us</a> | <a href="#" target="_blank" title="title" style="text-decoration: none; color: #000000;">Privacy Policy</a> | <a href="#" target="_blank" title="title" style="text-decoration: none; color: #000000;">Unsubscribe</a>
                                                   </td>
                                                 </tr>
                                           </tbody>

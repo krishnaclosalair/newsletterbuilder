@@ -1,0 +1,86 @@
+style.
+  
+  .carousel {
+    user-select: none;
+  }
+
+  .arrowIcons {
+    display: table-cell !important;
+    width: 16px !important;
+  }
+
+  .radio,
+  .next,
+  .previous {
+    display: none !important;
+  }
+
+  .radio:checked+.content .page,
+  .radio:checked+*+.content .page,
+  .radio:checked+*+*+.content .page {
+    display: none !important;
+  }
+
+  .radio-1:checked+*+*+.content .page-1,
+  .radio-2:checked+*+.content .page-2,
+  .radio-3:checked+.content .page-3 {
+    display: block !important;
+  }
+
+  .previous-icons,
+  .next-icons,
+  .radio-1:checked+*+*+.content .next-2,
+  .radio-2:checked+*+.content .next-3,
+  .radio-3:checked+.content .next-1,
+  .radio-1:checked+*+*+.content .previous-3,
+  .radio-2:checked+*+.content .previous-1,
+  .radio-3:checked+.content .previous-2 {
+    display: block !important;
+  }
+
+  .page *+div,
+  .switch *+div {
+    display: none !important;
+  }
+
+  .switch:hover+*+*+.actual .page,
+  .switch:hover+*+.actual .page,
+  .switch:hover+.actual .page {
+    display: none !important;
+  }
+
+  .switch-1:hover+*+*+.actual .page-1,
+  .switch-2:hover+*+.actual .page-2,
+  .switch-3:hover+.actual .page-3 {
+    display: block !important;
+  }
+
+  .switch:hover img {
+    border: 2px solid #000000 !important;
+  }
+
+  .radio-1:checked+*+*+.content .switch-1 img,
+  .radio-2:checked+*+.content .switch-2 img,
+  .radio-3:checked+.content .switch-3 img {
+    border: 2px solid #000000 !important;
+  }
+
+  .carousel noinput {
+    display: block !important;
+  }
+
+  .carousel noinput .page-1 {
+    display: block !important;
+  }
+
+  /* Outlook Web App / Outlook.com */
+  [class="x_carousel"] {
+    display: none !important;
+  }
+
+  /* Yahoo */
+  @media screen yahoo {
+    .arrowIcons {
+      display: none !important;
+    }
+  }

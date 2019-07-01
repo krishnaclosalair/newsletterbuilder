@@ -180,7 +180,13 @@ mixin subRow(opts)
 
 mixin column(opts)
   - opts = opts || {}
-  
+
+  - if (opts.width)
+    - var width = opts.width;
+    - var calculatedWidth = ( opts.paddingRight && opts.paddingLeft ) ? ( width - opts.paddingRight - opts.paddingLeft ) : opts.paddingRight ? ( width -          opts.paddingRight ) : opts.paddingLeft ? ( width - opts.paddingLeft ) : width;
+  - if (opts.width == '')
+    - var width = '600';
+
   - if ( opts.mobileWidth == '100%' )
     - var mobileWidth = 'w100pc full';
   - else if ( opts.mobileWidth == '95%' )
@@ -224,13 +230,13 @@ mixin column(opts)
     data-component='column',
     class=mobileWidth,
     class=opts.customClass,
-    width=opts.width ? opts.width : '600',
+    width=width,
     dir=opts.direction ? opts.direction : 'ltr',
     align=opts.align ? opts.align : 'center',
     valign=opts.valign ? opts.valign : 'top',
     bgcolor=opts.bgColor ? opts.bgColor : color.bg,
     background=(
-      ( opts.bulletproof && opts.bgSrc ) ? opts.bgSrc
+      ( opts.width && opts.bulletproof && opts.bgSrc ) ? opts.bgSrc
       : opts.bulletproof ? 'http://placehold.jp/' + ( opts.width ? opts.width : '600' ) + 'x' + ( Math.round( ( opts.width ? opts.width : '600' ) / 3 ) * 2 ) + '.jpg' : 'none'
     ),
     style=(
@@ -241,53 +247,63 @@ mixin column(opts)
       'border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + '; ' +
       'border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + '; ' +
       'border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + '; ' +
-      'border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + '; ' +
-      'width: ' + ( opts.width ? ( opts.width + 'px' ) : '600px' ) + ';' +
-      ( opts.bulletproof ? 
+      'border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';' +
+      ( opts.width ?
+        ' width: ' + width + 'px;'
+      : '') +
+      ( opts.width && opts.bulletproof ? 
         ' background-color: ' + ( opts.bgColor ? opts.bgColor : color.bg ) + '; ' + 
         'background-image: url(' + ( opts.bgSrc ? opts.bgSrc: 'http://placehold.jp/' + ( opts.width ? opts.width : '600' ) + 'x' + ( Math.round( ( opts.width ? opts.width : '600' ) / 3 ) * 2 ) + '.jpg' ) + '); ' + 
         'background-position: top center; ' + 
         'background-repeat: no-repeat; ' + 
         'background-size: cover;' 
+      : '') +
+      (
+        opts.msohide ?
+        ' mso-hide: all;'
       : '')
     )
   )
   
-    - if ( opts.bulletproof )
+    - if ( opts.width && opts.bulletproof )
       // -->
         <!--[if gte mso 9]>
-        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: #{opts.width ? opts.width : '600'}px;">
-          <v:fill type="frame" src="#{( opts.bgSrc ? opts.bgSrc: 'http://placehold.jp/' + (opts.width == 'full' ? '600' : opts.width) + 'x' + ( Math.round(( opts.width == 'full' ? '600' : opts.width ) / 3) * 2 ) + '.jpg' )}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
+        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width: #{width}px;">
+          <v:fill type="frame" src="#{( opts.bgSrc ? opts.bgSrc: 'http://placehold.jp/' + width + 'x' + ( Math.round( width / 3 ) * 2 ) + '.jpg' )}" color="#{opts.bgColor ? opts.bgColor : color.bg}" />
           <v:textbox style="mso-fit-shape-to-text:true" inset="0,0,0,0">
         <![endif]--> <!--
       div(
-        data-component='column'
+        data-component='column',
+        style=(
+          (
+            opts.msohide ?
+            ' mso-hide: all;'
+          : '')
+        )
       )
         table.w100pc(
           data-component='column',
-          width=(
-            ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
-            : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
-            : opts.paddingLeft ? ( ( opts.width ? opts.width : '600' ) - opts.paddingLeft ) 
-            : ( opts.width ? opts.width : '600' )
-          ),
+          width=calculatedWidth,
           align=opts.align ? opts.align : 'center',
           bgcolor=opts.bgColor ? opts.bgColor : color.bg,
           cellpadding='0',
           cellspacing='0',
           border='0',
           style=(
-            'width: ' + (
-              ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
-              : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
-              : opts.paddingLeft ? ( ( opts.width ? opts.width : '600' ) - opts.paddingLeft ) 
-              : ( opts.width ? opts.width : '600' )
-              ) 
-              + 'px;'
+            ( opts.width ?
+            'width: ' + calculatedWidth + 'px; '
+              : '') +
+            (
+              opts.msohide ?
+              'mso-hide: all;'
+            : '')
           )
         )
+        - if (opts.width)
           tbody
             block
+        - else
+          block
       // -->
         <!--[if gte mso 9]>
           </v:textbox>
@@ -297,29 +313,27 @@ mixin column(opts)
 
       table.w100pc(
         data-component='column',
-        width=(
-          ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
-          : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
-          : opts.paddingLeft ? ( ( opts.width ? opts.width : '600' ) - opts.paddingLeft ) 
-          : ( opts.width ? opts.width : '600' )
-        ),
+        width=calculatedWidth,
         align=opts.align ? opts.align : 'center',
         bgcolor=opts.bgColor ? opts.bgColor : color.bg,
         cellpadding='0',
         cellspacing='0',
         border='0',
         style=(
-          'width: ' + (
-            ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
-            : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
-            : opts.paddingLeft ? ( ( opts.width ? opts.width : '600' ) - opts.paddingLeft ) 
-            : ( opts.width ? opts.width : '600' )
-            ) 
-            + 'px;'
+            ( opts.width ?
+            'width: ' + calculatedWidth + 'px; '
+              : '') +
+          (
+            opts.msohide ?
+            ' mso-hide: all;'
+          : '')
         )
       )
-        tbody
-          block  
+        - if (opts.width)
+          tbody
+            block
+        - else
+          block
           
 mixin img(opts)
   - opts = opts || {}
@@ -392,7 +406,7 @@ mixin img(opts)
             )
           )
           img(
-            class=opts.responsive ? 'w100pc hauto' : '',
+            class=opts.responsive == 'true' ? 'w100pc hauto' : opts.responsive == 'false' ? '' : '',
             src=opts.imgSrc ? opts.imgSrc : 'http://placehold.jp/' + (
               ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
               : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
@@ -598,3 +612,245 @@ mixin btn(opts)
                     )
                   )
                     | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
+
+mixin vid(opts)
+  - opts = opts || {}
+  - !opts.width ? width = '600' : width = opts.width
+  - var calculatedVidImgWidth = Math.round((width / 16) * 9)
+
+  tr
+    td.w100pc(data-component='vid', class=opts.customClass, width=width, align=opts.align ? opts.align : 'center', valign=opts.valign ? opts.valign : 'top', bgcolor=opts.bgColor ? opts.bgColor : color.bg, style='padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + ';\
+    padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + ';\
+    padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + ';\
+    padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + ';\
+    border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + ';\
+    border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + ';\
+    border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + ';\
+    border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + ';\
+    width: ' + width + 'px;')
+      .vid(style='display:none;')
+        video(width=opts.vidWidth ? opts.vidWidth : width, controls='controls', poster=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', src=opts.vidSrc ? opts.vidSrc : 'https://bit.ly/2RtB5UV')
+          a(href=opts.vidHref ? opts.vidHref : '#', target='_blank', title=opts.vidTitle ? opts.vidTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
+            img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidTitle ? opts.vidTitle : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
+      .vid-fallback
+        a(href=opts.vidHref ? opts.vidHref : '#', target='_blank', title=opts.vidTitle ? opts.vidTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
+          img(class=opts.responsive ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidTitle ? opts.vidTitle : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
+      block
+
+mixin carousel(opts)
+  - opts = opts || {}
+
+  // Carousel
+  tr
+    td.w100pc(
+      data-component='carousel',
+      class=opts.customClass,
+      width=opts.width ? opts.width : '550',
+      align=opts.align ? opts.align : 'center',
+      valign=opts.valign ? opts.valign : 'top',
+      bgcolor=opts.bgColor ? opts.bgColor : color.bg,
+      style=(
+        'padding-top: ' + ( opts.paddingTop == '0' || opts.paddingTop == undefined ? '0' : opts.paddingTop + 'px' ) + '; ' +
+        'padding-right: ' + ( opts.paddingRight == '0' || opts.paddingRight == undefined ? '0' : opts.paddingRight + 'px' ) + '; ' +
+        'padding-bottom: ' + ( opts.paddingBottom == '0' || opts.paddingBottom == undefined ? '0' : opts.paddingBottom + 'px' ) + '; ' +
+        'padding-left: ' + ( opts.paddingLeft == '0' || opts.paddingLeft == undefined ? '0' : opts.paddingLeft + 'px' ) + '; ' +
+        'border-top: ' + ( opts.borderTop ? opts.borderTop : '0' ) + '; ' +
+        'border-right: ' + ( opts.borderRight ? opts.borderRight : '0' ) + '; ' +
+        'border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + '; ' +
+        'border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + '; ' +
+        'width: ' + ( opts.width ? ( opts.width + 'px' ) : '550px' ) + ';'
+      )
+    )
+      // -->
+        <!--[if !mso]> <!--
+      .carousel
+        block
+        
+      // -->
+        <![endif]--> <!--
+
+      // -->
+        <!--[if mso]>
+        <div class="page page-1">
+          <a href="#{ opts.carouselFallbackHref }">
+            <img src="#{ opts.carouselFallbackSrc }" />
+          </a>
+        </div>
+        <![endif]--> <!--
+
+mixin carouselIndex(opts)
+  - opts = opts || {}
+
+    input.radio(
+      checked=( opts.radioChecked ? 'checked' : undefined ),
+      class='radio-' + opts.radioIndex,
+      id='radio-' + opts.radioIndex,
+      name='radio',
+      type='radio',
+      style=(
+        'display: none; ' +
+        'mso-hide: all;'
+      )
+    )
+
+mixin carouselContent(opts)
+  - opts = opts || {}
+
+  .content.w100pc(
+    style=(
+      'width: ' + ( opts.width ? opts.width : '550' ) + 'px; ' +
+      'display: table; ' +
+      'table-layout: fixed; ' +
+      'text-align: center;'
+    )
+  )
+    block
+
+mixin carouselSwitch(opts)
+  - opts = opts || {}
+
+  // Carousel Switch
+  a.switch(
+    class='switch-' + opts.radioIndex,
+    href='#',
+    title='switch-' + opts.radioIndex,
+    style=(
+      'display: inline-block; ' +
+      'overflow: hidden; ' +
+      'text-decoration: none; ' +
+      'border: 0; ' + 
+      'outline: 0;'
+    )
+  )
+    label(
+      for='radio-' + opts.radioIndex
+    )
+      img(
+        src=opts.imgSrc ? opts.imgSrc : 'http://placehold.jp/50x35.jpg',
+        alt=opts.imgTitle ? opts.imgTitle : 'switch-' + opts.radioIndex,
+        width=opts.width ? opts.width : '50',
+        border='0',
+        style=(
+          'border: 2px solid #FFFFFF; ' +
+          'display: block; ' +
+          'width: ' + ( opts.width ? opts.width : '50' ) + 'px;'
+        )
+      )
+
+mixin carouselActual
+
+  table.actual(
+    style=(
+      'padding-bottom: 8px; ' +
+      'caption-side: top; ' +
+      'display: table-caption; ' +
+      'table-layout: fixed;'
+    )
+  )
+    tbody
+      tr
+        block
+
+mixin carouselTogglePrev(opts)
+  - opts = opts || {}
+  - index = 0;
+
+  // Toggle Previous
+  td.arrowIcons(
+    style=(
+      'display: none; ' +
+      'mso-hide: all;'
+    )
+  )
+    .previous-icons(
+      style=(
+        'display: none; ' +
+        'mso-hide: all;' 
+      )
+    )
+      while index < opts.radioCount
+
+        label.previous(
+          class='previous-' + ( index++ + 1 ),
+          for='radio-' + index
+        )
+          img(
+            src=( opts.toggleImgSrc ? opts.toggleImgSrc : 'http://placehold.jp/14/ffffff/000000/16x16.png?text=%3C' ),
+            width='16',
+            border='0',
+            style=(
+              'border: none; ' +
+              'width: 16px;'
+            )
+          )
+
+mixin carouselPageWrapper
+
+  // Carousel Page
+  td
+    div
+      block
+
+mixin carouselPage(opts)
+  - opts = opts || {}
+
+  div.page(
+    class='page-' + opts.radioIndex
+    style=(
+      ( opts.firstpage ? '' : 'display: none; mso-hide: all;' )
+    )
+  )
+    a(
+      href=opts.imgHref ? opts.imgHref : '#',
+      target='_blank',
+      title=opts.imgTitle ? opts.imgTitle : 'title',
+      style=(
+        'text-decoration: none; ' +
+        'border: 0; ' + 
+        'outline: 0;'
+        )
+    )
+      img(
+        src=opts.imgSrc ? opts.imgSrc : 'http://placehold.jp/550x350.png',
+        alt=opts.imgTitle ? opts.imgTitle : 'switch-' + opts.radioIndex,
+        width=opts.width ? opts.width : '550',
+        border='0',
+        style=(
+          'display: block; ' +
+          'border: none; ' +
+          'width: ' + ( opts.width ? opts.width : '550' ) + 'px;'
+        )
+      )
+
+mixin carouselToggleNext(opts)
+  - opts = opts || {}
+  - index = 0;
+
+  // Toggle Next
+  td.arrowIcons(
+    style=(
+      'display: none; ' +
+      'mso-hide: all;'
+    )
+  )
+    .next-icons(
+      style=(
+        'display: none; ' +
+        'mso-hide: all;' 
+      )
+    )
+      while index < opts.radioCount
+
+        label.next(
+          class='next-' + ( index++ + 1 ),
+          for='radio-' + index
+        )
+          img(
+            src=( opts.toggleImgSrc ? opts.toggleImgSrc : 'http://placehold.jp/14/ffffff/000000/16x16.png?text=%3E' ),
+            width='16',
+            border='0',
+            style=(
+              'border: none; ' +
+              'width: 16px;'
+            )
+          )
