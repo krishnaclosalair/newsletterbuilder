@@ -15,53 +15,53 @@ Responsive emails made easy.
 
 ### To render complicated nested tables like this:
 
-	<table class="w100pc backgroundTable" data-component="wrapper" width="600" height="auto" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px; height: auto;">
-        <tbody>
-          <tr>
-            <td class="w100pc" data-component="wrapper" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;"> 
-                  <table class="w100pc" data-component="row" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
-                    <tbody>
-                      <tr>
-                        <td class="w100pc pH" data-component="row" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
-                          <table class="w100pc" data-component="row" width="600" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
-                            <tbody>
-                              <tr>
-                                    <th data-component="column" width="600" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
-                                      <table class="w100pc" data-component="column" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
-                                        <tbody>
-                                              <tr>
-                                                <td class="w100pc" data-component="img" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0;"><img src="https://www.placehold.it/600x400" alt="alt" width="600" border="0" style="display: block; border: none; width: 600px;"></a>
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td class="w100pc" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 21px; color: #000000; width: 600px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-                                                </td>
-                                              </tr>
-                                              <tr>
-                                                <td class="w100pc" data-component="btn" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0;width: 600px;">
-                                                  <table class="w100pc" data-component="btn" align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="600" style="width: 600px;">
-                                                    <tbody>
-                                                      <tr>
-                                                        <td data-component="btn" width="200" align="center" valign="middle" bgcolor="#000000" style="padding-top: 16px; padding-right: 16px; padding-right: 16px; padding-bottom: 16px; padding-left: 16px; border: 0; font-family: Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 14px; color: #FFFFFF;width: 200px;"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0; color:#FFFFFF; "><span style="color: #FFFFFF; font-family: Helvetica, sans-serif; font-size: 14px; font-weight: normal;">Call-to-action</span></a></td>
-                                                      </tr>
-                                                    </tbody>
-                                                  </table>
-                                                </td>
-                                              </tr>
-                                        </tbody>
-                                      </table>
-                                    </th>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+			<table class="w100pc backgroundTable" data-component="wrapper" width="600" height="auto" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px; height: auto;">
+				<tbody>
+					<tr>
+						<td class="w100pc" data-component="wrapper" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px; ">
+									<table class="w100pc" data-component="row" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+										<tbody>
+											<tr>
+												<td class="w100pc pH" data-component="row" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+													<table class="w100pc" data-component="row" width="600" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+														<tbody>
+															<tr>
+																		<th data-component="column" width="600" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+																			<table class="w100pc" data-component="column" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width: 600px;">
+																				<tbody>
+																							<tr>
+																								<td class="w100pc" data-component="img" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0;"><img class="w100pc hauto" src="http://placehold.jp/600x400.jpg" alt="alt" width="600" border="0" style="display: block; border: none; width: 600px;"></a>
+																								</td>
+																							</tr>
+																							<tr>
+																								<td class="w100pc" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 21px; color: #000000; width: 600px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+																								</td>
+																							</tr>
+																							<tr>
+																								<td class="w100pc" data-component="btn" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0;width: 600px;">
+																									<table data-component="btn" align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="200" style="width: 200px;">
+																										<tbody>
+																											<tr>
+																												<td data-component="btn" width="200" align="center" valign="top" bgcolor="#000000" style="padding-top: 14px; padding-right: 0; padding-bottom: 14px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 14px; color: #FFFFFF; width: 200px;"><a href="#" target="_blank" title="title" style="text-decoration: none; color:#FFFFFF;"><span style="color: #FFFFFF; font-family: Helvetica, sans-serif; font-size: 14px; font-weight: normal;">Call-to-action</span></a></td>
+																											</tr>
+																										</tbody>
+																									</table>
+																								</td>
+																							</tr>
+																				</tbody>
+																			</table>
+																		</th>
+															</tr>
+														</tbody>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+						</td>
+					</tr>
+				</tbody>
+			</table>
 
 ## Getting started
 
@@ -113,7 +113,7 @@ Code looks like this:
 	        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
 	        
 	        // Button
-	        +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnPaddingTop: '16', btnPaddingRight: '16', btnPaddingBottom: '16', btnPaddingLeft: '16', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
+	        +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
 	        
 	  // ########## 2 COLUMN BLOCK ##########
 	  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
@@ -133,7 +133,7 @@ Code looks like this:
 	        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
 	        
 	        // Button
-	        +btn({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnPaddingTop: '16', btnPaddingRight: '16', btnPaddingBottom: '16', btnPaddingLeft: '16', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
+	        +btn({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
 	      
 	      // Divider
 	      +column({width: '32', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
@@ -151,11 +151,11 @@ Code looks like this:
 	        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
 	        
 	        // Button
-	        +btn({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnPaddingTop: '16', btnPaddingRight: '16', btnPaddingBottom: '16', btnPaddingLeft: '16', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
+	        +btn({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnHeight: '40', btnWidth: '200', btnColor: '#000000', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '14', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
 
 Which should render to this:
 
-![enter image description here](https://i.ibb.co/pv97Pfh/Newsletter-Builder.png)
+![Newsletter Builder](https://i.ibb.co/pv97Pfh/Newsletter-Builder.png)
 
 This is your starting point.
 
@@ -314,25 +314,20 @@ These options are available to all tags.
 | align | center | Horizontal alignment | left, center, right
 | valign | top | Vertical alignment | top, middle, bottom
 | bulletproof | none | Adds support for border-radius on buttons on the Microsoft Outlook Email Client by using VML (Vector Markup Language). Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/  | ({bulletproof: 'true')}
-| btnBorderRadius | 0 | Button border radius | Takes natural number as value
+| btnBorderRadius | 0 | Button border radius | Takes natural number as value. Only usable when bulletproof is true
 | btnHeight | 42(px) | Button height | Takes natural number as value
 | btnWidth | 200(px) | Button width | Takes natural number as value
 | btnColor | #000000 | Button background color | Takes hex color codes as value
-| btnPaddingTop | 0 | Button top padding | Takes natural number as value
-| btnPaddingRight | 0 | Button right padding | Takes natural number as value
-| btnPaddingBottom | 0 | Button bottom padding | Takes natural number as value
-| btnPaddingLeft | 0 | Button left padding | Takes natural number as value
 | btnBorder | 0 | Button border | Ex. 1px solid #000000
 | btnFontFamily | Helvetica | Button font family | Takes font name as value
 | btnFontSize | 14(px) | Button font size | Takes natural number as value
 | btnFontWeight | normal | Button font weight | lighter, normal, bold, bolder
-| btnLineHeight | 21(px) | Button line height | Takes natural number as value
 | btnHref | # | Button anchor path | Takes URL as value
 | btnTitle | title | Button title | Takes text as value
 | btnTxtColor | #FFFFFF | Button text color | Takes hex color codes as value
 | btnTxt | placeholder | Button actual text | Takes text as value
 
-          +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnWidth: '200', btnColor: '#CC0000', btnPaddingTop: '8', btnPaddingRight: '16', btnPaddingBottom: '8', btnPaddingLeft: '16', btnBorder: '1px solid #FFFFFF', btnFontFamily: 'Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnLineHeight: '21', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Lorem Ipsum'})
+          +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', btnBorderRadius: '20', btnWidth: '200', btnHeight: '42', btnColor: '#CC0000', btnBorder: '1px solid #FFFFFF', btnFontFamily: 'Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTitle: 'title', btnTxtColor: '#FFFFFF', btnTxt: 'Lorem Ipsum'})
 
 ---
 
