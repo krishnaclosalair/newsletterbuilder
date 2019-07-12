@@ -248,9 +248,9 @@ mixin column(opts)
       ( opts.bulletproof == 'true' ? 
         ' background-color: ' + ( opts.bulletproof == 'true' ? 'transparent' : ( opts.bgColor || opts.bulletproof == 'false' ) ? opts.bgColor : color.bg ) + '; ' + 
         'background-image: url(' + ( opts.bgSrc ? opts.bgSrc: 'http://placehold.jp/' + width + 'x' + ( Math.round( width / 3 ) * 2 ) + '.jpg' ) + '); ' + 
-        'background-position: top center; ' + 
+        'background-position: center center; ' + 
         'background-repeat: no-repeat; ' + 
-        'background-size: cover;' 
+        'background-size: contain;' 
       : '')
     )
   )
@@ -536,7 +536,7 @@ mixin btn(opts)
               - !opts.btnBorder || opts.btnBorder == '0' ? border = 'f' : border = opts.btnBorder.split(' ')[2] 
               td(
                 data-component='btn',
-                align=opts.align ? opts.align : 'center'
+                align=opts.btnAlign ? opts.btnAlign : 'center'
               )
                 div
                   // -->
@@ -582,7 +582,7 @@ mixin btn(opts)
               td(
                 data-component='btn',
                 width=( ( opts.btnWidth ? opts.btnWidth : '200' ) - borderCalc ),
-                align=opts.align ? opts.align : 'center', 
+                align=opts.btnAlign ? opts.btnAlign : 'center', 
                 valign=opts.valign ? opts.valign : 'top',
                 bgcolor=( opts.btnColor ? opts.btnColor : color.hlight ),
                 style=(
@@ -681,7 +681,7 @@ mixin carousel(opts)
         <!--[if mso]>
         <div class="page page-1">
           <a href="#{ opts.carouselFallbackHref }">
-            <img src="#{ opts.carouselFallbackSrc }" />
+            <img src="#{ opts.carouselFallbackSrc }" width="#{ opts.width ? opts.width : '550' }" border="0" style="display: block; border: none; width: #{ opts.width ? opts.width + 'px' : '550px' };" />
           </a>
         </div>
         <![endif]--> <!--
@@ -805,7 +805,7 @@ mixin carouselPage(opts)
   div.page(
     class='page-' + opts.radioIndex
     style=(
-      ( opts.firstpage ? '' : 'display: none; mso-hide: all;' )
+      ( opts.firstPage == 'true' ? '' : ( opts.firstPage == 'false' || !opts.firstPage ) ? 'display: none; mso-hide: all;' : '' )
     )
   )
     a(

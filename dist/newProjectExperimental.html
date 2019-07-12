@@ -72,36 +72,13 @@
       
       /* Prevent Small Text Resize */
       * {
-        -webkit-text-size-adjust: 100%;
-        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100% !important;
+        -ms-text-size-adjust: 100% !important;
       }
       
-      /* CLIENT-SPECIFIC */
-      
-      /* Samsung Mail */
-      
-        /* Prevent Link Restyle */
-        #MessageViewBody a {
-        color: inherit !important;
-        text-decoration: none !important;
-        font-size: inherit !important;
-        font-family: inherit !important;
-        font-weight: inherit !important;
-        line-height: inherit !important;
-        }
-        
-      
-      /* Outlook.com / Hotmail */
-      
-        /* Display Email Full Width */
-        .ExternalClass {
-          width:100% !important;
-        }
-      
-        .ExternalClass * {
-          line-height: 100% !important;
-        }
-      
+      div[style*="margin"] {
+        margin: 0 !important;
+      }
       
       /* Outlook */
       
@@ -132,53 +109,6 @@
           -ms-interpolation-mode:bicubic !important;
         }
       
-      /* OSX / iOS */
-      
-        /* WebKit Text Size Adjustment */
-        body, 
-        table, 
-        td, 
-        a {
-          -webkit-text-size-adjust:100% !important;
-        }
-        
-        /* iOS Blue Links */
-        a[x-apple-data-detectors] {
-          color: inherit !important;
-          text-decoration: none !important;
-          font-size: inherit !important;
-          font-family: inherit !important;
-          font-weight: inherit !important;
-          line-height: inherit !important;
-        }
-        .appleFooter a {
-          color:#99999 !important;
-          text-decoration: none !important;
-        }
-        
-      /* Android */
-      
-        /* Center Fix */
-        div[style*="margin: 16px 0;"] {
-        margin: 0 !important;
-        }
-      
-      /* Yahoo */
-      
-        /* Prevent Link Restyle */
-        .yshortcuts a {
-          border-bottom: none !important;
-        } 
-      
-      /* Windows Mobile */
-        
-       /* Windows Mobile Text Size Adjustment */
-        body, 
-        table, 
-        td,
-        a {
-          -ms-text-size-adjust:100% !important;
-        }
       
       /* MEDIA QUERIES */ 
       
@@ -369,15 +299,19 @@
         display: block !important;
       }
       
-      /* Outlook Web App / Outlook.com */
+      /* CLIENT SPECIFIC */
+      
+      .moz-text-html td.arrowIcons {
+        display: none !important;
+      }
+      
       [class="x_carousel"] {
         display: none !important;
       }
       
-      /* Yahoo */
       @media screen yahoo {
         .arrowIcons {
-          display: none !important;
+          display:none!important;
         }
       }
     </style>
@@ -459,7 +393,7 @@
                                                                           <!-- Carousel Page-->
                                                                           <td>
                                                                             <div>
-                                                                                  <div class="page page-1" style="display: none; mso-hide: all;"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0;"><img src="http://placehold.jp/ff0000/ff0000/580x350.png" alt="title" width="580" border="0" style="display: block; border: none; width: 580px;"></a></div>
+                                                                                  <div class="page page-1"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0;"><img src="http://placehold.jp/ff0000/ff0000/580x350.png" alt="title" width="580" border="0" style="display: block; border: none; width: 580px;"></a></div>
                                                                                   <div class="page page-2" style="display: none; mso-hide: all;"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0;"><img src="http://placehold.jp/00ff00/00ff00/580x350.png" alt="title" width="580" border="0" style="display: block; border: none; width: 580px;"></a></div>
                                                                                   <div class="page page-3" style="display: none; mso-hide: all;"><a href="#" target="_blank" title="title" style="text-decoration: none; border: 0; outline: 0;"><img src="http://placehold.jp/0000ff/0000ff/580x350.png" alt="title" width="580" border="0" style="display: block; border: none; width: 580px;"></a></div>
                                                                             </div>
@@ -485,7 +419,7 @@
                                                     <!--[if mso]>
                                                     <div class="page page-1">
                                                       <a href="#">
-                                                        <img src="http://placehold.jp/ff0000/ff0000/580x350.png" />
+                                                        <img src="http://placehold.jp/ff0000/ff0000/580x350.png" width="580" border="0" style="display: block; border: none; width: 580px;" />
                                                       </a>
                                                     </div>
                                                     <![endif]--> <!--
