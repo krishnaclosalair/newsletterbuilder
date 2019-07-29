@@ -269,7 +269,7 @@ These options are available to all tags.
 |--|--|--|--|
 | align | center | Horizontal alignment | left, center, right
 | valign | top | Vertical alignment | top, middle, bottom
-| bulletproof | none | Adds support for border-radius on buttons on the Microsoft Outlook Email Client by using VML (Vector Markup Language). Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/  | ({bulletproof: 'true')}
+| bulletproof | false | Adds support for border-radius on buttons on the Microsoft Outlook Email Client by using VML (Vector Markup Language). Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/  | ({bulletproof: 'true')}
 | btnBorderRadius | 0 | Button border radius | Takes natural number as value. Only usable when bulletproof is true
 | btnHeight | 42(px) | Button height | Takes natural number as value
 | btnWidth | 200(px) | Button width | Takes natural number as value
