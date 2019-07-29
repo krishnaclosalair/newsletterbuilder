@@ -1,4 +1,4 @@
-extends templateExperimental.pug
+extends templateCarousel.pug
 
 block vars
 
@@ -9,7 +9,7 @@ block content
 
   +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '32', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
   
-    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
     
       +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
         
@@ -17,7 +17,7 @@ block content
         
   +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
   
-    +row({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
     
       +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
       
@@ -26,15 +26,15 @@ block content
           +carouselIndex({radioIndex: '2'})
           +carouselIndex({radioIndex: '3'})
           +carouselContent({width: '580'})
-            +carouselSwitch({radioIndex: '1', imgSrc: 'http://placehold.jp/ff0000/ff0000/50x35.png', imgTitle: 'title', width: '50'})
-            +carouselSwitch({radioIndex: '2', imgSrc: 'http://placehold.jp/00ff00/00ff00/50x35.png', imgTitle: 'title', width: '50'})
-            +carouselSwitch({radioIndex: '3', imgSrc: 'http://placehold.jp/0000ff/0000ff/50x35.png', imgTitle: 'title', width: '50'})
+            +carouselSwitch({radioIndex: '1', imgSrc: 'http://placehold.jp/ff0000/ff0000/50x35.png', imgAlt: 'alt', width: '50'})
+            +carouselSwitch({radioIndex: '2', imgSrc: 'http://placehold.jp/00ff00/00ff00/50x35.png', imgAlt: 'alt', width: '50'})
+            +carouselSwitch({radioIndex: '3', imgSrc: 'http://placehold.jp/0000ff/0000ff/50x35.png', imgAlt: 'alt', width: '50'})
             +carouselActual
               +carouselTogglePrev({radioCount: '3', toggleImgSrc: 'http://placehold.jp/000000/000000/16x16.png'})
               +carouselPageWrapper
-                +carouselPage({radioIndex: '1', firstPage: 'true', imgHref: '#', imgTitle: 'title', imgSrc: 'http://placehold.jp/ff0000/ff0000/580x350.png', width: '580'})
-                +carouselPage({radioIndex: '2', imgHref: '#', imgTitle: 'title', imgSrc: 'http://placehold.jp/00ff00/00ff00/580x350.png', width: '580'})
-                +carouselPage({radioIndex: '3', imgHref: '#', imgTitle: 'title', imgSrc: 'http://placehold.jp/0000ff/0000ff/580x350.png', width: '580'})
+                +carouselPage({radioIndex: '1', firstPage: 'true', imgHref: '#', imgAlt: 'alt', imgSrc: 'http://placehold.jp/ff0000/ff0000/580x350.png', width: '580'})
+                +carouselPage({radioIndex: '2', imgHref: '#', imgAlt: 'alt', imgSrc: 'http://placehold.jp/00ff00/00ff00/580x350.png', width: '580'})
+                +carouselPage({radioIndex: '3', imgHref: '#', imgAlt: 'alt', imgSrc: 'http://placehold.jp/0000ff/0000ff/580x350.png', width: '580'})
               +carouselToggleNext({radioCount: '3', toggleImgSrc: 'http://placehold.jp/000000/000000/16x16.png'})
               
         

@@ -11,6 +11,7 @@ mixin wrapper(opts)
     cellpadding='0',
     cellspacing='0',
     border='0',
+    role='presentation',
     style=(
       'width: ' + width + ( opts.width == 'full' ? '' : 'px' ) + '; ' + 
       'height: ' + ( opts.height ? opts.height + 'px' : 'auto' ) + ';'
@@ -76,6 +77,7 @@ mixin row(opts)
     cellpadding='0',
     cellspacing='0',
     border='0',
+    role='presentation',
     style=(
       'width: ' + ( opts.width ? opts.width : '600' ) + 'px;'
       )
@@ -114,6 +116,7 @@ mixin row(opts)
             cellpadding='0',
             cellspacing='0',
             border='0',
+            role='presentation',
             style=(
               'width: ' + (
                 ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
@@ -165,6 +168,7 @@ mixin subRow(opts)
         cellpadding='0',
         cellspacing='0',
         border='0',
+        role='presentation',
         style=(
           'width: ' + (
             ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
@@ -227,6 +231,7 @@ mixin column(opts)
     class=mobileWidth,
     class=opts.customClass,
     width=opts.width ? opts.width : '600',
+    height=opts.height,
     dir=opts.direction ? opts.direction : 'ltr',
     align=opts.align ? opts.align : 'center',
     valign=opts.valign ? opts.valign : 'top',
@@ -278,6 +283,7 @@ mixin column(opts)
           cellpadding='0',
           cellspacing='0',
           border='0',
+          role='presentation',
           style=(
             'width: ' + (
               ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
@@ -310,6 +316,7 @@ mixin column(opts)
         cellpadding='0',
         cellspacing='0',
         border='0',
+        role='presentation',
         style=(
           'width: ' + (
             ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
@@ -360,7 +367,7 @@ mixin img(opts)
               : opts.paddingLeft ? ( ( opts.width ? opts.width : '600' ) - opts.paddingLeft ) 
               : ( opts.width ? opts.width : '600' )
               ) / 3 ) * 2 ) ) + '.jpg',
-          alt=opts.imgTitle ? opts.imgTitle : 'alt',
+          alt=opts.imgAlt ? opts.imgAlt : 'alt',
           width=(
             ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
             : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
@@ -386,7 +393,6 @@ mixin img(opts)
         a(
           href=opts.imgHref ? opts.imgHref : '#',
           target='_blank',
-          title=opts.imgTitle ? opts.imgTitle : 'title',
           style=(
             'text-decoration: none; ' +
             'border: 0; ' + 
@@ -406,7 +412,7 @@ mixin img(opts)
               : opts.paddingLeft ? ( ( opts.width ? opts.width : '600' ) - opts.paddingLeft ) 
               : ( opts.width ? opts.width : '600' )
               ) / 3 ) * 2 ) ) + '.jpg',
-            alt=opts.imgTitle ? opts.imgTitle : 'alt',
+            alt=opts.imgAlt ? opts.imgAlt : 'alt',
             width=(
               ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
               : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
@@ -498,6 +504,7 @@ mixin btn(opts)
         bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0',
         cellpadding='0',
         cellspacing='0',
+        role='presentation',
         width=(
             opts.bulletproof == 'true' 
             ?
@@ -548,7 +555,7 @@ mixin btn(opts)
                     <![endif]--> <!--
                   a(
                     href=opts.btnHref ? opts.btnHref : '#',
-                    title="_blank",
+                    target="_blank",
                     style=(
                       'background-color: ' + ( opts.btnColor ? opts.btnColor : color.hlight ) + '; ' +
                       'border: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + '; ' +
@@ -605,7 +612,6 @@ mixin btn(opts)
                 a(
                   href=opts.btnHref ? opts.btnHref : '#',
                   target='_blank', 
-                  title=opts.btnTitle ? opts.btnTitle : 'title',
                   style=(
                     'text-decoration: none; ' +
                     'color:' + (opts.btnTxtColor ? opts.btnTxtColor : color.bg) + ';'
@@ -638,11 +644,11 @@ mixin vid(opts)
     width: ' + width + 'px;')
       .vid(style='display:none;')
         video(width=opts.vidWidth ? opts.vidWidth : width, controls='controls', poster=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', src=opts.vidSrc ? opts.vidSrc : 'https://bit.ly/2RtB5UV')
-          a(href=opts.vidHref ? opts.vidHref : '#', target='_blank', title=opts.vidTitle ? opts.vidTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
-            img(class=( opts.responsive == 'true' ) ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidTitle ? opts.vidTitle : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
+          a(href=opts.vidHref ? opts.vidHref : '#', target='_blank', style='text-decoration: none; border: 0; outline: 0;')
+            img(class=( opts.responsive == 'true' ) ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidAlt ? opts.vidAlt : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
       .vid-fallback
-        a(href=opts.vidHref ? opts.vidHref : '#', target='_blank', title=opts.vidTitle ? opts.vidTitle : 'title', style='text-decoration: none; border: 0; outline: 0;')
-          img(class=( opts.responsive == 'true' ) ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidTitle ? opts.vidTitle : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
+        a(href=opts.vidHref ? opts.vidHref : '#', target='_blank', style='text-decoration: none; border: 0; outline: 0;')
+          img(class=( opts.responsive == 'true' ) ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidAlt ? opts.vidAlt : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
       block
 
 mixin carousel(opts)
@@ -721,7 +727,6 @@ mixin carouselSwitch(opts)
   a.switch(
     class='switch-' + opts.radioIndex,
     href='#',
-    title='switch-' + opts.radioIndex,
     style=(
       'display: inline-block; ' +
       'overflow: hidden; ' +
@@ -735,7 +740,7 @@ mixin carouselSwitch(opts)
     )
       img(
         src=opts.imgSrc ? opts.imgSrc : 'http://placehold.jp/50x35.jpg',
-        alt=opts.imgTitle ? opts.imgTitle : 'switch-' + opts.radioIndex,
+        alt=opts.imgAlt ? opts.imgAlt : 'switch-' + opts.radioIndex,
         width=opts.width ? opts.width : '50',
         border='0',
         style=(
@@ -748,6 +753,7 @@ mixin carouselSwitch(opts)
 mixin carouselActual
 
   table.actual(
+    role='presentation',
     style=(
       'padding-bottom: 8px; ' +
       'caption-side: top; ' +
@@ -811,7 +817,6 @@ mixin carouselPage(opts)
     a(
       href=opts.imgHref ? opts.imgHref : '#',
       target='_blank',
-      title=opts.imgTitle ? opts.imgTitle : 'title',
       style=(
         'text-decoration: none; ' +
         'border: 0; ' + 
@@ -820,7 +825,7 @@ mixin carouselPage(opts)
     )
       img(
         src=opts.imgSrc ? opts.imgSrc : 'http://placehold.jp/550x350.png',
-        alt=opts.imgTitle ? opts.imgTitle : 'switch-' + opts.radioIndex,
+        alt=opts.imgAlt ? opts.imgAlt : 'switch-' + opts.radioIndex,
         width=opts.width ? opts.width : '550',
         border='0',
         style=(
