@@ -183,6 +183,7 @@ These options are available to all tags.
 |--|--|--|--|
 | width  | 600(px) | Container Width | Takes natural numbers as value. Set to 'full' for 100%.
 | bgSrc | none | Background image source | Takes in URL as value
+| bgSize | cover | Background size | Choose either 'cover' or 'contain'
 | bulletproof | false | Adds support for background images on the Microsoft Outlook Email Client by using VML's (Vector Markup Language) v:fill tag. Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/ | ({bulletproof: 'true')}
 
     +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
@@ -205,6 +206,7 @@ These options are available to all tags.
 |--|--|--|--|
 | mobileWidth | none (scaling) | Length of column on mobile | 100%, 75%, 66%, 50%, 33%, 25%, 10%, hide (Hides on mobile)
 | bgSrc | none | Background image source | Takes in URL as value
+| bgSize | cover | Background size | Choose either 'cover' or 'contain'
 | bulletproof | false | Adds support for background images on the Microsoft Outlook Email Client by using VML's (Vector Markup Language) v:fill tag. Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/ | ({bulletproof: 'true')}
 | align | center | Horizontal alignment | left, center, right
 | valign | top | Vertical alignment | top, middle, bottom
@@ -240,7 +242,7 @@ These options are available to all tags.
 | imgHref | # | Anchor path | Takes url as value
 | imgAlt | alt | Image alt text | takes text as value
 | imgSrc | placeholder | Image source | Takes url as value
-| responsive | none | Images take the width of its container and sets height to adjust accordingly | ({responsive: 'true')}
+| responsive | false | Images take the width of its container and sets height to adjust accordingly | ({responsive: 'true')}
 
           +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgAlt: 'alt', responsive: 'true', imgSrc: ''})
 
@@ -270,6 +272,7 @@ These options are available to all tags.
 | align | center | Horizontal alignment | left, center, right
 | valign | top | Vertical alignment | top, middle, bottom
 | bulletproof | false | Adds support for border-radius on buttons on the Microsoft Outlook Email Client by using VML (Vector Markup Language). Source: Stig Morten Myre of Campaign Monitor - https://backgrounds.cm/  | ({bulletproof: 'true')}
+| responsive | false | Buttosn take the width of its container (does not work with bulletproof buttons) | ({responsive: 'true')}
 | btnBorderRadius | 0 | Button border radius | Takes natural number as value. Only usable when bulletproof is true
 | btnHeight | 42(px) | Button height | Takes natural number as value
 | btnWidth | 200(px) | Button width | Takes natural number as value

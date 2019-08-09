@@ -44,7 +44,7 @@ mixin wrapper(opts)
               'background-image: url(' + ( opts.bgSrc ? opts.bgSrc: 'http://placehold.jp/' + ( opts.width == 'full' ? '600' : width ) + 'x' + ( Math.round( ( opts.width == 'full' ? '600' : width ) / 3 ) * 2 ) + '.jpg' ) + '); ' + 
               'background-position: top center; ' + 
               'background-repeat: no-repeat; ' + 
-              'background-size: cover;' 
+              'background-size: ' + ( opts.bgSize == 'cover' ? 'cover' : opts.bgSize == 'contain' ? 'contain' : 'cover' ) + ';' 
             : '') 
             )
           )
@@ -255,7 +255,7 @@ mixin column(opts)
         'background-image: url(' + ( opts.bgSrc ? opts.bgSrc: 'http://placehold.jp/' + width + 'x' + ( Math.round( width / 3 ) * 2 ) + '.jpg' ) + '); ' + 
         'background-position: center center; ' + 
         'background-repeat: no-repeat; ' + 
-        'background-size: contain;' 
+        'background-size: ' + ( opts.bgSize == 'cover' ? 'cover' : opts.bgSize == 'contain' ? 'contain' : 'cover' ) + ';'
       : '')
     )
   )
@@ -498,10 +498,12 @@ mixin btn(opts)
         'width: ' + ( opts.width ? opts.width : '600' ) + 'px;' ) 
       )
       
-      table.w100pc(
+      table(
+        class=( ( opts.responsive == 'false' && opts.bulletproof == 'true') ? 'w100pc' : opts.responsive == 'true' ? 'w100pc' : opts.responsive == 'false' ? undefined  : undefined)
         data-component='btn',
         align=opts.align ? opts.align : 'center',
-        bgcolor=opts.bgColor ? opts.bgColor : color.bg, border='0',
+        bgcolor=opts.bgColor ? opts.bgColor : color.bg, 
+        border='0',
         cellpadding='0',
         cellspacing='0',
         role='presentation',
