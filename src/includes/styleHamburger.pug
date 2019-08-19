@@ -1,0 +1,42 @@
+style.
+  
+  noinput.checkbox {
+    display: block !important;
+    visibility: visible !important;
+  }
+
+  @media only screen and (max-width: 600px) {
+    /* Hides Menu Links */
+    .checkbox[type="checkbox"] ~ .links {
+      display: none !important;
+    }
+
+    /* As hamburger is clicked, displays links // Displays hamburger */
+    .checkbox[type="checkbox"]:checked ~ .links,
+    .checkbox[type="checkbox"] ~ .menu {
+      display: block !important;
+    }
+
+    /* Makes links stack up on top of eachother */
+    .checkbox[type="checkbox"] ~ .links > a {
+      display: block !important;
+    }
+
+    /* As hamburger is clicked, hides hamburger and displays hamburger exit */
+    .checkbox[type="checkbox"]:checked ~ .menu .menu-close {
+      display: block !important;
+    }
+
+    .checkbox[type="checkbox"]:checked ~ .menu .menu-open {
+      display: none !important;
+    }
+
+    /* Disables hamburger on Thunderbird */
+    .moz-text-html .checkbox[type="checkbox"] ~ .menu {
+      display: none !important;
+    }
+
+    .moz-text-html .checkbox[type="checkbox"] ~ .links {
+      display: block !important;
+    }
+  }

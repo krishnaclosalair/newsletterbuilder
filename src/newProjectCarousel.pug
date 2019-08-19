@@ -1,9 +1,71 @@
-extends templateCarousel.pug
+extends template.pug
 
 block vars
 
-  - var color = {bg: '#FFFFFF', txt: '#000000', hlight: '#000000'};
-  - var font = {default: 'Helvetica, sans-serif'}
+  //- Defaults
+  - 
+    var font = {
+      custom: {
+        name: 'Open Sans',
+        weights: [400, 700]
+      },
+      default: 'Helvetica, sans-serif',
+      style: {
+        heading: {
+          primary: {
+            family: 'Open Sans, Helvetica, sans-serif',
+            size: '28',
+            lineHeight: '32',
+            fontWeight: 'bold',
+            color: '#000000'
+          },
+          secondary: {
+            family: 'Open Sans, Helvetica, sans-serif',
+            size: '24',
+            lineHeight: '28',
+            fontWeight: 'bold',
+            color: '#000000'
+          },
+          tertiary: {
+            family: 'Open Sans, Helvetica, sans-serif',
+            size: '20',
+            lineHeight: '24',
+            fontWeight: 'bold',
+            color: '#000000'
+          }
+        },
+        body: {
+          family: 'Open Sans, Helvetica, sans-serif',
+          size: '16',
+          lineHeight: '20',
+          fontWeight: 'normal',
+          color: '#000000'
+        },
+        small: {
+          family: 'Open Sans, Helvetica, sans-serif',
+          size: '11',
+          lineHeight: '15',
+          fontWeight: 'normal',
+          color: '#000000'
+        }
+      }
+    };
+
+block font
+
+  include includes/customFont
+    
+block customCSS
+
+  include includes/styleCarousel
+
+  // Custom CSS
+  style.
+    @media only screen and (max-width: 600px) {
+      .customClass {
+        /* Make sure to add !important to overwrite inline CSS */
+      }
+    }
 
 block content
 

@@ -1,0 +1,11 @@
+- if (font.custom !== undefined)
+    - var fontName = font.custom.name.split(' ').join('+');
+    - var fontWeights = font.custom.weights.join(',');
+    link(href='https://fonts.googleapis.com/css?family=' + fontName + ':' + fontWeights, rel='stylesheet')/
+
+    // -->
+        <!--[if mso]>
+        <style>
+        body, table, td, th { font-family: #{font.default != '' ? font.default : 'Helvetica, sans-serif'} !important; }
+        </style>
+        <![endif]--> <!--
