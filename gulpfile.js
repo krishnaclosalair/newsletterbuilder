@@ -6,7 +6,7 @@ var pug = require('gulp-pug');
 var puginput = './src/*.pug';
 var pugoutput = './dist';
 
-gulp.task('pug', function() {
+gulp.task('pug', (done) => {
     // Find all .pug files from ./src/
     gulp.src(puginput)
         // Prettifies the html
@@ -15,12 +15,13 @@ gulp.task('pug', function() {
         }))
         // Write resulting HTML in ./dist/
         .pipe(gulp.dest(pugoutput));
+  done();
 });
 
 /* ##### ##### */
 
-gulp.task('watch', function() {
-    gulp.watch(puginput, ['pug']);
+gulp.task('watch', (done) => {
+    gulp.watch(puginput, gulp.series('pug'));
 });
 
-gulp.task('default', ['pug', 'watch']);
+gulp.task('default', gulp.series('pug', 'watch'));
