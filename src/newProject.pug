@@ -2,7 +2,7 @@ extends template.pug
 
 block vars
 
-  //- Defaults
+  //- General Settings
   - 
     var font = {
       custom: {
@@ -10,41 +10,52 @@ block vars
         weights: [400, 700]
       },
       default: 'Helvetica, sans-serif',
+      accessibility: 'true',
       style: {
         heading: {
           primary: {
             family: 'Open Sans, Helvetica, sans-serif',
             size: '28',
+            accessibilitySize: '30',
             lineHeight: '32',
+            accessibilityLineHeight: '34',
             fontWeight: 'bold',
             color: '#000000'
           },
           secondary: {
             family: 'Open Sans, Helvetica, sans-serif',
             size: '24',
+            accessibilitySize: '26',
             lineHeight: '28',
+            accessibilityLineHeight: '30',
             fontWeight: 'bold',
             color: '#000000'
           },
           tertiary: {
             family: 'Open Sans, Helvetica, sans-serif',
             size: '20',
+            accessibilitySize: '22',
             lineHeight: '24',
+            accessibilityLineHeight: '26',
             fontWeight: 'bold',
             color: '#000000'
           }
         },
         body: {
           family: 'Open Sans, Helvetica, sans-serif',
-          size: '16',
-          lineHeight: '20',
+          size: '15',
+          accessibilitySize: '17',
+          lineHeight: '19',
+          accessibilityLineHeight: '21',
           fontWeight: 'normal',
           color: '#000000'
         },
         small: {
           family: 'Open Sans, Helvetica, sans-serif',
           size: '11',
+          accessibilitySize: '13',
           lineHeight: '15',
+          accessibilityLineHeight: '17',
           fontWeight: 'normal',
           color: '#000000'
         }
@@ -54,11 +65,16 @@ block vars
 block font
 
   include includes/customFont
+
+block accessibility
+
+  include includes/styleAccessibility
     
 block customCSS
 
   // Custom CSS
   style.
+    /* Media Queries */
     @media only screen and (max-width: 600px) {
       .customClass {
         /* Make sure to add !important to overwrite inline CSS */
@@ -67,16 +83,41 @@ block customCSS
 
 block content
  
+  - if (font.accessibility == 'true')
+    +accessibilityInput
+
   //- START HERE
 
-  // ########## PREVIEW SNIPPET ##########
+  // ########## ACCESSIBILITY ##########
   +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '32', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      // Left Spacer
+      +column({width: '255', mobileWidth: '35%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '40', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +accessibilityLabel({for: 'normal', width: '40', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', content: '<img class="w100pc hauto" src="https://www.uploadlibrary.com/creativepure360/InteractiveEmails/Examples/Accessibility/small-text.png" width="40" border="0" style="display: block; border: none; width: 40px;" />'})
+
+      // Divider
+      +column({width: '10', mobileWidth: '5%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      +column({width: '40', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +accessibilityLabel({for: 'large', width: '40', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', content: '<img class="w100pc hauto" src="https://www.uploadlibrary.com/creativepure360/InteractiveEmails/Examples/Accessibility/large-text.png" width="40" border="0" style="display: block; border: none; width: 50px;" />'})
+
+      // Left Spacer
+      +column({width: '255', mobileWidth: '35%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+  // ########## PREVIEW SNIPPET ##########
+  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
   
     +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
     
       +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
 
-        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '11', fontWeight: 'normal', lineHeight: '16', fontColor: '#000000', txt: 'Preview Snippet | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">View in browser</a>'})
+        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'small', txt: 'Preview Snippet | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">View in browser</a>'})
 
   // ########## HEADER ##########
   +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
@@ -107,10 +148,10 @@ block content
         +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgAlt: 'alt', responsive: 'true', imgSrc: ''})
         
         // Heading
-        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '28', fontWeight: 'bold', lineHeight: '28', fontColor: '#000000', txt: 'Heading'})
+        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'primary', txt: 'Heading'})
         
         // Body Text
-        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
+        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
         
         // Button
         +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', responsive: 'false', btnBorderRadius: '20', btnHeight: '42', btnWidth: '200', btnColor: '#000000', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
@@ -127,10 +168,10 @@ block content
         +img({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgAlt: 'alt', responsive: 'true', imgSrc: ''})
         
         // Heading
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '28', fontWeight: 'bold', lineHeight: '28', fontColor: '#000000', txt: 'Heading'})
+        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'primary', txt: 'Heading'})
         
         // Body Text
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
+        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
         
         // Button
         +btn({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', responsive: 'true', btnBorderRadius: '20', btnHeight: '42', btnWidth: '200', btnColor: '#000000', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
@@ -145,10 +186,10 @@ block content
         +img({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgAlt: 'alt', responsive: 'true', imgSrc: ''})
         
         // Heading
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '28', fontWeight: 'bold', lineHeight: '28', fontColor: '#000000', txt: 'Heading'})
+        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'primary', txt: 'Heading'})
         
         // Body Text
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '21', fontColor: '#000000', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
+        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
         
         // Button
         +btn({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', responsive: 'true', btnBorderRadius: '20', btnHeight: '42', btnWidth: '200', btnColor: '#000000', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
@@ -198,4 +239,4 @@ block content
 
       +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
 
-        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Open Sans, Helvetica, sans-serif', fontSize: '11', fontWeight: 'normal', lineHeight: '16', fontColor: '#000000', txt: '<a href="#" target="_blank" style="text-decoration: none; color: #000000;">About Us</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Contact Us</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Privacy Policy</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Unsubscribe</a>'})
+        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'small', txt: '<a href="#" target="_blank" style="text-decoration: none; color: #000000;">About Us</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Contact Us</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Privacy Policy</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Unsubscribe</a>'})

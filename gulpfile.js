@@ -1,27 +1,20 @@
-var gulp = require('gulp');
+const
+    gulp = require('gulp'),
+    pug = require('gulp-pug');
 
-/* ##### PUG ##### */
-
-var pug = require('gulp-pug');
-var puginput = './src/*.pug';
-var pugoutput = './dist';
-
-gulp.task('pug', (done) => {
-    // Find all .pug files from ./src/
-    gulp.src(puginput)
-        // Prettifies the html
+gulp.task('pug', (buildHTML) => {
+    gulp.src('./src/*.pug')
         .pipe(pug({
             pretty: true
         }))
-        // Write resulting HTML in ./dist/
-        .pipe(gulp.dest(pugoutput));
-  done();
+        .pipe(gulp.dest('./dist'));
+    console.log('Updating HTML...');
+    buildHTML();
 });
 
-/* ##### ##### */
-
-gulp.task('watch', (done) => {
-    gulp.watch(puginput, gulp.series('pug'));
+gulp.task('watch', (watch) => {
+    gulp.watch('./src/*.pug', gulp.series('pug'));
+    watch();
 });
 
 gulp.task('default', gulp.series('pug', 'watch'));

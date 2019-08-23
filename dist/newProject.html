@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta content="date=no, address=no, telephone=no, email=no" name="format-detection"/>
     <meta name="x-apple-disable-message-reformatting"/>
-    <!-- -->
+    <!--  -->
     <!--[if gte mso 9]>
     <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
     <![endif]--> <!--
     
     -->
-    <!-- -->
+    <!--  -->
     <!--[if mso]>
     <xml>
     <o:OfficeDocumentSettings>
@@ -24,7 +24,7 @@
     
     -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
-    <!-- -->
+    <!--  -->
     <!--[if mso]>
     <style>
     body, table, td, th { font-family: Helvetica, sans-serif !important; }
@@ -234,8 +234,46 @@
         }
       }
     </style>
+    <style>
+      /* Accessibility */
+      .large-layout:checked ~ .backgroundTable .accessibility-primary {
+        font-size: 30px !important; 
+        line-height: 34px !important;
+      }
+      
+      .large-layout:checked ~ .backgroundTable .accessibility-secondary {
+        font-size: 26px !important; 
+        line-height: 30px !important;
+      }
+      
+      .large-layout:checked ~ .backgroundTable .accessibility-tertiary {
+        font-size: 22px !important; 
+        line-height: 26px !important;
+      }
+      
+      .large-layout:checked ~ .backgroundTable .accessibility-body {
+        font-size: 17px !important; 
+        line-height: 21px !important;
+      }
+      
+      .large-layout:checked ~ .backgroundTable .accessibility-small {
+        font-size: 13px !important; 
+        line-height: 17px !important;
+      }
+      
+      /* CLIENT SPECIFIC */
+      
+      .moz-text-html td.accessibility {
+        display: none !important;
+      }
+      
+      [class="x_accessibility"] {
+        display: none !important;
+      }
+    </style>
     <!-- Custom CSS-->
     <style>
+      /* Media Queries */
       @media only screen and (max-width: 600px) {
         .customClass {
           /* Make sure to add !important to overwrite inline CSS */
@@ -245,7 +283,15 @@
     </style>
   </head>
   <body>
-    <!-- ########## PREVIEW SNIPPET ##########-->
+        <!--  --><!--[if !mso]> <!--
+        -->
+        <input class="normal-layout" data-component="accessibilityInput" id="normal-layout" type="radio" name="layout" style="position:absolute; display:none !important; visibility:hidden !important;mso-hide: all;" checked="checked">
+        <input class="large-layout" data-component="accessibilityInput" id="large-layout" type="radio" name="layout" style="position:absolute; display:none !important; visibility:hidden !important;mso-hide: all;">
+        <!--  -->
+        <![endif]--> <!--
+        
+        -->
+    <!-- ########## ACCESSIBILITY ##########-->
         <table class="w100pc backgroundTable" data-component="wrapper" width="600" height="auto" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 600px; height: auto;">
           <tbody>
             <tr>
@@ -257,11 +303,85 @@
                             <table class="w100pc" data-component="row" width="600" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 600px;">
                               <tbody>
                                 <tr>
+                                  <!-- Left Spacer-->
+                                      <th data-component="column" width="255" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 255px;">
+                                        <table class="w100pc" data-component="column" width="255" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 255px;">
+                                          <tbody>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                      <th class="w10pc" data-component="column" width="40" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 40px;">
+                                        <table class="w100pc" data-component="column" width="40" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 40px;">
+                                          <tbody>
+                                                <tr>
+                                                  <td class="w100pc accessibility" data-component="accessibilityLabel" width="40" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 40px; mso-hide: all;">
+                                                    <!--  --><!--[if !mso]> <!--
+                                                    -->
+                                                    <label for="normal-layout" style="mso-hide: all;"><img class="w100pc hauto" src="https://www.uploadlibrary.com/creativepure360/InteractiveEmails/Examples/Accessibility/small-text.png" width="40" border="0" style="display: block; border: none; width: 40px;" /></label>
+                                                    <!--  --><![endif]--> <!--
+                                                    -->
+                                                  </td>
+                                                </tr>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                  <!-- Divider-->
+                                      <th class="w5pc" data-component="column" width="10" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 10px;">
+                                        <table class="w100pc" data-component="column" width="10" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 10px;">
+                                          <tbody>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                      <th class="w10pc" data-component="column" width="40" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 40px;">
+                                        <table class="w100pc" data-component="column" width="40" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 40px;">
+                                          <tbody>
+                                                <tr>
+                                                  <td class="w100pc accessibility" data-component="accessibilityLabel" width="40" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 40px; mso-hide: all;">
+                                                    <!--  --><!--[if !mso]> <!--
+                                                    -->
+                                                    <label for="large-layout" style="mso-hide: all;"><img class="w100pc hauto" src="https://www.uploadlibrary.com/creativepure360/InteractiveEmails/Examples/Accessibility/large-text.png" width="40" border="0" style="display: block; border: none; width: 50px;" /></label>
+                                                    <!--  --><![endif]--> <!--
+                                                    -->
+                                                  </td>
+                                                </tr>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                  <!-- Left Spacer-->
+                                      <th data-component="column" width="255" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 255px;">
+                                        <table class="w100pc" data-component="column" width="255" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 255px;">
+                                          <tbody>
+                                          </tbody>
+                                        </table>
+                                      </th>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+    <!-- ########## PREVIEW SNIPPET ##########-->
+        <table class="w100pc backgroundTable" data-component="wrapper" width="600" height="auto" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 600px; height: auto;">
+          <tbody>
+            <tr>
+              <td class="w100pc" data-component="wrapper" width="600" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 32px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px; ">
+                    <table class="w100pc" data-component="row" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 600px;">
+                      <tbody>
+                        <tr>
+                          <td class="w100pc pH" data-component="row" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
+                            <table class="w100pc" data-component="row" width="600" dir="ltr" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 600px;">
+                              <tbody>
+                                <tr>
                                       <th class="w100pc full" data-component="column" width="600" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" background="none" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; width: 600px;">
                                         <table class="w100pc" data-component="column" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 600px;">
                                           <tbody>
                                                 <tr>
-                                                  <td class="w100pc" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 11px; font-weight: normal; line-height: 16px; color: #000000; width: 600px;">Preview Snippet | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">View in browser</a>
+                                                  <td class="w100pc accessibility-small" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 11px; font-weight: normal; line-height: 15px; color: #000000; width: 600px;">Preview Snippet | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">View in browser</a>
                                                   </td>
                                                 </tr>
                                           </tbody>
@@ -350,12 +470,12 @@
                                                 </tr>
                                             <!-- Heading-->
                                                 <tr>
-                                                  <td class="w100pc" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 28px; color: #000000; width: 600px;">Heading
+                                                  <td class="w100pc accessibility-primary" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 32px; color: #000000; width: 600px;">Heading
                                                   </td>
                                                 </tr>
                                             <!-- Body Text-->
                                                 <tr>
-                                                  <td class="w100pc" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 21px; color: #000000; width: 600px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
+                                                  <td class="w100pc accessibility-body" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 15px; font-weight: normal; line-height: 19px; color: #000000; width: 600px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
                                                   </td>
                                                 </tr>
                                             <!-- Button-->
@@ -366,12 +486,13 @@
                                                         <tr>
                                                           <td data-component="btn" align="center">
                                                             <div>
-                                                              <!-- -->
+                                                              <!--  
+                                                              -->
                                                               <!--[if mso]>
-                                                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:42px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#000000">
-                                                                  <w:anchorlock/>
-                                                                  <center style="color:#FFFFFF; font-family:Open Sans, Helvetica, sans-serif; font-size:14px; font-weight:normal;">Call-to-action</center>
-                                                                </v:roundrect>
+                                                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:42px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#000000">
+                                                                <w:anchorlock/>
+                                                                <center style="color:#FFFFFF; font-family:Open Sans, Helvetica, sans-serif; font-size:14px; font-weight:normal;">Call-to-action</center>
+                                                              </v:roundrect>
                                                               <![endif]--> <!--
                                                               --><a href="#" target="_blank" style="background-color: #000000; border: 0; border-radius:20px; color: #FFFFFF; display:inline-block; font-family: Open Sans, Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 42px; text-align:center; text-decoration:none; width: 200px; -webkit-text-size-adjust:none; mso-hide:all;"><span style="color: #FFFFFF; font-family: Open Sans, Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 42px;">Call-to-action</span></a>
                                                             </div>
@@ -418,12 +539,12 @@
                                                 </tr>
                                             <!-- Heading-->
                                                 <tr>
-                                                  <td class="w100pc" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 28px; color: #000000; width: 284px;">Heading
+                                                  <td class="w100pc accessibility-primary" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 32px; color: #000000; width: 284px;">Heading
                                                   </td>
                                                 </tr>
                                             <!-- Body Text-->
                                                 <tr>
-                                                  <td class="w100pc" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 21px; color: #000000; width: 284px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
+                                                  <td class="w100pc accessibility-body" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 15px; font-weight: normal; line-height: 19px; color: #000000; width: 284px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
                                                   </td>
                                                 </tr>
                                             <!-- Button-->
@@ -434,12 +555,13 @@
                                                         <tr>
                                                           <td data-component="btn" align="center">
                                                             <div>
-                                                              <!-- -->
+                                                              <!--  
+                                                              -->
                                                               <!--[if mso]>
-                                                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:42px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#000000">
-                                                                  <w:anchorlock/>
-                                                                  <center style="color:#FFFFFF; font-family:Open Sans, Helvetica, sans-serif; font-size:14px; font-weight:normal;">Call-to-action</center>
-                                                                </v:roundrect>
+                                                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:42px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#000000">
+                                                                <w:anchorlock/>
+                                                                <center style="color:#FFFFFF; font-family:Open Sans, Helvetica, sans-serif; font-size:14px; font-weight:normal;">Call-to-action</center>
+                                                              </v:roundrect>
                                                               <![endif]--> <!--
                                                               --><a href="#" target="_blank" style="background-color: #000000; border: 0; border-radius:20px; color: #FFFFFF; display:inline-block; font-family: Open Sans, Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 42px; text-align:center; text-decoration:none; width: 200px; -webkit-text-size-adjust:none; mso-hide:all;"><span style="color: #FFFFFF; font-family: Open Sans, Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 42px;">Call-to-action</span></a>
                                                             </div>
@@ -470,12 +592,12 @@
                                                 </tr>
                                             <!-- Heading-->
                                                 <tr>
-                                                  <td class="w100pc" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 28px; color: #000000; width: 284px;">Heading
+                                                  <td class="w100pc accessibility-primary" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 28px; font-weight: bold; line-height: 32px; color: #000000; width: 284px;">Heading
                                                   </td>
                                                 </tr>
                                             <!-- Body Text-->
                                                 <tr>
-                                                  <td class="w100pc" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 21px; color: #000000; width: 284px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
+                                                  <td class="w100pc accessibility-body" data-component="txt" width="284" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 16px; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 15px; font-weight: normal; line-height: 19px; color: #000000; width: 284px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.
                                                   </td>
                                                 </tr>
                                             <!-- Button-->
@@ -486,12 +608,13 @@
                                                         <tr>
                                                           <td data-component="btn" align="center">
                                                             <div>
-                                                              <!-- -->
+                                                              <!--  
+                                                              -->
                                                               <!--[if mso]>
-                                                                <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:42px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#000000">
-                                                                  <w:anchorlock/>
-                                                                  <center style="color:#FFFFFF; font-family:Open Sans, Helvetica, sans-serif; font-size:14px; font-weight:normal;">Call-to-action</center>
-                                                                </v:roundrect>
+                                                              <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" href="#" style="height:42px;v-text-anchor:middle;width:200px;" arcsize="50%" stroke="f" fillcolor="#000000">
+                                                                <w:anchorlock/>
+                                                                <center style="color:#FFFFFF; font-family:Open Sans, Helvetica, sans-serif; font-size:14px; font-weight:normal;">Call-to-action</center>
+                                                              </v:roundrect>
                                                               <![endif]--> <!--
                                                               --><a href="#" target="_blank" style="background-color: #000000; border: 0; border-radius:20px; color: #FFFFFF; display:inline-block; font-family: Open Sans, Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 42px; text-align:center; text-decoration:none; width: 200px; -webkit-text-size-adjust:none; mso-hide:all;"><span style="color: #FFFFFF; font-family: Open Sans, Helvetica, sans-serif; font-size: 14px; font-weight: normal; line-height: 42px;">Call-to-action</span></a>
                                                             </div>
@@ -631,7 +754,7 @@
                                         <table class="w100pc" data-component="column" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" role="presentation" style="width: 600px;">
                                           <tbody>
                                                 <tr>
-                                                  <td class="w100pc" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 11px; font-weight: normal; line-height: 16px; color: #000000; width: 600px;"><a href="#" target="_blank" style="text-decoration: none; color: #000000;">About Us</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Contact Us</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Privacy Policy</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Unsubscribe</a>
+                                                  <td class="w100pc accessibility-small" data-component="txt" width="600" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top: 0; padding-right: 0; padding-bottom: 0; padding-left: 0; border-top: 0; border-right: 0; border-bottom: 0; border-left: 0; font-family: Open Sans, Helvetica, sans-serif; font-size: 11px; font-weight: normal; line-height: 15px; color: #000000; width: 600px;"><a href="#" target="_blank" style="text-decoration: none; color: #000000;">About Us</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Contact Us</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Privacy Policy</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Unsubscribe</a>
                                                   </td>
                                                 </tr>
                                           </tbody>
