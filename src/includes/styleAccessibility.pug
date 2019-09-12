@@ -1,37 +1,36 @@
-- if (font.accessibility == 'true')
-  style.
-    /* Accessibility */
-    .large-layout:checked ~ .backgroundTable .accessibility-primary {
-      font-size: #{font.style.heading.primary.accessibilitySize}px !important; 
-      line-height: #{font.style.heading.primary.accessibilityLineHeight}px !important;
-    }
-    
-    .large-layout:checked ~ .backgroundTable .accessibility-secondary {
-      font-size: #{font.style.heading.secondary.accessibilitySize}px !important; 
-      line-height: #{font.style.heading.secondary.accessibilityLineHeight}px !important;
-    }
-    
-    .large-layout:checked ~ .backgroundTable .accessibility-tertiary {
-      font-size: #{font.style.heading.tertiary.accessibilitySize}px !important; 
-      line-height: #{font.style.heading.tertiary.accessibilityLineHeight}px !important;
-    }
+style.
+  /* Accessibility */
+  .large-layout:checked ~ .backgroundTable .accessibility-primary {
+    font-size: #{font.style.heading.primary.accessibilitySize}px !important; 
+    line-height: #{font.style.heading.primary.accessibilityLineHeight}px !important;
+  }
+  
+  .large-layout:checked ~ .backgroundTable .accessibility-secondary {
+    font-size: #{font.style.heading.secondary.accessibilitySize}px !important; 
+    line-height: #{font.style.heading.secondary.accessibilityLineHeight}px !important;
+  }
+  
+  .large-layout:checked ~ .backgroundTable .accessibility-tertiary {
+    font-size: #{font.style.heading.tertiary.accessibilitySize}px !important; 
+    line-height: #{font.style.heading.tertiary.accessibilityLineHeight}px !important;
+  }
 
-    .large-layout:checked ~ .backgroundTable .accessibility-body {
-      font-size: #{font.style.body.accessibilitySize}px !important; 
-      line-height: #{font.style.body.accessibilityLineHeight}px !important;
-    }
-    
-    .large-layout:checked ~ .backgroundTable .accessibility-small {
-      font-size: #{font.style.small.accessibilitySize}px !important; 
-      line-height: #{font.style.small.accessibilityLineHeight}px !important;
-    }
+  .large-layout:checked ~ .backgroundTable .accessibility-body {
+    font-size: #{font.style.body.accessibilitySize}px !important; 
+    line-height: #{font.style.body.accessibilityLineHeight}px !important;
+  }
+  
+  .large-layout:checked ~ .backgroundTable .accessibility-small {
+    font-size: #{font.style.small.accessibilitySize}px !important; 
+    line-height: #{font.style.small.accessibilityLineHeight}px !important;
+  }
 
-    /* CLIENT SPECIFIC */
+  /* CLIENT SPECIFIC */
 
-    .moz-text-html td.accessibility {
-      display: none !important;
-    }
+  .moz-text-html td.accessibility {
+    display: none !important;
+  }
 
-    [class="x_accessibility"] {
-      display: none !important;
-    }
+  [class="x_accessibility"] {
+    display: none !important;
+  }

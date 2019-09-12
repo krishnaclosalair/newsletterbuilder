@@ -2,6 +2,17 @@ extends template.pug
 
 block vars
 
+  //- ############################## OPTIONS ##############################
+
+  //- Addons
+  - 
+    var addons = {
+      accessibility: 'true',
+      carousel: 'true',
+      hamburger: 'true',
+      video: 'false'
+    };
+
   //- General Settings
   - 
     var font = {
@@ -10,7 +21,6 @@ block vars
         weights: [400, 700]
       },
       default: 'Helvetica, sans-serif',
-      accessibility: 'true',
       style: {
         heading: {
           primary: {
@@ -66,9 +76,11 @@ block font
 
   include includes/customFont
 
-block accessibility
+block addons
 
-  include includes/styleAccessibility
+  include includes/addons
+
+//- ############################## CUSTOM CSS ##############################
     
 block customCSS
 
@@ -82,13 +94,14 @@ block customCSS
     }
 
 block content
- 
-  - if (font.accessibility == 'true')
-    +accessibilityInput
+  
+  //- ############################## START HERE ##############################
 
-  //- START HERE
+
 
   // ########## ACCESSIBILITY ##########
+  +accessibilityInput
+
   +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '32', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
   
     +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
@@ -98,17 +111,19 @@ block content
 
       +column({width: '40', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
 
-        +accessibilityLabel({for: 'normal', width: '40', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', content: '<img class="w100pc hauto" src="https://www.uploadlibrary.com/creativepure360/InteractiveEmails/Examples/Accessibility/small-text.png" width="40" border="0" style="display: block; border: none; width: 40px;" />'})
+        +accessibilityLabel({for: 'normal', width: '40', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', content: '<img class="w100pc hauto" src="Resources/small-text.png" width="40" border="0" style="display: block; border: none; width: 40px;" />'})
 
       // Divider
       +column({width: '10', mobileWidth: '5%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
 
       +column({width: '40', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
 
-        +accessibilityLabel({for: 'large', width: '40', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', content: '<img class="w100pc hauto" src="https://www.uploadlibrary.com/creativepure360/InteractiveEmails/Examples/Accessibility/large-text.png" width="40" border="0" style="display: block; border: none; width: 50px;" />'})
+        +accessibilityLabel({for: 'large', width: '40', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', content: '<img class="w100pc hauto" src="Resources/large-text.png" width="40" border="0" style="display: block; border: none; width: 50px;" />'})
 
       // Left Spacer
       +column({width: '255', mobileWidth: '35%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+
 
   // ########## PREVIEW SNIPPET ##########
   +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
@@ -119,8 +134,10 @@ block content
 
         +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'small', txt: 'Preview Snippet | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">View in browser</a>'})
 
+
+
   // ########## HEADER ##########
-  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
   
     // Logo
     +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
@@ -136,6 +153,20 @@ block content
       // Right Spacer
       +column({width: '225', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
   
+
+  // ########## HAMBURGER ##########
+  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '32', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        +hamburger({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '16', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', hamburgerColor: '#000000'})
+          +hamburgerLink({width: '284', bgColor: '#FFFFFF', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '16', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '14', fontColor: '#000000', txt: 'Menu 1'})
+          +hamburgerLink({width: '284', bgColor: '#FFFFFF', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '16', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '14', fontColor: '#000000', txt: 'Menu 2'})
+          +hamburgerLink({width: '284', bgColor: '#FFFFFF', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '16', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '14', fontColor: '#000000', txt: 'Menu 3'})
+
+
   // ########## 1 COLUMN BLOCK ##########
   +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
   
@@ -156,6 +187,8 @@ block content
         // Button
         +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', responsive: 'false', btnBorderRadius: '20', btnHeight: '42', btnWidth: '200', btnColor: '#000000', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
         
+
+
   // ########## 2 COLUMN BLOCK ##########
   +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
   
@@ -193,7 +226,34 @@ block content
         
         // Button
         +btn({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: 'true', responsive: 'true', btnBorderRadius: '20', btnHeight: '42', btnWidth: '200', btnColor: '#000000', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
+
+
+
+  // ########## CAROUSEL ##########
+  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+  
+    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    
+      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      
+        +carousel({width: '580', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', carouselFallbackHref: '#', carouselFallbackSrc: 'http://placehold.jp/cccccc/9b9b9b/580x350.png?text=1'})
+          +carouselIndex({radioChecked: 'true', radioIndex: '1'})
+          +carouselIndex({radioIndex: '2'})
+          +carouselIndex({radioIndex: '3'})
+          +carouselContent({width: '580'})
+            +carouselSwitch({radioIndex: '1', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/50x35.png?text=1', imgAlt: 'alt', width: '50'})
+            +carouselSwitch({radioIndex: '2', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/50x35.png?text=2', imgAlt: 'alt', width: '50'})
+            +carouselSwitch({radioIndex: '3', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/50x35.png?text=3', imgAlt: 'alt', width: '50'})
+            +carouselActual
+              +carouselTogglePrev({radioCount: '3', toggleImgSrc: 'Resources/arrow-left.png'})
+              +carouselPageWrapper
+                +carouselPage({radioIndex: '1', firstPage: 'true', imgHref: '#', imgAlt: 'alt', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/580x350.png?text=1', width: '580'})
+                +carouselPage({radioIndex: '2', imgHref: '#', imgAlt: 'alt', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/580x350.png?text=2', width: '580'})
+                +carouselPage({radioIndex: '3', imgHref: '#', imgAlt: 'alt', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/580x350.png?text=3', width: '580'})
+              +carouselToggleNext({radioCount: '3', toggleImgSrc: 'Resources/arrow-right.png'})
         
+
+
   // ########## FOOTER ##########
   +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
   
@@ -213,7 +273,7 @@ block content
             // Twitter
             +column({width: '20', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
             
-              +img({width: '20', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://twitter.com/', imgAlt: 'Twitter', responsive: 'false', imgSrc: 'Resources/Twitter.png'})
+              +img({width: '20', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://twitter.com/', imgAlt: 'Twitter', responsive: 'false', imgSrc: 'Resources/logo-twitter.png'})
             
             // Spacer
             +column({width: '15', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
@@ -221,7 +281,7 @@ block content
             // Facebook
             +column({width: '10', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
             
-              +img({width: '10', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://www.facebook.com/', imgAlt: 'Facebook', responsive: 'false', imgSrc: 'Resources/Facebook.png'})
+              +img({width: '10', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://www.facebook.com/', imgAlt: 'Facebook', responsive: 'false', imgSrc: 'Resources/logo-facebook.png'})
             
             // Spacer
             +column({width: '15', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
@@ -229,7 +289,7 @@ block content
             // Linkedin
             +column({width: '20', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
             
-              +img({width: '20', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://www.linkedin.com/', imgAlt: 'Linkedin', responsive: 'false', imgSrc: 'Resources/Linkedin.png'})
+              +img({width: '20', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://www.linkedin.com/', imgAlt: 'Linkedin', responsive: 'false', imgSrc: 'Resources/logo-linkedin.png'})
       
       // Rightr Spacer
       +column({width: '260', mobileWidth: '40%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
