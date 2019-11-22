@@ -30,7 +30,19 @@ style.
   .moz-text-html td.accessibility {
     display: none !important;
   }
-
+  
   [class="x_accessibility"] {
     display: none !important;
   }
+
+  u ~ table td.accessibility span {
+    display: none !important;
+  }
+
+  u ~ div table td.accessibility span {
+    display: none !important;
+  }
+
+  body[data-outlook-cycle] td.accessibility {
+    display: none !important;
+

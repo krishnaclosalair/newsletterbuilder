@@ -23,14 +23,6 @@
     <![endif]--> <!--
     
     -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet"/>
-    <!--  -->
-    <!--[if mso]>
-    <style>
-    body, table, td, th { font-family: Helvetica, sans-serif !important; }
-    </style>
-    <![endif]--> <!--
-    -->
     <style>
       /* RESET */ 
       
@@ -53,9 +45,6 @@
         box-sizing: border-box;
         font-weight: normal;
         word-wrap: break-word;
-        /* -webkit-hyphens: auto;
-        -moz-hyphens: auto;
-         hyphens: auto; */
       }
       
       table, 
@@ -270,6 +259,17 @@
       [class="x_accessibility"] {
         display: none !important;
       }
+      
+      u ~ table td.accessibility span {
+        display: none !important;
+      }
+      
+      u ~ div table td.accessibility span {
+        display: none !important;
+      }
+      
+      body[data-outlook-cycle] td.accessibility {
+        display: none !important;
     </style>
     <style>
       /* Carousel */

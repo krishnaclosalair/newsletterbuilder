@@ -7,7 +7,7 @@ mixin wrapper(opts)
     width=width,
     height=opts.height ? opts.height : 'auto',
     align='center',
-    bgcolor=( opts.bulletproof == 'true' ? 'transparent' : ( opts.bgColor || opts.bulletproof == 'false' ) ? opts.bgColor : '#FFFFFF' ),
+    bgcolor=( opts.bulletproof ? 'transparent' : ( opts.bgColor || !opts.bulletproof ) ? opts.bgColor : '#FFFFFF' ),
     cellpadding='0',
     cellspacing='0',
     border='0',
@@ -24,10 +24,10 @@ mixin wrapper(opts)
           class=opts.customClass,
           width=( opts.width == 'full' ? '600' : opts.width ),
           valign='top',
-          bgcolor=( opts.bulletproof == 'true' ? 'transparent' : ( opts.bgColor || opts.bulletproof == 'false' ) ? opts.bgColor : '#FFFFFF' ),
+          bgcolor=( opts.bulletproof ? 'transparent' : ( opts.bgColor || !opts.bulletproof ) ? opts.bgColor : '#FFFFFF' ),
           background=(
-            ( opts.bulletproof == 'true' && opts.bgSrc ) ? opts.bgSrc
-            : opts.bulletproof == 'true' ? 'http://placehold.jp/' + ( opts.width == 'full' ? '600' : width ) + 'x' + ( Math.round( ( width == 'full' ? '600' :width ) / 3) * 2 ) + '.jpg' : ( opts.bulletproof == 'false' || !opts.bulletproof ) ? 'none' : 'none'
+            ( opts.bulletproof && opts.bgSrc ) ? opts.bgSrc
+            : opts.bulletproof ? 'http://placehold.jp/' + ( opts.width == 'full' ? '600' : width ) + 'x' + ( Math.round( ( width == 'full' ? '600' :width ) / 3) * 2 ) + '.jpg' : ( !opts.bulletproof || !opts.bulletproof ) ? 'none' : 'none'
           ),
           style=(
             'padding-top: ' + ( opts.paddingTop == '0' || !opts.paddingTop ? '0' : opts.paddingTop + 'px' ) + '; ' +
@@ -40,7 +40,7 @@ mixin wrapper(opts)
             'border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + '; ' +
             'width: ' + width + ( opts.width == 'full' ? '' : 'px' ) + '; ' +
             ( opts.bulletproof ? 
-              ' background-color: ' + ( opts.bulletproof == 'true' ? 'transparent' : ( opts.bgColor || opts.bulletproof == 'false' ) ? opts.bgColor : '#FFFFFF' ) + '; ' + 
+              ' background-color: ' + ( opts.bulletproof ? 'transparent' : ( opts.bgColor || !opts.bulletproof ) ? opts.bgColor : '#FFFFFF' ) + '; ' + 
               'background-image: url(' + ( opts.bgSrc ? opts.bgSrc: 'http://placehold.jp/' + ( opts.width == 'full' ? '600' : width ) + 'x' + ( Math.round( ( opts.width == 'full' ? '600' : width ) / 3 ) * 2 ) + '.jpg' ) + '); ' + 
               'background-position: top center; ' + 
               'background-repeat: no-repeat; ' + 
@@ -48,7 +48,7 @@ mixin wrapper(opts)
             : '') 
             )
           )
-          - if ( opts.bulletproof == 'true' )
+          - if ( opts.bulletproof )
             //  
                 -->
                 <!--[if gte mso 9]>
@@ -64,7 +64,7 @@ mixin wrapper(opts)
                   </v:textbox>
                 </v:rect>
                 <![endif]--> <!--
-          - else if ( opts.bulletproof == 'false' || !opts.bulletproof )
+          - else if ( !opts.bulletproof || !opts.bulletproof )
             block
 
 mixin row(opts)
@@ -236,10 +236,10 @@ mixin column(opts)
     dir=opts.direction ? opts.direction : 'ltr',
     align=opts.align ? opts.align : 'center',
     valign=opts.valign ? opts.valign : 'top',
-    bgcolor=( opts.bulletproof == 'true' ? 'transparent' : ( opts.bgColor || opts.bulletproof == 'false' ) ? opts.bgColor : '#FFFFFF' ),
+    bgcolor=( opts.bulletproof ? 'transparent' : ( opts.bgColor || !opts.bulletproof ) ? opts.bgColor : '#FFFFFF' ),
     background=(
-      ( opts.bulletproof == 'true' && opts.bgSrc ) ? opts.bgSrc
-      : opts.bulletproof == 'true' ? 'http://placehold.jp/' + width + 'x' + ( Math.round( width / 3 ) * 2 ) + '.jpg' : ( opts.bulletproof == 'false' || !opts.bulletproof ) ? 'none' : 'none'
+      ( opts.bulletproof && opts.bgSrc ) ? opts.bgSrc
+      : opts.bulletproof ? 'http://placehold.jp/' + width + 'x' + ( Math.round( width / 3 ) * 2 ) + '.jpg' : ( !opts.bulletproof || !opts.bulletproof ) ? 'none' : 'none'
     ),
     style=(
       'padding-top: ' + ( opts.paddingTop == '0' || !opts.paddingTop ? '0' : opts.paddingTop + 'px' ) + '; ' +
@@ -251,8 +251,8 @@ mixin column(opts)
       'border-bottom: ' + ( opts.borderBottom ? opts.borderBottom : '0' ) + '; ' +
       'border-left: ' + ( opts.borderLeft ? opts.borderLeft : '0' ) + '; ' +
       'width: ' + ( opts.width ? ( opts.width + 'px' ) : '600px' ) + ';' +
-      ( opts.bulletproof == 'true' ? 
-        ' background-color: ' + ( opts.bulletproof == 'true' ? 'transparent' : ( opts.bgColor || opts.bulletproof == 'false' ) ? opts.bgColor : '#FFFFFF' ) + '; ' + 
+      ( opts.bulletproof ? 
+        ' background-color: ' + ( opts.bulletproof ? 'transparent' : ( opts.bgColor || !opts.bulletproof ) ? opts.bgColor : '#FFFFFF' ) + '; ' + 
         'background-image: url(' + ( opts.bgSrc ? opts.bgSrc: 'http://placehold.jp/' + width + 'x' + ( Math.round( width / 3 ) * 2 ) + '.jpg' ) + '); ' + 
         'background-position: center center; ' + 
         'background-repeat: no-repeat; ' + 
@@ -261,7 +261,7 @@ mixin column(opts)
     )
   )
   
-    - if ( opts.bulletproof == 'true' )
+    - if ( opts.bulletproof )
       //  
           -->
           <!--[if gte mso 9]>
@@ -281,7 +281,7 @@ mixin column(opts)
             : ( opts.width ? opts.width : '600' )
           ),
           align=opts.align ? opts.align : 'center',
-          bgcolor=( opts.bulletproof == 'true' ? 'transparent' : ( opts.bgColor || opts.bulletproof == 'false' ) ? opts.bgColor : '#FFFFFF' ),
+          bgcolor=( opts.bulletproof ? 'transparent' : ( opts.bgColor || !opts.bulletproof ) ? opts.bgColor : '#FFFFFF' ),
           cellpadding='0',
           cellspacing='0',
           border='0',
@@ -304,7 +304,7 @@ mixin column(opts)
             </v:textbox>
           </v:rect>
           <![endif]--> <!--
-    - else if ( opts.bulletproof == 'false' || !opts.bulletproof )
+    - else if ( !opts.bulletproof || !opts.bulletproof )
 
       table.w100pc(
         data-component='column',
@@ -356,9 +356,9 @@ mixin img(opts)
         'width: ' + ( opts.width ? ( opts.width + 'px' ) : '600px' ) + ';'
       )
     )
-      - if ( opts.removeLink == 'true' )
+      - if ( opts.removeLink )
         img(
-          class=( opts.responsive == 'false' ? '' : ( opts.responsive == 'true' || !opts.responsive ) ? 'w100pc hauto' : 'w100pc hauto' ),
+          class=( !opts.responsive ? '' : ( opts.responsive || !opts.responsive ) ? 'w100pc hauto' : 'w100pc hauto' ),
           src=opts.imgSrc ? opts.imgSrc : 'http://placehold.jp/' + (
               ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
               : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
@@ -392,7 +392,7 @@ mixin img(opts)
         )
         block
         
-      - else if ( opts.removeLink == 'false' || !opts.removeLink )
+      - else if ( !opts.removeLink )
         a(
           href=opts.imgHref ? opts.imgHref : '#',
           target='_blank',
@@ -403,7 +403,7 @@ mixin img(opts)
             )
           )
           img(
-            class=( opts.responsive == 'false' ? '' : ( opts.responsive == 'true' || !opts.responsive ) ? 'w100pc hauto' : 'w100pc hauto' ),
+            class=( !opts.responsive ? '' : ( opts.responsive || !opts.responsive ) ? 'w100pc hauto' : 'w100pc hauto' ),
             src=opts.imgSrc ? opts.imgSrc : 'http://placehold.jp/' + (
               ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
               : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
@@ -492,7 +492,7 @@ mixin txt(opts)
   tr
     td.w100pc(
       data-component='txt',
-      class=opts.type ? ('accessibility-' + opts.type) : undefined,
+      class=addons.accessibility ? ('accessibility-' + opts.type) : !addons.accessibility || undefined ? undefined : undefined,
       class=mobileAlignment,
       class=opts.customClass, 
       width=opts.width ? opts.width : '600',
@@ -543,7 +543,7 @@ mixin btn(opts)
       )
       
       table(
-        class=( ( opts.responsive == 'false' && opts.bulletproof == 'false' ) ? undefined : 'w100pc' )
+        class=( ( !opts.responsive && !opts.bulletproof ) ? undefined : 'w100pc' )
         data-component='btn',
         align=opts.align ? opts.align : 'center',
         bgcolor=opts.bgColor ? opts.bgColor : '#FFFFFF', 
@@ -552,14 +552,14 @@ mixin btn(opts)
         cellspacing='0',
         role='presentation',
         width=(
-            opts.bulletproof == 'true' 
+            opts.bulletproof 
             ?
               ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
               : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
               : opts.paddingLeft ? ( ( opts.width ? opts.width : '600' ) - opts.paddingLeft ) 
               : ( opts.width ? opts.width : '600' )
             :
-            ( opts.bulletproof == 'false' || !opts.bulletproof )
+            ( !opts.bulletproof || !opts.bulletproof )
             ?
               ( opts.btnWidth ? opts.btnWidth : '200' )
             :
@@ -567,14 +567,14 @@ mixin btn(opts)
           ),
         style=(
           'width: ' +
-          ( opts.bulletproof == 'true' 
+          ( opts.bulletproof 
           ?
             ( opts.paddingRight && opts.paddingLeft ) ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight - opts.paddingLeft ) 
             : opts.paddingRight ? ( ( opts.width ? opts.width : '600' ) - opts.paddingRight )
             : opts.paddingLeft ? ( ( opts.width ? opts.width : '600' ) - opts.paddingLeft ) 
             : ( opts.width ? opts.width : '600' )
           :
-          ( opts.bulletproof == 'false' || !opts.bulletproof )
+          ( !opts.bulletproof || !opts.bulletproof )
           ?
             ( opts.btnWidth ? opts.btnWidth : '200' )
           :
@@ -585,11 +585,11 @@ mixin btn(opts)
       )
         tbody
           tr
-            - if ( opts.bulletproof == 'true' )
+            - if ( opts.bulletproof )
               - !opts.btnBorder || opts.btnBorder == '0' ? border = 'f' : border = opts.btnBorder.split(' ')[2] 
               td(
                 data-component='btn',
-                align=opts.btnAlign ? opts.btnAlign : 'center'
+                align=opts.align ? opts.align : 'center'
               )
                 div
                   //  
@@ -631,18 +631,18 @@ mixin btn(opts)
                     )
                       | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
                         
-            - else if ( opts.bulletproof == 'false' || !opts.bulletproof )
+            - else if ( !opts.bulletproof || !opts.bulletproof )
               - borderCalc = ( opts.btnBorder ? ( opts.btnBorder.split('px')[0] * 2 ) : '0' )
               td(
                 data-component='btn',
                 width=( ( opts.btnWidth ? opts.btnWidth : '200' ) - borderCalc ),
-                align=opts.btnAlign ? opts.btnAlign : 'center', 
+                align='center', 
                 valign=opts.valign ? opts.valign : 'top',
                 bgcolor=( opts.btnColor ? opts.btnColor : '#000000' ),
                 style=(
-                  'padding-top: ' + ( opts.btnHeight ? ( opts.btnHeight / 3 ) : '14' ) + 'px; ' +
+                  'padding-top: 0; ' +
                   'padding-right: 0; ' +
-                  'padding-bottom: ' + ( opts.btnHeight ? ( opts.btnHeight / 3 ) : '14' ) + 'px; ' +
+                  'padding-bottom: 0; ' +
                   'padding-left: 0; ' +
                   'border-top: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + '; ' +
                   'border-right: ' + ( opts.btnBorder ? opts.btnBorder : '0' ) + '; ' +
@@ -651,7 +651,9 @@ mixin btn(opts)
                   'font-family: ' + ( opts.btnFontFamily ? opts.btnFontFamily : font.default ? font.default : 'Helvetica, sans-serif' ) + '; ' +
                   'font-size: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px; ' +
                   'font-weight: ' + ( opts.btnFontWeight ? opts.btnFontWeight : 'normal' ) + '; ' +
-                  'line-height: ' + ( opts.btnFontSize ? opts.btnFontSize : '14' ) + 'px; ' +
+                  'mso-line-height-rule: exactly; ' +
+                  'mso-text-raise: ' + ( opts.btnHeight ? opts.btnHeight / 5 : '10' ) + 'px; ' +
+                  'line-height: ' + (opts.btnHeight ? opts.btnHeight : '50' ) + 'px; ' + 
                   'color: ' + ( opts.btnTxtColor ? opts.btnTxtColor : '#FFFFFF' ) + '; ' +
                   'width: ' + ( ( opts.btnWidth ? opts.btnWidth : '200' ) - borderCalc ) + 'px;'
                 )
@@ -660,7 +662,9 @@ mixin btn(opts)
                   href=opts.btnHref ? opts.btnHref : '#',
                   target='_blank', 
                   style=(
+                    'display: block;' +
                     'text-decoration: none; ' +
+                    'text-align: center; ' +
                     'color:' + (opts.btnTxtColor ? opts.btnTxtColor : '#FFFFFF') + ';'
                   )
                 )
@@ -692,10 +696,10 @@ mixin vid(opts)
       .vid(style='display:none;')
         video(width=opts.vidWidth ? opts.vidWidth : width, controls='controls', poster=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', src=opts.vidSrc ? opts.vidSrc : 'https://bit.ly/2RtB5UV')
           a(href=opts.vidHref ? opts.vidHref : '#', target='_blank', style='text-decoration: none; border: 0; outline: 0;')
-            img(class=( opts.responsive == 'true' ) ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidAlt ? opts.vidAlt : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
+            img(class=( opts.responsive ) ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidAlt ? opts.vidAlt : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
       .vid-fallback
         a(href=opts.vidHref ? opts.vidHref : '#', target='_blank', style='text-decoration: none; border: 0; outline: 0;')
-          img(class=( opts.responsive == 'true' ) ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidAlt ? opts.vidAlt : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
+          img(class=( opts.responsive ) ? 'w100pc hauto' : '', src=opts.vidImgSrc ? opts.vidImgSrc : 'http://placehold.jp/' + width + 'x' + calculatedVidImgWidth + '.png?text=|>', alt=opts.vidAlt ? opts.vidAlt : 'alt', width=opts.vidImgWidth ? opts.vidImgWidth : width, border='0', style='display: block; border: none; width: ' + (opts.vidImgWidth ? opts.vidImgWidth : width) + 'px;')/
       block
 
 mixin carousel(opts)
@@ -860,7 +864,7 @@ mixin carouselPage(opts)
   div.page(
     class='page-' + opts.radioIndex
     style=(
-      ( opts.firstPage == 'true' ? '' : ( opts.firstPage == 'false' || !opts.firstPage ) ? 'display: none; mso-hide: all;' : '' )
+      ( opts.firstPage ? '' : !opts.firstPage ? 'display: none; mso-hide: all;' : '' )
     )
   )
     a(
@@ -1008,9 +1012,9 @@ mixin hamburgerLink(opts)
       'color: ' + ( opts.fontColor ? opts.fontColor : '#000000' ) + ';'
     )
   )
-    - if ( opts.custom == 'true' )
+    - if ( opts.custom )
       block
-    - else if ( !opts.custom || opts.custom == 'false' )
+    - else if (!opts.custom)
       a(
       href=opts.linkHref ? opts.linkHref : '#',
       target="_blank", 
