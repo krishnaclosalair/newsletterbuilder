@@ -1,87 +1,75 @@
-extends template.pug
+extends ./template/template
 
 block vars
 
-  //- ############################## OPTIONS ##############################
+  //- /\/\/\/\/\/\/\/\/\/\ General Settings /\/\/\/\/\/\/\/\/\/\
 
-  //- Addons
+  //- Title
   - 
-    var addons = {
-      accessibility: true,
-      carousel: true,
-      hamburger: true,
-      video: false
-    };
+    let title = 'Newsletter';
 
-  //- General Settings
+  //- Text Settings
   - 
-    var font = {
-      fallback: true,
-      default: 'Helvetica, sans-serif',
+    let font = {
       style: {
-        heading: {
-          primary: {
-            family: 'Open Sans, Helvetica, sans-serif',
-            size: '28',
-            accessibilitySize: '30',
-            lineHeight: '32',
-            accessibilityLineHeight: '34',
-            fontWeight: 'bold',
-            color: '#000000'
-          },
-          secondary: {
-            family: 'Open Sans, Helvetica, sans-serif',
-            size: '24',
-            accessibilitySize: '26',
-            lineHeight: '28',
-            accessibilityLineHeight: '30',
-            fontWeight: 'bold',
-            color: '#000000'
-          },
-          tertiary: {
-            family: 'Open Sans, Helvetica, sans-serif',
-            size: '20',
-            accessibilitySize: '22',
-            lineHeight: '24',
-            accessibilityLineHeight: '26',
-            fontWeight: 'bold',
-            color: '#000000'
-          }
+        primary: {
+          family: 'Open Sans, Helvetica, sans-serif',
+          size: '28',
+          weight: 'bold',
+          height: '32',
+          color: '#000000'
+        },
+        secondary: {
+          family: 'Open Sans, Helvetica, sans-serif',
+          size: '24',
+          weight: 'bold',
+          height: '28',
+          color: '#000000'
+        },
+        tertiary: {
+          family: 'Open Sans, Helvetica, sans-serif',
+          size: '20',
+          weight: 'bold',
+          height: '24',
+          color: '#000000'
         },
         body: {
           family: 'Open Sans, Helvetica, sans-serif',
           size: '15',
-          accessibilitySize: '17',
-          lineHeight: '19',
-          accessibilityLineHeight: '21',
-          fontWeight: 'normal',
+          weight: 'normal',
+          height: '19',
           color: '#000000'
         },
         small: {
           family: 'Open Sans, Helvetica, sans-serif',
           size: '11',
-          accessibilitySize: '13',
-          lineHeight: '15',
-          accessibilityLineHeight: '17',
-          fontWeight: 'normal',
+          weight: 'normal',
+          height: '15',
           color: '#000000'
         }
       }
     };
 
-block font
+//- /\/\/\/\/\/\/\/\/\/\ Custom Settings /\/\/\/\/\/\/\/\/\/\
 
-  include includes/customFont
+//- Custom Fonts & Fallbacks
 
-block addons
+block customFonts
 
-  include includes/addons
+  style.
+    /* Custom Fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
-//- ############################## CUSTOM CSS ##############################
-    
+  //- Font Fallback
+  <!--[if mso]>
+    style.      
+      .customFont { font-family: Helvetica, sans-serif !important; }
+  <![endif]-->
+
+//- Custom CSS
+
 block customCSS
 
-  // Custom CSS
   style.
     /* Media Queries */
     @media only screen and (max-width: 600px) {
@@ -91,221 +79,77 @@ block customCSS
     }
 
 block content
-  
-  //- ############################## START HERE ##############################
 
+  //- /\/\/\/\/\/\/\/\/\/\ Message /\/\/\/\/\/\/\/\/\/\
 
-  // ########## ACCESSIBILITY ##########
-  +accessibilityInput
+  // Wrapper 
+  +wrapper({customClass: '', width: '600', bulletproof: false, bgSrc: '', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
 
-  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '32', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-  
-    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+    // Row 
+    +row({customClass: '', noMobilePadding: false, width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
 
-      // Left Spacer
-      +column({width: '255', mobileWidth: '35%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      // Spacer
+      +spacer({width: '25', mobileWidth: 'hide', bgColor: '#FFFFFF'})
 
-      +column({width: '40', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+      // Column 
+      +column({customClass: '', width: '550', bulletproof: false, bgSrc: '', mobileWidth: '100%', direction: 'ltr', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
 
-        +accessibilityLabel({for: 'normal', width: '40', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', content: '<img class="w100pc hauto" src="Resources/small-text.png" width="40" border="0" style="display: block; border: none; width: 40px;" />'})
+        // Image 
+        +image({width: '550', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', removeLink: false, imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: ''})
 
-      // Divider
-      +column({width: '10', mobileWidth: '5%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+        // Primary Heading 
+        +text({customClass: 'customFont', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'primary', txt: ''})
 
-      +column({width: '40', mobileWidth: '10%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-        +accessibilityLabel({for: 'large', width: '40', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', content: '<img class="w100pc hauto" src="Resources/large-text.png" width="40" border="0" style="display: block; border: none; width: 50px;" />'})
-
-      // Left Spacer
-      +column({width: '255', mobileWidth: '35%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-
-  // ########## PREVIEW SNIPPET ##########
-  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-  
-    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-    
-      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'small', txt: 'Preview Snippet | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">View in browser</a>'})
-
-
-  // ########## HEADER ##########
-  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-  
-    // Logo
-    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-      // Left Spacer
-      +column({width: '225', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-    
-      // Image
-      +column({width: '150', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-        +img({width: '150', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgAlt: 'alt', responsive: false, imgSrc: 'http://placehold.jp/32/cccccc/999999/150x100.png?text=Logo'})
-
-      // Right Spacer
-      +column({width: '225', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-  
-
-  // ########## HAMBURGER ##########
-  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '32', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-  
-    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-    
-      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-        +hamburger({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '16', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', hamburgerColor: '#000000'})
-          +hamburgerLink({width: '284', bgColor: '#FFFFFF', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '16', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '14', fontColor: '#000000', txt: 'Menu 1'})
-          +hamburgerLink({width: '284', bgColor: '#FFFFFF', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '16', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '14', fontColor: '#000000', txt: 'Menu 2'})
-          +hamburgerLink({width: '284', bgColor: '#FFFFFF', paddingTop: '16', paddingRight: '16', paddingBottom: '16', paddingLeft: '16', borderTop: '16', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: 'Helvetica, sans-serif', fontSize: '14', fontWeight: 'normal', lineHeight: '14', fontColor: '#000000', txt: 'Menu 3'})
-
-
-  // ########## 1 COLUMN BLOCK ##########
-  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-  
-    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-    
-      // Column
-      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-      
-        // Image
-        +img({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: ''})
+        // Body 
+        +text({customClass: 'customFont', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: ''})
         
-        // Primary Heading
-        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'primary', txt: 'Primary Heading'})
+        // Button 
+        +button({customClass: 'customFont', width: '550', align: 'center', valign: 'top', bgColor: 'transparent', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
 
-        // Secondary Heading
-        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '12', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'secondary', txt: 'Secondary Heading'})
+      // Spacer
+      +spacer({width: '25', mobileWidth: 'hide', bgColor: '#FFFFFF'})
 
-        // Tertiary Heading
-        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '8', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'tertiary', txt: 'Tertiary Heading'})
+  // Wrapper 
+  +wrapper({customClass: '', width: '600', bulletproof: false, bgSrc: '', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+    // Row 
+    +row({customClass: '', noMobilePadding: false, width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+      // Spacer
+      +spacer({width: '25', mobileWidth: 'hide', bgColor: '#FFFFFF'})
+
+      // Column 
+      +column({customClass: '', width: '265', bulletproof: false, bgSrc: '', mobileWidth: '100%', direction: 'ltr', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        // Image 
+        +image({width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', removeLink: false, imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: ''})
+
+        // Secondary Heading 
+        +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'secondary', txt: ''})
+
+        // Body 
+        +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: ''})
         
-        // Body Text
-        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
+        // Button 
+        +button({customClass: 'customFont', width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
+
+      // Spacer
+      +spacer({width: '20', mobileWidth: 'hide', bgColor: '#FFFFFF'})
+
+      // Column 
+      +column({customClass: '', width: '265', bulletproof: false, bgSrc: '', mobileWidth: '100%', direction: 'ltr', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
+
+        // Image 
+        +image({width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', removeLink: false, imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: ''})
+
+        // Secondary Heading 
+        +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'secondary', txt: ''})
+
+        // Body 
+        +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: ''})
         
-        // Button
-        +btn({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: true, responsive: false, btnBorderRadius: '20', btnHeight: '42', btnWidth: '200', btnColor: '#000000', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
-        
+        // Button 
+        +button({customClass: 'customFont', width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
 
-  // ########## 2 COLUMN BLOCK ##########
-  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-  
-    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-    
-      // 1st Column
-      +column({width: '284', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-      
-        // Image
-        +img({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: ''})
-        
-        // Primary Heading
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'primary', txt: 'Primary Heading'})
-
-        // Secondary Heading
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '12', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'secondary', txt: 'Secondary Heading'})
-
-        // Tertiary Heading
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '8', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'tertiary', txt: 'Tertiary Heading'})
-        
-        // Body Text
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
-        
-        // Button
-        +btn({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: true, responsive: true, btnBorderRadius: '20', btnHeight: '42', btnWidth: '200', btnColor: '#000000', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
-      
-      // Divider
-      +column({width: '32', mobileWidth: 'hide', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-      
-      // 2nd Column
-      +column({width: '284', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-      
-        // Image
-        +img({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: ''})
-        
-        // Primary Heading
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'primary', txt: 'Primary Heading'})
-
-        // Secondary Heading
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '12', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'secondary', txt: 'Secondary Heading'})
-
-        // Tertiary Heading
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '8', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'tertiary', txt: 'Tertiary Heading'})
-        
-        // Body Text
-        +txt({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis tristique interdum. In facilisis metus arcu, in eleifend felis vulputate auctor. Quisque congue pretium mauris a iaculis. Proin eget tempus nunc. Donec at est sapien.'})
-        
-        // Button
-        +btn({width: '284', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: true, responsive: true, btnBorderRadius: '20', btnHeight: '42', btnWidth: '200', btnColor: '#000000', btnBorder: '0', btnFontFamily: 'Open Sans, Helvetica, sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'}) 
-
-
-  // ########## CAROUSEL ##########
-  +wrapper({width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-  
-    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-    
-      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-      
-        +carousel({width: '580', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', carouselFallbackHref: '#', carouselFallbackSrc: 'http://placehold.jp/cccccc/9b9b9b/580x350.png?text=1'})
-          +carouselIndex({radioChecked: true, radioIndex: '1'})
-          +carouselIndex({radioIndex: '2'})
-          +carouselIndex({radioIndex: '3'})
-          +carouselContent({width: '580'})
-            +carouselSwitch({radioIndex: '1', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/50x35.png?text=1', imgAlt: 'alt', width: '50'})
-            +carouselSwitch({radioIndex: '2', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/50x35.png?text=2', imgAlt: 'alt', width: '50'})
-            +carouselSwitch({radioIndex: '3', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/50x35.png?text=3', imgAlt: 'alt', width: '50'})
-            +carouselActual
-              +carouselTogglePrev({radioCount: '3', toggleImgSrc: 'Resources/arrow-left.png'})
-              +carouselPageWrapper
-                +carouselPage({radioIndex: '1', firstPage: true, imgHref: '#', imgAlt: 'alt', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/580x350.png?text=1', width: '580'})
-                +carouselPage({radioIndex: '2', imgHref: '#', imgAlt: 'alt', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/580x350.png?text=2', width: '580'})
-                +carouselPage({radioIndex: '3', imgHref: '#', imgAlt: 'alt', imgSrc: 'http://placehold.jp/cccccc/9b9b9b/580x350.png?text=3', width: '580'})
-              +carouselToggleNext({radioCount: '3', toggleImgSrc: 'Resources/arrow-right.png'})
-        
-
-  // ########## FOOTER ##########
-  +wrapper({customClass: '', width: '600', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-  
-    // Footer Social Icons
-    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-    
-      // Left Spacer
-      +column({width:'260', mobileWidth: '40%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-       
-      // Social Icons
-      +column({width: '80', mobileWidth: '20%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-        +subRow({width: '80', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-          +column({width: '80', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-            // Twitter
-            +column({width: '20', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-            
-              +img({width: '20', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://twitter.com/', imgAlt: 'Twitter', responsive: false, imgSrc: 'Resources/logo-twitter.png'})
-            
-            // Spacer
-            +column({width: '15', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-            
-            // Facebook
-            +column({width: '10', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-            
-              +img({width: '10', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://www.facebook.com/', imgAlt: 'Facebook', responsive: false, imgSrc: 'Resources/logo-facebook.png'})
-            
-            // Spacer
-            +column({width: '15', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-            
-            // Linkedin
-            +column({width: '20', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-            
-              +img({width: '20', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', imgHref: 'https://www.linkedin.com/', imgAlt: 'Linkedin', responsive: false, imgSrc: 'Resources/logo-linkedin.png'})
-      
-      // Rightr Spacer
-      +column({width: '260', mobileWidth: '40%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-    // Footer Navigation
-    +row({width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-      +column({width: '600', mobileWidth: '100%', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
-
-        +txt({width: '600', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'small', txt: '<a href="#" target="_blank" style="text-decoration: none; color: #000000;">About Us</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Contact Us</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Privacy Policy</a> | <a href="#" target="_blank" style="text-decoration: none; color: #000000;">Unsubscribe</a>'})
+      // Spacer
+      +spacer({width: '25', mobileWidth: 'hide', bgColor: '#FFFFFF'})

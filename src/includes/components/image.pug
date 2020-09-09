@@ -1,0 +1,69 @@
+mixin image(opts)
+  - let imageWidth = opts.width - opts.paddingRight - opts.paddingLeft;
+  - let imageHeight = Math.floor((imageWidth * 2) / 3);
+
+  tr
+    td(
+      data-component='image',
+      class=opts.customClass,
+      class="w100pc",
+      width=opts.width,
+      align=opts.align,
+      valign=opts.valign,
+      bgcolor=opts.bgColor,
+      style={
+        'padding-top': `${opts.paddingTop}px`,
+        'padding-right': `${opts.paddingRight}px`,
+        'padding-bottom': `${opts.paddingBottom}px`,
+        'padding-left': `${opts.paddingLeft}px`,
+        'border-top': opts.borderTop,
+        'border-right': opts.borderRight,
+        'border-bottom': opts.borderBottom,
+        'border-left': opts.borderLeft,
+        width: `${opts.width}px`
+      }
+    )
+      - if (opts.removeLink)
+        img(
+          class=opts.responsive ? 'w100pc hauto' : undefined,
+          src=(
+            opts.imgSrc 
+              ? opts.imgSrc 
+              : `http://placehold.jp/${imageWidth}x${imageHeight}.jpg`
+          ),
+          alt=opts.imgAlt,
+          width=imageWidth,
+          border=0,
+          style={
+            display: 'block',
+            border: 'none',
+            width: `${imageWidth}px`
+          }
+        )
+
+      - else
+        a(
+          href=opts.imgHref,
+          target='_blank',
+          style={
+            'text-decoration': 'none',
+            'border': 0, 
+            'outline': 0
+          }
+        )
+          img(
+            class=opts.responsive ? 'w100pc hauto' : undefined,
+            src=(
+              opts.imgSrc 
+                ? opts.imgSrc 
+                : `http://placehold.jp/${imageWidth}x${imageHeight}.jpg`
+            ),
+            alt=opts.imgAlt,
+            width=imageWidth,
+            border=0,
+            style={
+              display: 'block',
+              border: 'none',
+              width: `${imageWidth}px`
+            }
+          )

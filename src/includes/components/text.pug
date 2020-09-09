@@ -1,0 +1,36 @@
+mixin text(opts)
+  - let {family, size, weight, height, color} = font.style[opts.type];
+
+  - 
+    if (opts.mobileAlignment) {
+      mobileAlignment = `aH--${opts.mobileAlignment[0]}`
+    }
+
+  tr
+    td(
+      data-component='text',
+      class=opts.customClass,
+      class="w100pc",
+      class=mobileAlignment,
+      width=opts.width,
+      align=opts.align, 
+      valign=opts.valign,
+      bgcolor=opts.bgColor,
+      style={
+        'padding-top': `${opts.paddingTop}px`,
+        'padding-right': `${opts.paddingRight}px`,
+        'padding-bottom': `${opts.paddingBottom}px`,
+        'padding-left': `${opts.paddingLeft}px`,
+        'border-top': opts.borderTop,
+        'border-right': opts.borderRight,
+        'border-bottom': opts.borderBottom,
+        'border-left': opts.borderLeft,
+        'font-family': opts.fontFamily ? opts.fontFamily : family,
+        'font-size': `${opts.fontSize ? opts.fontSize : size}px`,
+        'font-weight': opts.fontWeight ? opts.fontWeight : weight,
+        'line-height': `${opts.lineHeight ? opts.lineHeight : height}px`,
+        color: opts.fontColor ? opts.fontColor : color,
+        width: `${opts.width}px`
+      }
+    )
+      | !{opts.txt ? opts.txt : opts.type == 'body' ? 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.' : 'Lorem ipsum dolor sit amet' }

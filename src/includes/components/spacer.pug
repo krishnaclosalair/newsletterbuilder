@@ -1,0 +1,20 @@
+mixin spacer(opts)
+  - 
+    if ( opts.mobileWidth == '100%' ) {
+      opts.mobileWidth = 'w100pc full';
+    } else if ( opts.mobileWidth && opts.mobileWidth.includes('%') ) {
+      opts.mobileWidth = ('w' + opts.mobileWidth).replace('%', 'pc');
+    }
+
+  th(
+    data-component='spacer',
+    class=opts.customClass,
+    class=opts.mobileWidth,
+    width=opts.width,
+    align='center',
+    valign='top',
+    bgcolor=( opts.bgColor ? opts.bgColor : '#FFFFFF' ),
+    style={
+      width: `${opts.width}px`
+    }
+  )

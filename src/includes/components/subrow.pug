@@ -1,0 +1,42 @@
+mixin subRow(opts)
+  - let calculatedWidth = opts.width - opts.paddingRight - opts.paddingLeft;
+  
+  tr
+    td(
+      data-component='subRow',
+      class=opts.customClass,
+      class="w100pc",
+      width=opts.width,
+      align='center',
+      valign=opts.valign,
+      bgcolor=opts.bgColor,
+      style={
+        'padding-top': `${opts.paddingTop}px`,
+        'padding-right': `${opts.paddingRight}px`,
+        'padding-bottom': `${opts.paddingBottom}px`,
+        'padding-left': `${opts.paddingLeft}px`,
+        'border-top': opts.borderTop,
+        'border-right': opts.borderRight,
+        'border-bottom': opts.borderBottom,
+        'border-left': opts.borderLeft,
+        width: `${opts.width}px`
+      }
+    )
+      table(
+        data-component='subRow',
+        role='presentation',
+        class="w100pc",
+        width=calculatedWidth,
+        dir=opts.direction,
+        align=opts.align,
+        bgcolor=opts.bgColor,
+        cellpadding=0,
+        cellspacing=0,
+        border=0,
+        style={
+          width: `${calculatedWidth}px`
+        }
+      )
+        tbody
+          tr
+            block
