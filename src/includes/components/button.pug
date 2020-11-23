@@ -63,61 +63,62 @@ mixin button(opts)
                 data-component='button',
                 align=opts.align
               )
-                <!--[if mso]>
-                #{opts.btnBorderRadius == 0 ? 'v:rect' : 'v:roundrect'}(
-                  xmlns:v="urn:schemas-microsoft-com:vml", 
-                  xmlns:w="urn:schemas-microsoft-com:office:word",
-                  href=opts.btnHref,
-                  fillcolor=opts.btnColor,
-                  arcsize=arcsize,
-                  stroke=stroke,
-                  strokecolor=strokeColor,
-                  strokeweight=strokeWeight,
-                  style={
-                    width: `${opts.btnWidth}px`,
-                    height: `${opts.btnHeight}px`,
-                    'v-text-anchor': 'middle'
-                  }
-                )
-                  w:anchorlock/
-                  center(
-                    class=opts.customClass,
+                div
+                  <!--[if mso]>
+                  #{opts.btnBorderRadius == 0 ? 'v:rect' : 'v:roundrect'}(
+                    xmlns:v="urn:schemas-microsoft-com:vml", 
+                    xmlns:w="urn:schemas-microsoft-com:office:word",
+                    href=opts.btnHref,
+                    fillcolor=opts.btnColor,
+                    arcsize=arcsize,
+                    stroke=stroke,
+                    strokecolor=strokeColor,
+                    strokeweight=strokeWeight,
                     style={
-                      'font-family': `${opts.btnFontFamily}`,
-                      'font-size': `${opts.btnFontSize}px`,
-                      'font-weight': opts.btnFontWeight,
-                      color: `${opts.btnTxtColor ? opts.btnTxtColor : '#FFFFFF'}`
-                    }
-                  )
-                    | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
-                <![endif]-->
-                  a(
-                    href=opts.btnHref ? opts.btnHref : '#',
-                    target="_blank",
-                    style={
-                      'background-color': opts.btnColor,
-                      border: opts.btnBorder,
-                      'border-radius': opts.btnBorderRadius == 0 ? '0' : `${opts.btnBorderRadius}px`,
-                      display: 'inline-block',
-                      'text-decoration': 'none',
-                      'text-align': 'center',
                       width: `${opts.btnWidth}px`,
-                      'mso-hide': 'all'
+                      height: `${opts.btnHeight}px`,
+                      'v-text-anchor': 'middle'
                     }
                   )
-                    span(
-                      class=opts.customClass
+                    w:anchorlock/
+                    center(
+                      class=opts.customClass,
                       style={
-                        color: opts.btnTxtColor,
-                        'font-family': opts.btnFontFamily,
+                        'font-family': `${opts.btnFontFamily}`,
                         'font-size': `${opts.btnFontSize}px`,
-                        '-webkit-text-size-adjust': 'none',
                         'font-weight': opts.btnFontWeight,
-                        'line-height': `${opts.btnHeight}px`
+                        color: `${opts.btnTxtColor ? opts.btnTxtColor : '#FFFFFF'}`
                       }
                     )
                       | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
-                        
+                  <![endif]-->
+                    a(
+                      href=opts.btnHref ? opts.btnHref : '#',
+                      target="_blank",
+                      style={
+                        'background-color': opts.btnColor,
+                        border: opts.btnBorder,
+                        'border-radius': opts.btnBorderRadius == 0 ? '0' : `${opts.btnBorderRadius}px`,
+                        display: 'inline-block',
+                        'text-decoration': 'none',
+                        'text-align': 'center',
+                        width: `${opts.btnWidth}px`,
+                        'mso-hide': 'all'
+                      }
+                    )
+                      span(
+                        class=opts.customClass
+                        style={
+                          color: opts.btnTxtColor,
+                          'font-family': opts.btnFontFamily,
+                          'font-size': `${opts.btnFontSize}px`,
+                          '-webkit-text-size-adjust': 'none',
+                          'font-weight': opts.btnFontWeight,
+                          'line-height': `${opts.btnHeight}px`
+                        }
+                      )
+                        | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
+
             - else if ( !opts.bulletproof )
               td(
                 data-component='button',
