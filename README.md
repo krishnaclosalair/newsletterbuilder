@@ -134,9 +134,10 @@ These options are available to all tags.
 | imgAlt | Image alt text | takes text as value
 | responsive | Images take the width of its container and sets height to adjust accordingly | ({responsive: 'true')}
 | imgSrc | Image source | Takes url as value
+| imageHeight | Image height | Takes natural numbers as value. **Only** use this option when the image is less than 19px in height. There is a quirk in desktop Outlook that causes `td` and `th` elements to have a minimum height of 19px unless otherwise specified - this quirk creates white lines above the image if you don't use a [counterspell](https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=500875).
 
 ```
-+image({width: '550', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', removeLink: false, imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: ''})
++image({width: '550', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', removeLink: false, imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: '', imageHeight: '15'})
 ```
 
 ---
