@@ -1,46 +1,68 @@
 mixin button(opts)
-  - 
-    if (opts.btnBorder != 0) {
-      borderWeight = `${opts.btnBorder.split('px')[0]}`,
-      strokeColor = opts.btnBorder.split(' ')[2],
-      strokeWeight = `${opts.btnBorder.split('px')[0]}pt`
-    }
-    else {
-      stroke = 'f'
-    }
+  - let rectType = "rect";
+  - let mergeStyles = {};
 
   - 
-    if (opts.btnBorderRadius != 0) {
+    if (opts.btnBorder != 0) {
+      borderWeight = `${opts.btnBorder.split("px")[0]}`,
+      strokeColor = opts.btnBorder.split(" ")[2],
+      strokeWeight = `${opts.btnBorder.split("px")[0]}pt`
+    }
+    else {
+      stroke = "f";
+    }
+
+    if (opts.bgSrc) {
+      mergeStyles = Object.assign(mergeStyles, {
+        "background-color": "transparent",
+        "background-image": `url(${opts.bgSrc ? opts.bgSrc : placeholderImage })`,
+        "background-position": "center",
+        "background-repeat": "no-repeat",
+        "background-size":  "cover"
+      });
+    }
+
+    if (opts.gradient) {
+      mergeStyles = Object.assign(mergeStyles, {
+        "background": `linear-gradient(${opts.gradient.join(",")})`
+      });
+    }
+
+    if (opts.btnBorderRadius) {
       arcsize = `${opts.btnBorderRadius * 2.5}%`;
+      rectType = "roundrect";
+      mergeStyles = Object.assign(mergeStyles, {
+        "border": "none",
+        "border-radius": `${opts.btnBorderRadius}px`
+      });
     }
 
   tr
     td(
-      data-component='button',
-      class='w100pc',
+      data-component="button",
+      class="w100pc",
       width=opts.width,
       align=opts.align,
       valign=opts.valign,
       bgcolor=opts.bgColor,
       style={
-        'padding-top': `${opts.paddingTop}px`,
-        'padding-right': `${opts.paddingRight}px`,
-        'padding-bottom': `${opts.paddingBottom}px`,
-        'padding-left': `${opts.paddingLeft}px`,
-        'border-top': opts.borderTop,
-        'border-right': opts.borderRight,
-        'border-bottom': opts.borderBottom,
-        'border-left': opts.borderLeft,
+        "padding-top": `${opts.paddingTop}px`,
+        "padding-right": `${opts.paddingRight}px`,
+        "padding-bottom": `${opts.paddingBottom}px`,
+        "padding-left": `${opts.paddingLeft}px`,
+        "border-top": opts.borderTop,
+        "border-right": opts.borderRight,
+        "border-bottom": opts.borderBottom,
+        "border-left": opts.borderLeft,
         width: `${opts.width}px`
       }
     )
-      
       table(
-        data-component='button',
+        data-component="button",
         role="button",
-        class=!opts.responsive && !opts.bulletproof ? undefined : 'w100pc',
+        class=!opts.responsive && !opts.bulletproof ? undefined : "w100pc",
         align=opts.align,
-        bgcolor=opts.bgColor, 
+        bgcolor=opts.bgColor,
         border=0,
         cellpadding=0,
         cellspacing=0,
@@ -60,104 +82,112 @@ mixin button(opts)
           tr
             - if ( opts.bulletproof )
               td(
-                data-component='button',
+                data-component="button",
                 align=opts.align
               )
                 div
                   <!--[if mso]>
-                  #{opts.btnBorderRadius == 0 ? 'v:rect' : 'v:roundrect'}(
+                  #{`v:${rectType}`}(
                     xmlns:v="urn:schemas-microsoft-com:vml", 
                     xmlns:w="urn:schemas-microsoft-com:office:word",
                     href=opts.btnHref,
-                    fillcolor=opts.btnColor,
+                    fill=(opts.gradient ? "true" : undefined),
+                    fillcolor=(opts.gradient ? undefined : opts.btnColor),
                     arcsize=arcsize,
-                    stroke=stroke,
-                    strokecolor=strokeColor,
-                    strokeweight=strokeWeight,
+                    stroke=(opts.gradient ? "false" : stroke),
+                    strokecolor=(opts.gradient ? undefined : strokeColor),
+                    strokeweight=(opts.gradient ? undefined : strokeWeight),
                     style={
                       width: `${opts.btnWidth}px`,
                       height: `${opts.btnHeight}px`,
-                      'v-text-anchor': 'middle'
+                      "v-text-anchor": "middle"
                     }
                   )
+                    - if (opts.gradient)
+                      v:fill(
+                        type="gradient",
+                        color=(opts.gradient[2]),
+                        color2=(opts.gradient[1]),
+                        angle=(opts.gradient[0].replace("deg", ""))
+                      )/
                     w:anchorlock/
                     center(
                       class=opts.customClass,
                       style={
-                        'font-family': `${opts.btnFontFamily}`,
-                        'font-size': `${opts.btnFontSize}px`,
-                        'font-weight': opts.btnFontWeight,
-                        color: `${opts.btnTxtColor ? opts.btnTxtColor : '#FFFFFF'}`
+                        "font-family": `${opts.btnFontFamily}`,
+                        "font-size": `${opts.btnFontSize}px`,
+                        "font-weight": opts.btnFontWeight,
+                        color: `${opts.btnTxtColor ? opts.btnTxtColor : "#FFFFFF"}`
                       }
                     )
-                      | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
+                      | !{opts.btnTxt ? opts.btnTxt : "Call-to-action"}
                   <![endif]-->
                     a(
-                      href=opts.btnHref ? opts.btnHref : '#',
+                      href=opts.btnHref ? opts.btnHref : "#",
                       target="_blank",
                       style={
-                        'background-color': opts.btnColor,
+                        "background-color": opts.btnColor,
                         border: opts.btnBorder,
-                        'border-radius': opts.btnBorderRadius == 0 ? '0' : `${opts.btnBorderRadius}px`,
-                        display: 'inline-block',
-                        'text-decoration': 'none',
-                        'text-align': 'center',
+                        "border-radius": opts.btnBorderRadius == 0 ? "0" : `${opts.btnBorderRadius}px`,
+                        display: "inline-block",
+                        "text-decoration": "none",
+                        "text-align": "center",
                         width: `${opts.btnWidth}px`,
-                        'mso-hide': 'all'
+                        "mso-hide": "all"
                       }
-                    )
+                    )&attributes({style: mergeStyles})
                       span(
                         class=opts.customClass
                         style={
                           color: opts.btnTxtColor,
-                          'font-family': opts.btnFontFamily,
-                          'font-size': `${opts.btnFontSize}px`,
-                          '-webkit-text-size-adjust': 'none',
-                          'font-weight': opts.btnFontWeight,
-                          'line-height': `${opts.btnHeight}px`
+                          "font-family": opts.btnFontFamily,
+                          "font-size": `${opts.btnFontSize}px`,
+                          "-webkit-text-size-adjust": "none",
+                          "font-weight": opts.btnFontWeight,
+                          "line-height": `${opts.btnHeight}px`
                         }
                       )
-                        | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
+                        | !{opts.btnTxt ? opts.btnTxt : "Call-to-action"}
 
             - else if ( !opts.bulletproof )
               td(
-                data-component='button',
+                data-component="button",
                 width=(opts.btnBorder != 0 ? opts.btnWidth - ( borderWeight * 2 ) : opts.btnWidth),
-                align='center',
+                align="center",
                 valign=opts.valign,
                 bgcolor=opts.btnColor,
                 style={
-                  'padding-top': `${opts.btnColor == 'transparent' ? ( Math.round(opts.btnHeight / 3 )) : '0'}px`,
-                  'padding-right': '0px',
-                  'padding-bottom': `${opts.btnColor == 'transparent' ? ( Math.round(opts.btnHeight / 3 )) : '0'}px`,
-                  'padding-left': '0px',
-                  'border-top': opts.btnBorder,
-                  'border-right': opts.btnBorder,
-                  'border-bottom': opts.btnBorder,
-                  'border-left': opts.btnBorder,
+                  "padding-top": `${opts.btnColor == "transparent" ? ( Math.round(opts.btnHeight / 3 )) : "0"}px`,
+                  "padding-right": "0px",
+                  "padding-bottom": `${opts.btnColor == "transparent" ? ( Math.round(opts.btnHeight / 3 )) : "0"}px`,
+                  "padding-left": "0px",
+                  "border-top": opts.btnBorder,
+                  "border-right": opts.btnBorder,
+                  "border-bottom": opts.btnBorder,
+                  "border-left": opts.btnBorder,
                   width: `${opts.btnBorder != 0 ? opts.btnWidth - ( borderWeight * 2 ) : opts.btnWidth}px`
                 }
-              )
+              )&attributes({style: mergeStyles})
                 a(
                   href=opts.btnHref,
-                  target='_blank', 
+                  target="_blank", 
                   style={
-                    'padding-top': `${opts.btnColor == 'transparent' ? '0' : ( Math.round(opts.btnHeight / 3 ))}px`,
-                    'padding-bottom': `${opts.btnColor == 'transparent' ? '0' : ( Math.round(opts.btnHeight / 3 ))}px`,
-                    'border': `${opts.btnColor == 'transparent' ? '0' : '1px solid ' + opts.btnColor}`,
-                    display: 'block',
-                    'text-decoration': 'none',
-                    'text-align': 'center'
+                    "padding-top": `${opts.btnColor == "transparent" ? "0" : ( Math.round(opts.btnHeight / 3 ))}px`,
+                    "padding-bottom": `${opts.btnColor == "transparent" ? "0" : ( Math.round(opts.btnHeight / 3 ))}px`,
+                    "border": `${opts.btnColor == "transparent" ? "0" : "1px solid " + opts.btnColor}`,
+                    display: "block",
+                    "text-decoration": "none",
+                    "text-align": "center"
                   }
-                )
+                )&attributes({style: mergeStyles})
                   span(
                     class=opts.customClass
                     style={
                       color: opts.btnTxtColor,
-                      'font-family': opts.btnFontFamily,
-                      'font-size': `${opts.btnFontSize}px`,
-                      'font-weight': opts.btnFontWeight,
-                      'line-height': `${opts.btnFontSize}px`
+                      "font-family": opts.btnFontFamily,
+                      "font-size": `${opts.btnFontSize}px`,
+                      "font-weight": opts.btnFontWeight,
+                      "line-height": `${opts.btnFontSize}px`
                     }
                   )
-                    | !{opts.btnTxt ? opts.btnTxt : 'Call-to-action'}
+                    | !{opts.btnTxt ? opts.btnTxt : "Call-to-action"}
