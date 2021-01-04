@@ -28,6 +28,8 @@ mixin text(opts)
         'font-family': opts.fontFamily ? opts.fontFamily : family,
         'font-size': `${opts.fontSize ? opts.fontSize : size}px`,
         'font-weight': opts.fontWeight ? opts.fontWeight : weight,
+        'mso-line-height-rule': 'exactly',
+        'mso-text-raise': `${(parseInt(opts.lineHeight ? opts.lineHeight : height) - parseInt(opts.fontSize ? opts.fontSize : size))/4}`,
         'line-height': `${opts.lineHeight ? opts.lineHeight : height}px`,
         color: opts.fontColor ? opts.fontColor : color,
         width: `${opts.width}px`
