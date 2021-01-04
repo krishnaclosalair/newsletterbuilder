@@ -1,60 +1,62 @@
 mixin wrapper(opts)
-  - let width = opts.width == 'full' ? '100%' : opts.width;
+  - let width = opts.width == "full" ? "100%" : opts.width;
+  - let placeholderImage = `http://placehold.jp/${opts.width == "full" ? "600" :  opts.width}x${Math.round( ( opts.width == "full" ? "600" : opts.width ) / 3) * 2}.jpg`;
+
   - 
     if (opts.bulletproof) {
       let background = {
         style: {
-          'background-color': 'transparent',
-          'background-image': `url(${opts.bgSrc ? opts.bgSrc : `http://placehold.jp/${opts.width == 'full' ? '600' :  width}x${Math.round( ( width == 'full' ? '600' : width ) / 3) * 2}.jpg`})`,
-          'background-position': 'center',
-          'background-repeat': 'no-repeat',
-          'background-size':  'cover'
+          "background-color": "transparent",
+          "background-image": `url(${opts.bgSrc ? opts.bgSrc : placeholderImage})`,
+          "background-position": "center",
+          "background-repeat": "no-repeat",
+          "background-size":  "cover"
         }
       }
     }
   
   table(
-    data-component='wrapper',
-    role='presentation',
+    data-component="wrapper",
+    role="presentation",
     class="w100pc",
     width=width,
-    align='center',
-    bgcolor=opts.bulletproof ? 'transparent' : opts.bgColor,
+    align="center",
+    bgcolor=opts.bulletproof ? "transparent" : opts.bgColor,
     cellpadding=0,
     cellspacing=0,
     border=0,
     style={
-      width: opts.width == 'full' ? width : `${width}px`
+      width: opts.width == "full" ? width : `${width}px`
     }
   )
     tbody
       tr
         td(
-          data-component='wrapper',
+          data-component="wrapper",
           class=opts.customClass,
           class="w100pc",
-          width=( opts.width == 'full' ? '600' : opts.width ),
-          valign='top',
-          bgcolor=( opts.bulletproof ? 'transparent' : ( opts.bgColor || !opts.bulletproof ) ? opts.bgColor : '#FFFFFF' ),
+          width=( opts.width == "full" ? "600" : opts.width ),
+          valign="top",
+          bgcolor=( opts.bulletproof ? "transparent" : ( opts.bgColor || !opts.bulletproof ) ? opts.bgColor : "#FFFFFF" ),
           background=(
-            ( opts.bulletproof && opts.bgSrc ) ? opts.bgSrc : opts.bulletproof ? `http://placehold.jp/${opts.width == 'full' ? '600' : width}x${Math.round( ( width == 'full' ? '600' : width ) / 3) * 2}.jpg` : undefined
+            ( opts.bulletproof && opts.bgSrc ) ? opts.bgSrc : opts.bulletproof ? placeholderImage : undefined
           ),
           style={
-            'padding-top': `${opts.paddingTop}px`,
-            'padding-right': `${opts.paddingRight}px`,
-            'padding-bottom': `${opts.paddingBottom}px`,
-            'padding-left': `${opts.paddingLeft}px`,
-            'border-top': opts.borderTop,
-            'border-right': opts.borderRight,
-            'border-bottom': opts.borderBottom,
-            'border-left': opts.borderLeft,
-            width: opts.width == 'full' ? '' : `${opts.width}px`
+            "padding-top": `${opts.paddingTop}px`,
+            "padding-right": `${opts.paddingRight}px`,
+            "padding-bottom": `${opts.paddingBottom}px`,
+            "padding-left": `${opts.paddingLeft}px`,
+            "border-top": opts.borderTop,
+            "border-right": opts.borderRight,
+            "border-bottom": opts.borderBottom,
+            "border-left": opts.borderLeft,
+            width: opts.width == "full" ? "" : `${opts.width}px`
           }
         )&attributes(background)
           - if ( opts.bulletproof )
             <!--[if gte mso 9]>
             <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="#{opts.width == 'full' ? 'mso-width-percent:1000' : 'width: ' + width + 'px'};#{opts.height ? ' height: ' + opts.height + 'px;' : ''}">
-              <v:fill type="frame" src="#{( opts.bgSrc ? opts.bgSrc : 'http://placehold.jp/' + (opts.width == 'full' ? '600' : width) + 'x' + ( Math.round((opts.width == 'full' ? '600' : width) / 3) * 2 ) + '.jpg' )}" color="#{opts.bgColor ? opts.bgColor : '#FFFFFF'}" />
+              <v:fill type="frame" src="#{( opts.bgSrc ? opts.bgSrc : placeholderImage )}" color="#{opts.bgColor ? opts.bgColor : '#FFFFFF'}" />
               <v:textbox #{opts.height ? '' : 'style=\'mso-fit-shape-to-text:true\' '}inset="0,0,0,0">
             <![endif]-->
               block
