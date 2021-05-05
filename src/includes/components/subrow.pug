@@ -1,6 +1,14 @@
 mixin subRow(opts)
   - let calculatedWidth = opts.width - opts.paddingRight - opts.paddingLeft;
-  
+  - let mergeStyles = {};
+
+  - 
+    if (opts.borderCollapse == 'separate') {
+      mergeStyles = Object.assign(mergeStyles, {
+        "border-collapse": "separate !important",
+      });
+    }
+
   tr
     td(
       data-component='subRow',
@@ -36,7 +44,7 @@ mixin subRow(opts)
         style={
           width: `${calculatedWidth}px`
         }
-      )
+      )&attributes({ style: mergeStyles })
         tbody
           tr
             block

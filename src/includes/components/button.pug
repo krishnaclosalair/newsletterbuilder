@@ -1,6 +1,7 @@
 mixin button(opts)
   - let rectType = "rect";
   - let mergeStyles = {};
+  - let mergeAdditionalStyles = {};
 
   - 
     if (opts.btnBorder != 0) {
@@ -32,9 +33,11 @@ mixin button(opts)
       arcsize = `${opts.btnBorderRadius * 2.5}%`;
       rectType = "roundrect";
       mergeStyles = Object.assign(mergeStyles, {
-        "border": "none",
         "border-radius": `${opts.btnBorderRadius}px`
       });
+      mergeAdditionalStyles = Object.assign(mergeAdditionalStyles, {
+        "border-collapse": "separate !important"
+      })
     }
 
   tr
@@ -77,7 +80,7 @@ mixin button(opts)
             : opts.btnWidth
           )}px`
         }
-      )
+      )&attributes({style: mergeAdditionalStyles})
         tbody
           tr
             - if ( opts.bulletproof )

@@ -1,0 +1,30 @@
+mixin customcontent(opts)
+
+  - 
+    if (opts.mobileAlignment) {
+      mobileAlignment = `aH--${opts.mobileAlignment[0]}`
+    }
+
+  tr
+    td(
+      data-component='inlineimage',
+      class=opts.customClass,
+      class="w100pc",
+      class=mobileAlignment,
+      width=opts.width,
+      align=opts.align, 
+      valign=opts.valign,
+      bgcolor=opts.bgColor,
+      style={
+        'padding-top': `${opts.paddingTop}px`,
+        'padding-right': `${opts.paddingRight}px`,
+        'padding-bottom': `${opts.paddingBottom}px`,
+        'padding-left': `${opts.paddingLeft}px`,
+        'border-top': opts.borderTop,
+        'border-right': opts.borderRight,
+        'border-bottom': opts.borderBottom,
+        'border-left': opts.borderLeft,
+        width: `${opts.width}px`
+      }
+    )
+      | !{opts.content}

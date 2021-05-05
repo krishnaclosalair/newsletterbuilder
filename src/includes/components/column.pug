@@ -27,6 +27,15 @@ mixin column(opts)
         "border-radius": `${opts.borderRadius}px`
       });
     }
+    if (opts.individualBorderRadius) {
+      let borderRadius = opts.individualBorderRadius.split(' ');
+      mergeStyles = Object.assign(mergeStyles, {
+        "border-top-left-radius": `${borderRadius[0]}px`,
+        "border-top-right-radius": `${borderRadius[1]}px`,
+        "border-bottom-right-radius": `${borderRadius[2]}px`,
+        "border-bottom-left-radius": `${borderRadius[3]}px`
+      });
+    }
 
   - if ( opts.mobileWidth == "100%" )
     - opts.mobileWidth = "w100pc full";
