@@ -234,6 +234,23 @@ These options are available to all tags.
 
 ---
 
+**+customcontent**
+
+| Option | Description | Usage
+|--|--|--|
+| align | Horizontal alignment | left, center, right
+| mobileALignment | Horizontal alignment on mobile | left, center, right
+| valign | Vertical alignment | top, middle, bottom
+| content | HTML | Takes HTML as value.
+
+```
++customcontent({customClass: '', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'secondary', content: `
+<a href="#" target="_blank" style="text-decoration:none;border:0;outline:0;"><img src="http://placehold.jp/32x32.jpg" alt="alt" width="32" border="0" style="display:inline;border:none;width:32px;"></a>
+`})
+```
+
+---
+
 ***NOTE: Unit expression not recessary. (Use 14 instead of 14px)***
 
 ### Structure
