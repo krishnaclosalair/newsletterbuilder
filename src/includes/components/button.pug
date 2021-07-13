@@ -85,6 +85,7 @@ mixin button(opts)
           tr
             - if ( opts.bulletproof )
               td(
+                class=opts.customClass,
                 data-component="button",
                 align=opts.align
               )
@@ -140,7 +141,6 @@ mixin button(opts)
                       }
                     )&attributes({style: mergeStyles})
                       span(
-                        class=opts.customClass
                         style={
                           color: opts.btnTxtColor,
                           "font-family": opts.btnFontFamily,
@@ -154,6 +154,7 @@ mixin button(opts)
 
             - else if ( !opts.bulletproof )
               td(
+                class=opts.customClass,
                 data-component="button",
                 width=(opts.btnBorder != 0 ? opts.btnWidth - ( borderWeight * 2 ) : opts.btnWidth),
                 align="center",
@@ -184,7 +185,6 @@ mixin button(opts)
                   }
                 )&attributes({style: mergeStyles})
                   span(
-                    class=opts.customClass
                     style={
                       color: opts.btnTxtColor,
                       "font-family": opts.btnFontFamily,

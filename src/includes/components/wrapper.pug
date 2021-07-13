@@ -1,6 +1,6 @@
 mixin wrapper(opts)
   - let width = opts.width == "full" ? "100%" : opts.width;
-  - let placeholderImage = `http://placehold.jp/${opts.width == "full" ? "600" :  opts.width}x${Math.round( ( opts.width == "full" ? "600" : opts.width ) / 3) * 2}.jpg`;
+  - let placeholderImage = `http://placehold.jp/${opts.width == "full" ? message.width :  opts.width}x${Math.round( ( opts.width == "full" ? message.width : opts.width ) / 3) * 2}.jpg`;
 
   - 
     if (opts.bulletproof) {
@@ -35,7 +35,7 @@ mixin wrapper(opts)
           data-component="wrapper",
           class=opts.customClass,
           class="w100pc",
-          width=( opts.width == "full" ? "600" : opts.width ),
+          width=( opts.width == "full" ? message.width : opts.width ),
           valign="top",
           bgcolor=( opts.bulletproof ? "transparent" : ( opts.bgColor || !opts.bulletproof ) ? opts.bgColor : "#FFFFFF" ),
           background=(

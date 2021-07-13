@@ -2,7 +2,7 @@ mixin column(opts)
   - let bgWidth = opts.width;
   - let bgHeight = Math.floor((bgWidth * 2) / 3);
   - let mergeStyles = {};
-  - let placeholderImage = `http://placehold.jp/${opts.width == 'full' ? '600' :  opts.width}x${Math.round( ( opts.width == 'full' ? '600' : opts.width ) / 3) * 2}.jpg`;
+  - let placeholderImage = `http://placehold.jp/${opts.width == 'full' ? message.width :  opts.width}x${Math.round( ( opts.width == 'full' ? message.width : opts.width ) / 3) * 2}.jpg`;
   - let rectType = "rect";
 
   - 

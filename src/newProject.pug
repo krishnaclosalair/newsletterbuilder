@@ -4,48 +4,75 @@ block vars
 
   //- /\/\/\/\/\/\/\/\/\/\ General Settings /\/\/\/\/\/\/\/\/\/\
 
+  //- Color
+  -
+    const color = {
+      primary: {
+        main: '#000000',
+        alt: '#000000',
+      },
+      secondary: {
+        main: '#000000',
+        alt: '#000000',
+      },
+      tertiary: {
+        main: '#000000',
+        alt: '#000000',
+      }
+    };
+
   //- Title
-  - 
-    let title = 'Newsletter';
+  - const title = 'Newsletter';
+
+  //- Message Settings
+  -
+    const message = {
+      body: {
+        style: {
+          background: '#FFFFFF',
+        }
+      },
+      width: 600,
+    };
 
   //- Text Settings
   - 
-    let font = {
+    const font = {
       style: {
         primary: {
           family: 'Open Sans, Helvetica, sans-serif',
           size: '28',
           weight: 'bold',
           height: '32',
-          color: '#000000'
+          color: '#000000',
         },
         secondary: {
           family: 'Open Sans, Helvetica, sans-serif',
           size: '24',
           weight: 'bold',
           height: '28',
-          color: '#000000'
+          color: '#000000',
         },
         tertiary: {
           family: 'Open Sans, Helvetica, sans-serif',
           size: '20',
           weight: 'bold',
           height: '24',
-          color: '#000000'
+          color: '#000000',
         },
         body: {
           family: 'Open Sans, Helvetica, sans-serif',
           size: '15',
           weight: 'normal',
           height: '19',
-          color: '#000000'
+          color: '#000000',
         },
         small: {
           family: 'Open Sans, Helvetica, sans-serif',
           size: '11',
           weight: 'normal',
           height: '15',
-          color: '#000000'
+          color: '#000000',
         }
       }
     };
@@ -62,8 +89,11 @@ block customFonts
 
   //- Font Fallback
   <!--[if mso]>
-    style.      
-      .customFont { font-family: Helvetica, sans-serif !important; }
+    style.
+      .customFont,
+      .customFont > a > span { 
+        font-family:  sans-serif !important; 
+      }
   <![endif]-->
 
 //- Custom CSS
@@ -94,7 +124,7 @@ block content
       // Column 
       +column({customClass: '', width: '550', bulletproof: false, bgSrc: '', mobileWidth: '100%', direction: 'ltr', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
 
-        // Socials
+        // Logo
         +customcontent({customClass: '', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'secondary', content: `
         <a href="#" target="_blank" style="text-decoration:none;border:0;outline:0;"><img src="http://placehold.jp/200x50.jpg" alt="alt" width="200" border="0" style="display:inline;border:none;width:200px;"></a>
         `})
@@ -124,7 +154,7 @@ block content
         +text({customClass: 'customFont', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: ''})
         
         // Button 
-        +button({customClass: 'customFont', width: '550', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
+        +button({customClass: 'customFont', width: '550', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', type: 'primary', btnTxt: 'Call-to-action'})
 
       // Spacer
       +spacer({width: '25', mobileWidth: 'hide', bgColor: '#FFFFFF'})
@@ -151,7 +181,7 @@ block content
         +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: ''})
         
         // Button 
-        +button({customClass: 'customFont', width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
+        +button({customClass: 'customFont', width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', type: 'primary', btnTxt: 'Call-to-action'})
 
       // Spacer
       +spacer({width: '20', mobileWidth: 'hide', bgColor: '#FFFFFF'})
@@ -169,7 +199,7 @@ block content
         +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: ''})
         
         // Button 
-        +button({customClass: 'customFont', width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
+        +button({customClass: 'customFont', width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', type: 'primary', btnTxt: 'Call-to-action'})
 
       // Spacer
       +spacer({width: '25', mobileWidth: 'hide', bgColor: '#FFFFFF'})

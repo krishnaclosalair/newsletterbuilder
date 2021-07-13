@@ -5,7 +5,7 @@
     <meta http-equiv="Content Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta content="date=no, address=no, telephone=no, email=no" name="format-detection"/>
-    <meta name="build-date" content="2021-05-12"/>
+    <meta name="build-date" content="2021-07-12"/>
     <!-- Disable auto-scaling on iOS 10~-->
     <meta name="x-apple-disable-message-reformatting"/><!--[if gte mso 9]>
     <meta content="IE=edge" http-equiv="X-UA-Compatible"/><![endif]-->
@@ -21,7 +21,12 @@
       @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
       
     </style><!--[if mso]>
-    <style>.customFont { font-family: Helvetica, sans-serif !important; }</style><![endif]-->
+    <style>
+      .customFont,
+      .customFont > a > span { 
+        font-family:  sans-serif !important; 
+      }
+    </style><![endif]-->
     <style>
       /* /\/\/\/\/\/\/\ General Reset /\/\/\/\/\/\/\ */ 
       
@@ -29,7 +34,7 @@
         margin: 0;
         padding: 0;
       }
-      
+
       table {
         border-spacing: 0;
       }
@@ -48,7 +53,7 @@
       th {
         border-collapse: collapse;
       }
-      
+
       img {
         border:0 none;
         height: auto;
@@ -58,21 +63,21 @@
         text-decoration: none;
         display: block;
       }
-      
+
       a {
         text-decoration: none;
         color: inherit;
         outline: 0;
       }
-      
+
       a img {
         border: 0;
       }
-      
+
       /* /\/\/\/\/\/\/\ Client-Specific Resets /\/\/\/\/\/\/\ */
-      
+
       /* General */
-      
+
         /* Prevent Resizing of Small Text */
         * {
           text-size-adjust: none !important;
@@ -80,12 +85,12 @@
           -webkit-text-size-adjust: none !important;
         }
         
-        div[style*="margin"] {
+        div[style*=&quot;margin&quot;] {
           margin: 0 !important;
         }
-      
+
       /* Apple */
-      
+
         /* Removes blue links on Apple devices */
         a[x-apple-data-detectors] {
           color: inherit !important;
@@ -95,7 +100,7 @@
           font-weight: inherit !important;
           line-height: inherit !important;
         }
-      
+
       /* Outlook */
       
         /* Visited Link Color */
@@ -108,7 +113,7 @@
           color: inherit !important;
         }
       
-        /* "Read in Browser" Link */
+        /* &quot;Read in Browser&quot; Link */
         #outlook a {
           padding:0 !important;
         }
@@ -124,18 +129,18 @@
         img {
           -ms-interpolation-mode: bicubic !important;
         }
-      
+
         /* Centers email (Outlook.com) */
         .ExternalClass {
           width: 100%;
         }
-      
+
         /* Fix Line Height (Outlook.com) */
         .ExternalClass * {
           line-height: 100%;
         }
-      
-        /* Fix Button "padding" (Outlook for Android)  */
+
+        /* Fix Button &quot;padding&quot; (Outlook for Android)  */
         @media (min-resolution: 1dpi) {
           body[data-outlook-cycle] span.btn {
             line-height: 42px !important;
@@ -143,7 +148,7 @@
         }
       
       /* /\/\/\/\/\/\/\ Media Queries /\/\/\/\/\/\/\ */ 
-      
+
       @media only screen and (max-width: 600px) {
         .hide {
           display: none !important;
@@ -256,7 +261,7 @@
           text-align: right !important;
         }
       }
-    </style>
+</style>
     <style>
       /* Media Queries */
       @media only screen and (max-width: 600px) {
@@ -267,7 +272,7 @@
       
     </style>
   </head>
-  <body>
+  <body style="background:#FFFFFF;">
     <!-- Wrapper -->
         <table class="w100pc" data-component="wrapper" role="presentation" width="600" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width:600px;">
           <tbody>
@@ -287,7 +292,7 @@
                                       <th class="w100pc full" data-component="column" width="550" dir="ltr" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top:0;border-right:0;border-bottom:0;border-left:0;width:550px;">
                                         <table class="w100pc" data-component="column" role="presentation" width="550" align="center" bgcolor="#FFFFFF" cellpadding="0" cellspacing="0" border="0" style="width:550px;">
                                           <tbody>
-                                            <!-- Socials-->
+                                            <!-- Logo-->
                                                 <tr>
                                                   <td class="w100pc aH--c" data-component="customcontent" width="550" align="center" valign="top" bgcolor="#FFFFFF" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top:0;border-right:0;border-bottom:0;border-left:0;width:550px;">
         <a href="#" target="_blank" style="text-decoration:none;border:0;outline:0;"><img src="http://placehold.jp/200x50.jpg" alt="alt" width="200" border="0" style="display:inline;border:none;width:200px;"></a>
@@ -347,7 +352,7 @@
                                                     <table data-component="button" role="button" align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="200" style="width:200px;border-collapse:separate !important;">
                                                       <tbody>
                                                         <tr>
-                                                          <td data-component="button" width="200" align="center" valign="top" bgcolor="#000000" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top:0;border-right:0;border-bottom:0;border-left:0;width:200px;border-radius:0px;"><a href="#" target="_blank" style="padding-top:17px;padding-bottom:17px;border:1px solid #000000;display:block;text-decoration:none;text-align:center;border-radius:0px;"><span class="customFont" style="color:#FFFFFF;font-family:Open Sans,Helvetica,sans-serif;font-size:14px;font-weight:normal;line-height:14px;">Call-to-action</span></a></td>
+                                                          <td class="customFont" data-component="button" width="200" align="center" valign="top" bgcolor="#000000" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top:0;border-right:0;border-bottom:0;border-left:0;width:200px;border-radius:0px;"><a href="#" target="_blank" style="padding-top:17px;padding-bottom:17px;border:1px solid #000000;display:block;text-decoration:none;text-align:center;border-radius:0px;"><span style="color:#FFFFFF;font-family:Open Sans,Helvetica,sans-serif;font-size:14px;font-weight:normal;line-height:14px;">Call-to-action</span></a></td>
                                                         </tr>
                                                       </tbody>
                                                     </table>
@@ -407,7 +412,7 @@
                                                     <table data-component="button" role="button" align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="200" style="width:200px;border-collapse:separate !important;">
                                                       <tbody>
                                                         <tr>
-                                                          <td data-component="button" width="200" align="center" valign="top" bgcolor="#000000" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top:0;border-right:0;border-bottom:0;border-left:0;width:200px;border-radius:0px;"><a href="#" target="_blank" style="padding-top:17px;padding-bottom:17px;border:1px solid #000000;display:block;text-decoration:none;text-align:center;border-radius:0px;"><span class="customFont" style="color:#FFFFFF;font-family:Open Sans,Helvetica,sans-serif;font-size:14px;font-weight:normal;line-height:14px;">Call-to-action</span></a></td>
+                                                          <td class="customFont" data-component="button" width="200" align="center" valign="top" bgcolor="#000000" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top:0;border-right:0;border-bottom:0;border-left:0;width:200px;border-radius:0px;"><a href="#" target="_blank" style="padding-top:17px;padding-bottom:17px;border:1px solid #000000;display:block;text-decoration:none;text-align:center;border-radius:0px;"><span style="color:#FFFFFF;font-family:Open Sans,Helvetica,sans-serif;font-size:14px;font-weight:normal;line-height:14px;">Call-to-action</span></a></td>
                                                         </tr>
                                                       </tbody>
                                                     </table>
@@ -441,7 +446,7 @@
                                                     <table data-component="button" role="button" align="center" bgcolor="#FFFFFF" border="0" cellpadding="0" cellspacing="0" width="200" style="width:200px;border-collapse:separate !important;">
                                                       <tbody>
                                                         <tr>
-                                                          <td data-component="button" width="200" align="center" valign="top" bgcolor="#000000" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top:0;border-right:0;border-bottom:0;border-left:0;width:200px;border-radius:0px;"><a href="#" target="_blank" style="padding-top:17px;padding-bottom:17px;border:1px solid #000000;display:block;text-decoration:none;text-align:center;border-radius:0px;"><span class="customFont" style="color:#FFFFFF;font-family:Open Sans,Helvetica,sans-serif;font-size:14px;font-weight:normal;line-height:14px;">Call-to-action</span></a></td>
+                                                          <td class="customFont" data-component="button" width="200" align="center" valign="top" bgcolor="#000000" style="padding-top:0px;padding-right:0px;padding-bottom:0px;padding-left:0px;border-top:0;border-right:0;border-bottom:0;border-left:0;width:200px;border-radius:0px;"><a href="#" target="_blank" style="padding-top:17px;padding-bottom:17px;border:1px solid #000000;display:block;text-decoration:none;text-align:center;border-radius:0px;"><span style="color:#FFFFFF;font-family:Open Sans,Helvetica,sans-serif;font-size:14px;font-weight:normal;line-height:14px;">Call-to-action</span></a></td>
                                                         </tr>
                                                       </tbody>
                                                     </table>
