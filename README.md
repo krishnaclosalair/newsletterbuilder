@@ -45,6 +45,7 @@ Create a copy of the newProject.pug file found inside the src folder. This is go
 	+image
 	+text
 	+button
+  +customcontent
 
 Format:
 
@@ -93,7 +94,7 @@ These options are available to all tags.
 | direction | Direction of element content | rtl, ltr
 
 ```
-+row({customClass: '', noMobilePadding: false, width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
++row({customClass: '', noMobilePadding: false, width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '32', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
 ```
 
 ---
@@ -137,7 +138,7 @@ These options are available to all tags.
 | imageHeight | Image height | Takes natural numbers as value. **Only** use this option when the image is less than 19px in height. There is a quirk in desktop Outlook that causes `td` and `th` elements to have a minimum height of 19px unless otherwise specified - this quirk creates white lines above the image if you don't use a [counterspell](https://gatherer.wizards.com/Pages/Card/Details.aspx?multiverseid=500875).
 
 ```
-+image({width: '550', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', removeLink: false, imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: '', imageHeight: '15'})
++image({width: '550', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', removeLink: false, imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: '', imageHeight: ''})
 ```
 
 ---
@@ -157,7 +158,16 @@ These options are available to all tags.
 | type | Text type - Controlled by changing the text settings at the top of the document | primary, secondary, tertiary, body, small
 | txt | Actual text | Takes text as value. HTML may also be written
 
-**Text Settings**
+**Text and Colour Settings**
+```
+  -
+    const color = {
+      primary: #000000,
+      secondary: #000000,
+      tertiary: #000000,
+    };
+```
+
 
 ```
   - 
@@ -229,7 +239,7 @@ These options are available to all tags.
 | btnTxt | Button actual text | Takes text as value
 
 ```
-+button({customClass: 'customFont', width: '550', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', btnTxt: 'Call-to-action'})
++button({customClass: 'customFont', width: '550', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', type: 'primary', btnTxt: 'Call-to-action'})
 ```
 
 ---
@@ -244,8 +254,8 @@ These options are available to all tags.
 | content | HTML | Takes HTML as value.
 
 ```
-+customcontent({customClass: '', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'secondary', content: `
-<a href="#" target="_blank" style="text-decoration:none;border:0;outline:0;"><img src="http://placehold.jp/32x32.jpg" alt="alt" width="32" border="0" style="display:inline;border:none;width:32px;"></a>
++customcontent({customClass: '', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'secondary', content: `
+<a href="#" target="_blank" style="text-decoration:none;border:0;outline:0;"><img src="http://placehold.jp/200x50.jpg" alt="alt" width="200" border="0" style="display:inline;border:none;width:200px;"></a>
 `})
 ```
 
