@@ -39,7 +39,7 @@ Create a copy of the newProject.pug file found inside the src folder. This is go
 
 	+wrapper
 	+row
-	+subRow
+	+subrow
 	+column
 	+spacer
 	+image
