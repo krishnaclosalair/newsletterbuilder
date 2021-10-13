@@ -46,7 +46,7 @@ Create a copy of the newProject.pug file found inside the src folder. This is go
 	+text
 	+button
   +customcontent
-
+  
 Format:
 
 	+tag({option:'value'})
@@ -91,7 +91,7 @@ These options are available to all tags.
 | Option | Description | Usage
 |--|--|--|
 | noMobilePadding | Option to add or remove horizontal padding on mobile | Takes true or false
-| direction | Direction of element content | rtl, ltr
+| direction | Direction of element content on desktop | rtl, ltr
 
 ```
 +row({customClass: '', noMobilePadding: false, width: '600', direction: 'ltr', bgColor: '#FFFFFF', paddingTop: '32', paddingRight: '0', paddingBottom: '32', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
