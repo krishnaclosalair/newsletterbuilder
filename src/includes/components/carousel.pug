@@ -1,0 +1,134 @@
+mixin carousel(opts)
+
+  tr
+    td(
+      data-component="carousel",
+      class=opts.customClass,
+      class="w100pc",
+      width=opts.width,
+      align=opts.align, 
+      valign=opts.valign,
+      bgcolor=opts.bgColor,
+      style={
+        'padding-top': `${opts.paddingTop}px`,
+        'padding-right': `${opts.paddingRight}px`,
+        'padding-bottom': `${opts.paddingBottom}px`,
+        'padding-left': `${opts.paddingLeft}px`,
+        'border-top': opts.borderTop,
+        'border-right': opts.borderRight,
+        'border-bottom': opts.borderBottom,
+        'border-left': opts.borderLeft,
+        width: `${opts.width}px`
+      }
+    )
+      <!--[if !mso]-->
+      .carousel
+        each item, index in opts.carouselItems
+          input(
+            id=`radio-${index + 1}`,
+            class=`radio radio-${index + 1}`,
+            type='radio',
+            name='radio',
+            checked=index === 0 ? 'checked' : false
+            style={
+              display: 'none'
+              }
+          )
+
+        div(
+          class="content w100pc",
+          style={
+            width: `${opts.width}px`,
+            display: 'table',
+            'table-layout': 'fixed',
+            'text-align': 'center'
+          }
+        )
+          each item, index in opts.carouselItems
+            a(
+              class=`switch switch-${index + 1}`,
+              href=opts.carouselItems[index].href,
+              style={
+                display: 'inline-block',
+                overflow: 'hidden',
+                'text-decoration': 'none',
+                border: 0,
+                outline: 0
+              }
+            )
+              label(
+                for=`radio-${index + 1}`
+              )
+                img(
+                  src=opts.carouselItems[index].src,
+                  alt=opts.carouselItems[index].alt,
+                  width='75',
+                  border='0',
+                  style={
+                    border: '4px solid #FFFFFF',
+                    display: 'block',
+                    width: '75px'
+                  }
+                )
+
+          table(
+            class="actual",
+            role='presentation',
+            style={
+              'padding-bottom': '8px',
+              'caption-side': 'top',
+              display: 'table-caption',
+              'table-layout': 'fixed'
+            }
+          )
+            tbody
+              tr
+                td(
+                  class="w100pc",
+                  width=opts.width,
+                  style={
+                    width: `${opts.width}px`
+                  }
+                )
+                  div
+                    each item, index in opts.carouselItems
+                      div(
+                        class=`page page-${index + 1}`,
+                        style=index === 0 ? false : 'display: none'
+                      )
+                        a(
+                          href=opts.carouselItems[index].href,
+                          target='_blank',
+                          style={
+                            'text-decoration': 'none',
+                            border: 0,
+                            outline: 0
+                          }
+                        )
+                          img(
+                            src=opts.carouselItems[index].src,
+                            alt=opts.carouselItems[index].alt,
+                            width=opts.width,
+                            border='0',
+                            style={
+                              display: 'block',
+                              border: 'none',
+                              width: `${opts.width}px`
+                            }
+                          )                       
+      <!--[endif]-->
+
+      <!--[if mso]>
+      div(class='page page-1')
+        a(href=opts.fallbackItem.href)
+          img(
+            src=opts.fallbackItem.src,
+            width=opts.width,
+            border="0",
+            style={
+              display: 'block',
+              border: 'none',
+              width: `${opts.width}px`
+            }
+          )
+      <![endif]-->
