@@ -1,16 +1,17 @@
 mixin wrapper(opts)
   - let width = opts.width == "full" ? "100%" : opts.width;
   - let placeholderImage = `http://placehold.jp/${opts.width == "full" ? message.width :  opts.width}x${Math.round( ( opts.width == "full" ? message.width : opts.width ) / 3) * 2}.jpg`;
+  - let background;
 
   - 
     if (opts.bulletproof) {
-      let background = {
+      background = {
         style: {
           "background-color": "transparent",
           "background-image": `url(${opts.bgSrc ? opts.bgSrc : placeholderImage})`,
           "background-position": "center",
           "background-repeat": "no-repeat",
-          "background-size":  "cover"
+          "background-size":  "contain"
         }
       }
     }
