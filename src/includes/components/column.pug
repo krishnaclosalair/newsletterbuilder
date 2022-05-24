@@ -1,40 +1,43 @@
 mixin column(opts)
   - let bgWidth = opts.width;
   - let bgHeight = Math.floor((bgWidth * 2) / 3);
-  - let mergeStyles = {};
+  - let styles = {};
   - let placeholderImage = `http://placehold.jp/${opts.width == 'full' ? message.width :  opts.width}x${Math.round( ( opts.width == 'full' ? message.width : opts.width ) / 3) * 2}.jpg`;
   - let rectType = "rect";
 
   - 
     if (opts.bgSrc) {
-      mergeStyles = Object.assign(mergeStyles, {
+      styles = {...styles, 
         "background-color": "transparent",
         "background-image": `url(${opts.bgSrc ? opts.bgSrc : placeholderImage })`,
         "background-position": "center",
         "background-repeat": "no-repeat",
         "background-size":  "cover"
-      });
+      };
     }
+
     if (opts.gradient) {
-      mergeStyles = Object.assign(mergeStyles, {
+      styles = {...styles, 
         "background": `linear-gradient(${opts.gradient.join(",")})`
-      });
+      };
     }
+
     if (opts.borderRadius) {
       arcsize = `${opts.borderRadius * 2.5}%`;
       rectType = "roundrect";
-      mergeStyles = Object.assign(mergeStyles, {
+      styles = {...styles, 
         "border-radius": `${opts.borderRadius}px`
-      });
+      };
     }
+
     if (opts.individualBorderRadius) {
       let borderRadius = opts.individualBorderRadius.split(' ');
-      mergeStyles = Object.assign(mergeStyles, {
+      styles = {...styles, 
         "border-top-left-radius": `${borderRadius[0]}px`,
         "border-top-right-radius": `${borderRadius[1]}px`,
         "border-bottom-right-radius": `${borderRadius[2]}px`,
         "border-bottom-left-radius": `${borderRadius[3]}px`
-      });
+      };
     }
 
   - if ( opts.mobileWidth == "100%" )
@@ -69,7 +72,7 @@ mixin column(opts)
       "border-left": opts.borderLeft,
       width: `${opts.width}px`
     }
-  )&attributes({ style: mergeStyles })
+  )&attributes({ style: styles })
   
     - if ( opts.bulletproof )
       <!--[if gte mso 9]>

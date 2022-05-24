@@ -1,12 +1,12 @@
 mixin subrow(opts)
   - let calculatedWidth = opts.width - opts.paddingRight - opts.paddingLeft;
-  - let mergeStyles = {};
+  - let styles = {};
 
   - 
     if (opts.borderCollapse == 'separate') {
-      mergeStyles = Object.assign(mergeStyles, {
+      styles = {...styles,
         "border-collapse": "separate !important",
-      });
+      };
     }
 
   tr
@@ -44,7 +44,7 @@ mixin subrow(opts)
         style={
           width: `${calculatedWidth}px`
         }
-      )&attributes({ style: mergeStyles })
+      )&attributes({ style: styles })
         tbody
           tr
             block

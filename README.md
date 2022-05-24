@@ -109,9 +109,11 @@ These options are available to all tags.
 | direction | Direction of element content | rtl, ltr
 | align | center | Horizontal alignment | left, center, right
 | valign | top | Vertical alignment | top, middle, bottom
+| borderRadius | Border radius | Takes natural numbers as value Ex. 25
+| individualBorderRadius | Individual border radius | Takes natural numbers as value Ex. 25 0 0 25
 
 ```
-+column({customClass: '', width: '550', bulletproof: false, bgSrc: '', mobileWidth: '100%', direction: 'ltr', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0'})
++column({customClass: '', width: '550', bulletproof: false, bgSrc: '', mobileWidth: '100%', direction: 'ltr', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', borderRadius: '0'})
 ```
 
 ---

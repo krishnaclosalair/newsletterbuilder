@@ -1,7 +1,7 @@
 mixin button(opts)
   - let rectType = "rect";
-  - let mergeStyles = {};
-  - let mergeAdditionalStyles = {};
+  - let styles = {};
+  - let additionalStyles = {};
 
   - 
     if (opts.btnBorder != 0) {
@@ -14,30 +14,30 @@ mixin button(opts)
     }
 
     if (opts.bgSrc) {
-      mergeStyles = Object.assign(mergeStyles, {
+      styles = {...styles, 
         "background-color": "transparent",
         "background-image": `url(${opts.bgSrc ? opts.bgSrc : placeholderImage })`,
         "background-position": "center",
         "background-repeat": "no-repeat",
         "background-size":  "cover"
-      });
+      };
     }
 
     if (opts.gradient) {
-      mergeStyles = Object.assign(mergeStyles, {
+      styles = {...styles, 
         "background": `linear-gradient(${opts.gradient.join(",")})`
-      });
+      };
     }
 
     if (opts.btnBorderRadius) {
       arcsize = `${opts.btnBorderRadius * 2.5}%`;
       rectType = "roundrect";
-      mergeStyles = Object.assign(mergeStyles, {
+      styles = {...styles, 
         "border-radius": `${opts.btnBorderRadius}px`
-      });
-      mergeAdditionalStyles = Object.assign(mergeAdditionalStyles, {
+      };
+      additionalStyles = {...additionalStyles, 
         "border-collapse": "separate !important"
-      })
+      };
     }
 
   tr
@@ -80,7 +80,7 @@ mixin button(opts)
             : opts.btnWidth
           )}px`
         }
-      )&attributes({style: mergeAdditionalStyles})
+      )&attributes({style: additionalStyles})
         tbody
           tr
             - if ( opts.bulletproof )
@@ -139,7 +139,7 @@ mixin button(opts)
                         width: `${opts.btnWidth}px`,
                         "mso-hide": "all"
                       }
-                    )&attributes({style: mergeStyles})
+                    )&attributes({style: styles})
                       span(
                         style={
                           color: opts.btnTxtColor,
@@ -171,7 +171,7 @@ mixin button(opts)
                   "border-left": opts.btnBorder,
                   width: `${opts.btnBorder != 0 ? opts.btnWidth - ( borderWeight * 2 ) : opts.btnWidth}px`
                 }
-              )&attributes({style: mergeStyles})
+              )&attributes({style: styles})
                 a(
                   href=opts.btnHref,
                   target="_blank", 
@@ -183,7 +183,7 @@ mixin button(opts)
                     "text-decoration": "none",
                     "text-align": "center"
                   }
-                )&attributes({style: mergeStyles})
+                )&attributes({style: styles})
                   span(
                     style={
                       color: opts.btnTxtColor,
