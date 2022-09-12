@@ -2,12 +2,13 @@ mixin button(opts)
   - let rectType = "rect";
   - let styles = {};
   - let additionalStyles = {};
+  - let {family, size, weight, color, btnColor, height, width, border, borderRadius} = button.style[opts.type];
 
   - 
-    if (opts.btnBorder != 0) {
-      borderWeight = `${opts.btnBorder.split("px")[0]}`,
-      strokeColor = opts.btnBorder.split(" ")[2],
-      strokeWeight = `${opts.btnBorder.split("px")[0]}pt`
+    if (opts.btnBorder != 0 || border != 0) {
+      borderWeight = opts.btnBorder.split("px")[0] || border.split("px")[0],
+      strokeColor = opts.btnBorder.split(" ")[2] || border.split(" ")[2],
+      strokeWeight = `${opts.btnBorder.split("px")[0] || border.split("px")[0]}pt`
     }
     else {
       stroke = "f";
@@ -29,11 +30,11 @@ mixin button(opts)
       };
     }
 
-    if (opts.btnBorderRadius) {
-      arcsize = `${opts.btnBorderRadius * 2.5}%`;
+    if (opts.btnBorderRadius ? opts.btnBorderRadius : borderRadius) {
+      arcsize = `${(opts.btnBorderRadius ? opts.btnBorderRadius : borderRadius) * 2.5}%`;
       rectType = "roundrect";
       styles = {...styles, 
-        "border-radius": `${opts.btnBorderRadius}px`
+        "border-radius": `${opts.btnBorderRadius ? opts.btnBorderRadius : borderRadius}px`
       };
       additionalStyles = {...additionalStyles, 
         "border-collapse": "separate !important"
@@ -72,12 +73,12 @@ mixin button(opts)
         width=(
           opts.bulletproof 
           ? opts.width - opts.paddingRight - opts.paddingLeft 
-          : opts.btnWidth
+          : opts.btnWidth ? opts.btnWidth : width
         ),
         style={
           width: `${( opts.bulletproof
             ? opts.width - opts.paddingRight - opts.paddingLeft
-            : opts.btnWidth
+            : opts.btnWidth ? opts.btnWidth : width
           )}px`
         }
       )&attributes({style: additionalStyles})
@@ -96,14 +97,14 @@ mixin button(opts)
                     xmlns:w="urn:schemas-microsoft-com:office:word",
                     href=opts.btnHref,
                     fill=(opts.gradient ? "true" : undefined),
-                    fillcolor=(opts.gradient ? undefined : opts.btnColor),
+                    fillcolor=(opts.gradient ? undefined : opts.btnColor ? opts.btnColor : btnColor),
                     arcsize=arcsize,
                     stroke=(opts.gradient ? "false" : stroke),
                     strokecolor=(opts.gradient ? undefined : strokeColor),
                     strokeweight=(opts.gradient ? undefined : strokeWeight),
                     style={
-                      width: `${opts.btnWidth}px`,
-                      height: `${opts.btnHeight}px`,
+                      width: `${opts.btnWidth ? opts.btnWidth : width}px`,
+                      height: `${opts.btnHeight ? opts.btnHeight : height}px`,
                       "v-text-anchor": "middle"
                     }
                   )
@@ -118,10 +119,10 @@ mixin button(opts)
                     center(
                       class=opts.customClass,
                       style={
-                        "font-family": `${opts.btnFontFamily}`,
-                        "font-size": `${opts.btnFontSize}px`,
-                        "font-weight": opts.btnFontWeight,
-                        color: `${opts.btnTxtColor ? opts.btnTxtColor : "#FFFFFF"}`
+                        "font-family": `${opts.btnFontFamily ? opts.btnFontFamily : family}`,
+                        "font-size": `${opts.btnFontSize ? opts.btnFontSize : size}px`,
+                        "font-weight": opts.btnFontWeight ? opts.btnFontWeight : weight,
+                        color: `${opts.btnTxtColor ? opts.btnTxtColor : color}`
                       }
                     )
                       | !{opts.btnTxt ? opts.btnTxt : "Call-to-action"}
@@ -130,24 +131,24 @@ mixin button(opts)
                       href=opts.btnHref ? opts.btnHref : "#",
                       target="_blank",
                       style={
-                        "background-color": opts.btnColor,
-                        border: opts.btnBorder,
-                        "border-radius": opts.btnBorderRadius == 0 ? "0" : `${opts.btnBorderRadius}px`,
+                        "background-color": opts.btnColor ? opts.btnColor : btnColor,
+                        border: opts.btnBorder ? opts.btnBorder : border,
+                        "border-radius": opts.btnBorderRadius == 0 || borderRadius == 0 ? "0" : `${opts.btnBorderRadius ? opts.btnBorderRadius : borderRadius}px`,
                         display: "inline-block",
                         "text-decoration": "none",
                         "text-align": "center",
-                        width: `${opts.btnWidth}px`,
+                        width: `${opts.btnWidth ? opts.btnWidth : width}px`,
                         "mso-hide": "all"
                       }
                     )&attributes({style: styles})
                       span(
                         style={
-                          color: opts.btnTxtColor,
-                          "font-family": opts.btnFontFamily,
-                          "font-size": `${opts.btnFontSize}px`,
+                          color: opts.btnTxtColor ? opts.btnTxtColor : color,
+                          "font-family": opts.btnFontFamily ? opts.btnFontFamily : family,
+                          "font-size": `${opts.btnFontSize ? opts.btnFontSize : size}px`,
                           "-webkit-text-size-adjust": "none",
-                          "font-weight": opts.btnFontWeight,
-                          "line-height": `${opts.btnHeight}px`
+                          "font-weight": opts.btnFontWeight ? opts.btnFontWeight : weight,
+                          "line-height": `${opts.btnHeight ? opts.btnHeight : height}px`
                         }
                       )
                         | !{opts.btnTxt ? opts.btnTxt : "Call-to-action"}
@@ -156,29 +157,29 @@ mixin button(opts)
               td(
                 class=opts.customClass,
                 data-component="button",
-                width=(opts.btnBorder != 0 ? opts.btnWidth - ( borderWeight * 2 ) : opts.btnWidth),
+                width=(opts.btnBorder != 0 || border != 0 ? (opts.btnWidth ? opts.btnWidth : width) - ( borderWeight * 2 ) : (opts.btnWidth ? opts.btnWidth : width)),
                 align="center",
                 valign=opts.valign,
-                bgcolor=opts.btnColor,
+                bgcolor=opts.btnColor ? opts.btnColor : btnColor,
                 style={
-                  "padding-top": `${opts.btnColor == "transparent" ? ( Math.round(opts.btnHeight / 3 )) : "0"}px`,
+                  "padding-top": `${opts.btnColor == "transparent" || btnColor == "transparent" ? ( Math.round((opts.btnHeight ? opts.btnHeight : height) / 3 )) : "0"}px`,
                   "padding-right": "0px",
-                  "padding-bottom": `${opts.btnColor == "transparent" ? ( Math.round(opts.btnHeight / 3 )) : "0"}px`,
+                  "padding-bottom": `${opts.btnColor == "transparent" || btnColor == "transparent" ? ( Math.round((opts.btnHeight ? opts.btnHeight : height) / 3 )) : "0"}px`,
                   "padding-left": "0px",
-                  "border-top": opts.btnBorder,
-                  "border-right": opts.btnBorder,
-                  "border-bottom": opts.btnBorder,
-                  "border-left": opts.btnBorder,
-                  width: `${opts.btnBorder != 0 ? opts.btnWidth - ( borderWeight * 2 ) : opts.btnWidth}px`
+                  "border-top": opts.btnBorder ? opts.btnBorder : border,
+                  "border-right": opts.btnBorder ? opts.btnBorder : border,
+                  "border-bottom": opts.btnBorder ? opts.btnBorder : border,
+                  "border-left": opts.btnBorder ? opts.btnBorder : border,
+                  width: `${opts.btnBorder != 0 || border != 0 ? (opts.btnWidth ? opts.btnWidth : width) - ( borderWeight * 2 ) : (opts.btnWidth ? opts.btnWidth : width)}px`
                 }
               )&attributes({style: styles})
                 a(
                   href=opts.btnHref,
                   target="_blank", 
                   style={
-                    "padding-top": `${opts.btnColor == "transparent" ? "0" : ( Math.round(opts.btnHeight / 3 ))}px`,
-                    "padding-bottom": `${opts.btnColor == "transparent" ? "0" : ( Math.round(opts.btnHeight / 3 ))}px`,
-                    "border": `${opts.btnColor == "transparent" ? "0" : "1px solid " + opts.btnColor}`,
+                    "padding-top": `${opts.btnColor == "transparent" || btnColor == "transparent" ? "0" : ( Math.round((opts.btnHeight ? opts.btnHeight : height) / 3 ))}px`,
+                    "padding-bottom": `${opts.btnColor == "transparent" || btnColor == "transparent" ? "0" : ( Math.round((opts.btnHeight ? opts.btnHeight : height) / 3 ))}px`,
+                    "border": `${opts.btnColor == "transparent" || opts.btnColor == "transparent" ? "0" : "1px solid " + (opts.btnColor ? opts.btnColor : btnColor)}`,
                     display: "block",
                     "text-decoration": "none",
                     "text-align": "center"
@@ -186,11 +187,11 @@ mixin button(opts)
                 )&attributes({style: styles})
                   span(
                     style={
-                      color: opts.btnTxtColor,
-                      "font-family": opts.btnFontFamily,
-                      "font-size": `${opts.btnFontSize}px`,
-                      "font-weight": opts.btnFontWeight,
-                      "line-height": `${opts.btnFontSize}px`
+                      color: opts.btnTxtColor ? opts.btnTxtColor : color,
+                      "font-family": opts.btnFontFamily ? opts.btnFontFamily : family,
+                      "font-size": `${opts.btnFontSize ? opts.btnFontSize : size}px`,
+                      "font-weight": opts.btnFontWeight ? opts.btnFontWeight : weight,
+                      "line-height": `${opts.btnFontSize ? opts.btnFontSize : size}px`
                     }
                   )
                     | !{opts.btnTxt ? opts.btnTxt : "Call-to-action"}

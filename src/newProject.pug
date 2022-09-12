@@ -64,7 +64,32 @@ block vars
           weight: 'normal',
           height: '15',
           color: '#000000',
-        }
+        },
+        custom1 : {
+          family: '',
+          size: '',
+          weight: '',
+          height: '',
+          color: '',
+        },
+      }
+    };
+
+  //- Button Settings
+  -
+    const button = {
+      style: {
+        custom1: {
+          family: 'Open Sans, Helvetica, sans-serif',
+          size: '14',
+          weight: 'normal',
+          color: '#FFFFFF',
+          btnColor: '#000000',
+          height: '50',
+          width: '200',
+          border: '0',
+          borderRadius: '0',
+        },
       }
     };
 
@@ -83,7 +108,7 @@ block customFonts
     style.
       .customFont,
       .customFont * { 
-        font-family:  sans-serif !important; 
+        font-family:  sans-serif !important;
       }
   <![endif]-->
 
@@ -139,13 +164,13 @@ block content
         +image({width: '550', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', removeLink: false, imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: '', imageHeight: ''})
 
         // Primary Heading 
-        +text({customClass: 'customFont', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'primary', txt: ''})
+        +text({customClass: 'customFont', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: '', fontSize: '', fontWeight: '', lineHeight: '', fontColor: '', type: 'primary', txt: ''})
 
         // Body 
-        +text({customClass: 'customFont', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: ''})
+        +text({customClass: 'customFont', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: '', fontSize: '', fontWeight: '', lineHeight: '', fontColor: '', type: 'body', txt: ''})
         
         // Button 
-        +button({customClass: 'customFont', width: '550', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', type: 'primary', btnTxt: 'Call-to-action'})
+        +button({customClass: 'customFont', width: '550', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '', btnHeight: '', btnBorder: '', btnBorderRadius: '', btnColor: '', btnFontFamily: '', btnFontSize: '', btnFontWeight: '', btnHref: '#', btnTxtColor: '', type: 'custom1', btnTxt: 'Call-to-action'})
 
       // Spacer
       +spacer({width: '25', mobileWidth: 'hide', bgColor: '#FFFFFF'})
@@ -166,13 +191,13 @@ block content
         +image({width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', removeLink: false, imgHref: '#', imgAlt: 'alt', responsive: true, imgSrc: '', imageHeight: ''})
 
         // Secondary Heading 
-        +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'secondary', txt: ''})
+        +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: '', fontSize: '', fontWeight: '', lineHeight: '', fontColor: '', type: 'secondary', txt: ''})
 
         // Body 
-        +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: ''})
+        +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: '', fontSize: '', fontWeight: '', lineHeight: '', fontColor: '', type: 'body', txt: ''})
         
         // Button 
-        +button({customClass: 'customFont', width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', type: 'primary', btnTxt: 'Call-to-action'})
+        +button({customClass: 'customFont', width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '', btnHeight: '', btnBorder: '', btnBorderRadius: '', btnColor: '', btnFontFamily: '', btnFontSize: '', btnFontWeight: '', btnHref: '#', btnTxtColor: '', type: 'custom1', btnTxt: 'Call-to-action'})
 
       // Spacer
       +spacer({width: '20', mobileWidth: 'hide', bgColor: '#FFFFFF'})
@@ -187,10 +212,10 @@ block content
         +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'secondary', txt: ''})
 
         // Body 
-        +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'body', txt: ''})
+        +text({customClass: 'customFont', width: '265', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: '', fontSize: '', fontWeight: '', lineHeight: '', fontColor: '', type: 'body', txt: ''})
         
         // Button 
-        +button({customClass: 'customFont', width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '200', btnHeight: '50', btnBorder: '0', btnBorderRadius: '0', btnColor: '#000000', btnFontFamily: 'Open Sans,Helvetica,sans-serif', btnFontSize: '14', btnFontWeight: 'normal', btnHref: '#', btnTxtColor: '#FFFFFF', type: 'primary', btnTxt: 'Call-to-action'})
+        +button({customClass: 'customFont', width: '265', align: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '0', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', bulletproof: false, responsive: false, btnWidth: '', btnHeight: '', btnBorder: '', btnBorderRadius: '', btnColor: '', btnFontFamily: '', btnFontSize: '', btnFontWeight: '', btnHref: '#', btnTxtColor: '', type: 'custom1', btnTxt: 'Call-to-action'})
 
       // Spacer
       +spacer({width: '25', mobileWidth: 'hide', bgColor: '#FFFFFF'})
@@ -216,10 +241,10 @@ block content
         `})
 
         // Small 
-        +text({customClass: 'customFont', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'small', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'})
+        +text({customClass: 'customFont', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: '', fontSize: '', fontWeight: '', lineHeight: '', fontColor: '', type: 'small', txt: 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.'})
         // Small 
 
-        +text({customClass: 'customFont', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', type: 'small', txt: ''})
+        +text({customClass: 'customFont', width: '550', align: 'center', mobileAlignment: 'center', valign: 'top', bgColor: '#FFFFFF', paddingTop: '0', paddingRight: '0', paddingBottom: '16', paddingLeft: '0', borderTop: '0', borderRight: '0', borderBottom: '0', borderLeft: '0', fontFamily: '', fontSize: '', fontWeight: '', lineHeight: '', fontColor: '', type: 'small', txt: ''})
 
       // Spacer
       +spacer({width: '25', mobileWidth: 'hide', bgColor: '#FFFFFF'})
