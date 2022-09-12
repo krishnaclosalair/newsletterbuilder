@@ -160,7 +160,7 @@ These options are available to all tags.
 | type | Text type - Controlled by changing the text settings at the top of the document | primary, secondary, tertiary, body, small
 | txt | Actual text | Takes text as value. HTML may also be written
 
-**Text and Colour Settings**
+**Colour, Text, and Button Settings**
 ```
   -
     const color = {
@@ -210,6 +210,25 @@ These options are available to all tags.
           height: '15',
           color: '#000000'
         }
+      }
+    };
+```
+
+```
+  -
+    const button = {
+      style: {
+        custom1: {
+          family: 'Open Sans, Helvetica, sans-serif',
+          size: '14',
+          weight: 'normal',
+          color: '#FFFFFF',
+          btnColor: '#000000',
+          height: '50',
+          width: '200',
+          border: '0',
+          borderRadius: '0',
+        },
       }
     };
 ```
